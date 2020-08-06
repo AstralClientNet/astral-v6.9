@@ -1,0 +1,203 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "edit_world_dx",
+  
+  /*//// Panels /////*/
+  
+  "title_label@settings_dx.base_label": {
+    "text": "options.edit",
+    "offset": [ 0, 19 ]
+  },
+
+  "panel_content": {
+    "type": "stack_panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 46 ],
+    "size": [ 202, 190 ],
+    "controls": [
+      {
+        "panel_0": {
+          "type": "panel",
+          "size": [ 202, 50 ],
+          "controls": [
+            {
+              "option_text_edit_0@settings_common_dx.option_text_edit": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "selectWorld.enterName",
+                "$option_binding_name": "#world_name",
+                "$option_enabled_binding_name": "#world_name_enabled",
+                "$text_box_name": "world_name_text_box"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "gamerules_button_panel": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "controls": [
+            {
+              "gamerules_button@create_world_dx.gamerules_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_1": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "controls": [
+            {
+              "more_world_options_button@create_world_dx.more_world_options_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_2": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "bindings": [
+            {
+              "binding_name": "#show_convert_to_infinite_button",
+              "binding_name_override": "#visible"
+            }
+          ],
+          "controls": [
+            {
+              "convert_to_infinite_button@settings_common_dx.action_button": {
+                "size": [ 200, 20 ],
+                "$pressed_button_name": "convert_to_infinite_button",
+                "$button_text": "createWorldScreen.action.editLocal",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_3": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "controls": [
+            {
+              "export_button@settings_common_dx.action_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$button_text": "gui.exportWorldLong",
+                "$pressed_button_name": "export_world_button"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "resources_panel": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "controls": [
+            {
+              "resource_packs_button@create_world_dx.resource_packs_button": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ 98, 20 ]
+              }
+            },
+            {
+              "behavior_packs_button@create_world_dx.behavior_packs_button": {
+                "size": [ 98, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_4": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "ignored": "(not $is_world_edit or $is_mp_client or $trial or not $is_pregame or $export_disabled)",
+          "controls": [
+            {
+              "copy_world_button@settings_common_dx.action_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$button_text": "gui.copyWorld",
+                "$pressed_button_name": "copy_world_button"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_5": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "controls": [
+            {
+              "export_template_button@settings_common_dx.action_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$button_text": "gui.exportTemplate",
+                "$pressed_button_name": "export_template_button"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_6": {
+          "type": "panel",
+          "size": [ 202, 20 ],
+          "controls": [
+            {
+              "save_button@play_dx.cancel_button": {
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "size": [ 98, 20 ],
+                "offset": [ 1, 0 ],
+                "$button_text": "addExternalServerScreen.saveButtonLabel"
+              }
+            },
+            {
+              "delete_button@settings_common_dx.action_button": {
+                "size": [ 98, 20 ],
+                "anchor_from": "bottom_right",
+                "anchor_to": "bottom_right",
+                "offset": [ -1, 0 ],
+                "$button_text": "gui.deleteWorldLong",
+                "$pressed_button_name": "delete_world_button"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "edit_screen_panel": {
+    "type": "panel",
+    "controls": [
+      { "options_label@edit_world_dx.title_label": { "layer": 2 } },
+      { "panel_content@edit_world_dx.panel_content": { "layer": 2 } },
+      { "main_bg_panel@settings_dx.bg_panel": { } }
+    ]
+  }
+}

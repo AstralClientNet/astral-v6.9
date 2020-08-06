@@ -1,0 +1,38 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "new_button_toggle_janger",
+
+  "button_toggle": {
+    "type": "panel",
+    "size": "$toggle_size",
+    "$toggle_size|default": [ 150, 20 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "$toggle_focus_enabled": false,
+    "$radio_toggle_group": true,
+    "$default_selector_toggle_index|default": 0,
+    "$font_type|default": "smooth",
+    "$toggle_group_default_selected": "$default_selector_toggle_index",
+    "$toggle_tab_focus_binding_type": "global",
+    "$toggle_tab_focus_binding_name": "#navigation_tab_focus_precedence",
+    "$toggle_on_hover_binding_type": "global",
+    "$toggle_on_hover_binding_name": "#toggle_on_hover",
+    "$tts_name|default": "accessibility.sectionbutton.tts.title",
+    "$toggle_tts_enabled_binding_type": "global",
+    "$back_button|default": false,
+    "$enabled|default": true,
+    "$control_name|default": "this_toggle",
+    "controls": [
+      {
+        "$control_name@button_toggle_janger.toggle_button": {
+          "toggle_group_forced_index": "$toggle_index",
+          "toggle_group_default_selected": "$toggle_default_selected",
+          "$toggle_index|default": -1,
+          "$toggle_default_selected|default": 0
+        }
+      }
+    ]
+  }
+}

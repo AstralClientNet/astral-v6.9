@@ -1,0 +1,165 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved.                                          *
++*   Need to be Credited, 'cause of (not #toggle_state):                *
++*   @HawfHuman. All rights reserved.                                             *
++*   Ok. @CrizArtEx use that in pause menu, first. All rights reserved *
++*********************************************************/
+{
+  "namespace": "pause_menu_janger",
+
+  "pause_menu_screen_content_panel": {
+    "type": "panel",
+    "controls": [
+      { "pause_menu_content_panel@pause_menu_content_panel": {} },
+      { "invite_players_content_panel@players_menu_janger.players_menu_content_panel": {} },
+      { "gamepad_helpers@players_menu_janger.gamepad_helpers": {} },
+      { "keyboard_helpers@players_menu_janger.keyboard_helpers": {} }
+    ]
+  },
+
+  "pause_menu_content_panel": {
+    "type": "panel",
+    "$title_text": "menu.game",
+    "controls": [
+      { "menu_content_panel@pause_menu_janger.menu_content_panel": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "players_menu_view",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+ /* "game_menu_text": {
+    "type": "label",
+    "text": "menu.game",
+    "shadow": true,
+    "color": "$title_text_color",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "6% + 10px" ],
+    "layer": 20
+  },
+*/
+
+ "astral": {
+    "type": "image",
+    "texture": "textures/ui/pause_screen",
+    "size": [ 200, 200 ], 
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [ 0, -15],
+    "layer": -1
+  },
+
+  "menu_content_panel": {
+    "type": "panel",
+    "size": [ 200, 112 ],
+    "anchor_from": "center",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "-16%" ],
+    "controls": [
+      //Left Side//
+      { "return_to_game_button@pause_menu_janger.return_to_game_button": { "offset": [ 13, -2 ] } },
+      { "achievements_button@pause_menu_janger.achievements_button": { "offset": [ 13, 22 ] } },
+      { "take_screenshot_button@pause_menu_janger.take_screenshot_button": { "offset": [ 13, 46 ] } },
+      { "settings_button@pause_menu_janger.settings_button": { "offset": [ 13, 70 ] } },
+      { "astral@astral": {} },
+      //Right Side//
+      { "profile_button@pause_menu_janger.profile_button": { "offset": [ 104, 22 ] } },
+      { "players_menu_button@players_menu_janger.players_menu_button": { "offset": [ 104, 70 ] } },
+      { "feed_button@pause_menu_janger.feed_button": { "offset": [ 13, 94 ] } },
+      { "quit_button@pause_menu_janger.quit_button": { "offset": [ 46, -48 ] } }
+    ]
+  },
+
+  "pause_button_template@button_janger.classic_button": {
+    "size": [ "100%", 25 ],
+    "focus_identifier": "$pressed_button_name",
+    "focus_change_right": "$focus_override_right",
+    "focus_change_left": "$pressed_button_name"
+  },
+
+  "return_to_game_button@pause_menu_janger.pause_button_template": {
+    "size": [ 84, 20 ],
+    "$pressed_button_name": "button.menu_continue",
+    "$button_text": "menu.returnToGame"
+  },
+
+  "achievements_button@button_janger.classic_button": {
+    "size": [ 84, 20 ],
+    "$pressed_button_name": "button.menu_achievements",
+    "$button_text": "menu.achievements"
+  },
+
+  "take_screenshot_button@button_janger.classic_button": {
+    "$pressed_button_name": "button.screenshot",
+    "size": [ 177, 20 ],
+    "$button_text": "menu.takeScreenshot"
+  },
+
+  "profile_button@button_janger.classic_button": {
+    "size": [ 84, 20 ],
+    "$pressed_button_name": "button.to_profile_or_skins_screen",
+    "$button_text": "Wardrobe",
+    "$button_tts_header": "accessibility.start.profile"
+  },
+
+  "settings_button@button_janger.classic_button": {
+    "size": [ 84, 20 ],
+    "$pressed_button_name": "button.menu_settings",
+    "$button_text": "menu.options"
+  },
+
+  "feed_button@button_janger.classic_button": {
+    "$button_text": "Feed and Gallery",
+    "$pressed_button_name": "button.menu_feed",
+    "size": [ 177, 20 ]
+  },
+
+  "quit_button@black_button.black_button": {
+    "size": [ 84, 20 ],
+    "$pressed_button_name": "button.menu_quit",
+    "variables": [
+      {
+        "requires": "(not $is_secondary_client)",
+        "$button_text": "Disconnect"
+      },
+      {
+        "requires": "$is_secondary_client",
+        "$button_text": "Disconnect"
+      }
+    ]
+  },
+
+  "gamepad_helpers": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ -66, "-4px" ],
+    "size": [ "100%c", 10 ],
+    "layer": 10,
+    "visible": "($win10_edition and $is_holographic)",
+    "controls": [
+      { "gamepad_helper_y@common.gamepad_helper_y": {} }
+    ]
+  },
+
+  "keyboard_helpers": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ -66, "-4px" ],
+    "size": [ "100%c", 10 ],
+    "layer": 10,
+    "visible": "($win10_edition and $is_holographic)",
+    "$keyboard_helper_visible_binding": "#edu_keyboard_helper_visible",
+    "$ignore_image": true,
+    "controls": [
+      { "keyboard_helper_keys@common.keyboard_helper_keys": {} }
+    ]
+  }
+}

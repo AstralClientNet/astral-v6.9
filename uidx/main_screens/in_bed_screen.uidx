@@ -1,0 +1,53 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "bed_dx",
+
+  "in_bed_screen_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "chat_button@common_buttons_dx.main_button": {
+          "layer": 1,
+          "$button_text": "multiplayer.inBedOpenChat",
+          "$pressed_button_name": "button.chat",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -45 ]
+        }
+      },
+      {
+        "wake_up_button@common_buttons_dx.main_button": {
+          "layer": 1,
+          "$button_text": "multiplayer.stopSleeping",
+          "$pressed_button_name": "button.wake_up_button",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -20 ]
+        }
+      },
+      {
+        "select_button@death_dx.a_button_panel": {
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  /*//// Screen ////*/
+
+  "center_screen": {
+    "type": "panel",
+    "controls": [
+      { "screen_background@java_gui_common.screen_background": { "layer": -10, "ignored": "(not $is_holographic)" } }
+    ]
+  },
+
+  "full_screen": {
+    "type": "panel",
+    "controls": [
+      { "in_bed_screen_content@bed_dx.in_bed_screen_content": { } },
+      { "screen_background@java_gui_common.screen_background": { "layer": -10, "ignored": "$is_holographic" } }
+    ]
+  }
+}

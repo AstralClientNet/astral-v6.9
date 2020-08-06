@@ -1,0 +1,49 @@
+{"animations":
+    {"animation.player.first_person.base_pose":
+        {"bones":
+            {"body":
+                {"rotation":
+                    ["query.target_x_rotation","query.target_y_rotation",0]
+                    }
+                    },
+            "loop":true},
+        "animation.player.first_person.empty_hand":
+    {"bones":
+{"rightarm":
+    {
+        "position":[13.5,-7.5,11],
+        "rotation":["95.5 + variable.is_using_vr * 7.5","-40.0 + variable.is_using_vr * 7.5","115.0 + variable.is_using_vr * -2.5"]
+        }
+        },
+        "loop":true},
+    "animation.player.first_person.map_hold":{
+        "bones":{
+            "leftarm":{
+                "position":["-16.250 + variable.is_vertical_splitscreen * 7.0","-10.75 - variable.map_angle * 8.0 + variable.is_vertical_splitscreen * 0.6 - variable.short_arm_offset_left","9.0 - variable.map_angle * 8.0 + variable.short_arm_offset_left"],
+                "rotation":[40,-20,-155],
+                "scale":[1.15,1.15,1.15]},
+                "rightarm":{
+                    "position":["12.50 + variable.is_vertical_splitscreen * 1.75","-7.5 - variable.map_angle * 8.0 + variable.is_vertical_splitscreen * 0.5 - variable.short_arm_offset_right","5.25 - variable.map_angle * 8.0 + variable.short_arm_offset_right"],
+                    "rotation":[77.5,7.5,160]
+                    }
+                },
+                "loop":true
+                   },
+    "animation.player.first_person.map_hold_attack":{
+        "bones":{
+            "leftarm":{
+                "position":["math.sin(variable.first_person_rotation_factor * variable.attack_time * 112.0) * -10.75","math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 200.0) * 3.75 - variable.first_person_rotation_factor * variable.attack_time * 1.25 + variable.short_arm_offset_left","math.sin(variable.first_person_rotation_factor * variable.attack_time * 120.0) * 5.75"],
+                "rotation":["variable.map_angle * 90.0","-15.0 * math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * -100.0)",0]
+                },
+                "rightarm":{
+                    "position":["math.sin(variable.first_person_rotation_factor * variable.attack_time * 112.0) * -6.25","math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 200.0) * 1.75 + variable.short_arm_offset_right","math.sin(variable.first_person_rotation_factor * variable.attack_time * 120.0) * 5.25"],
+                    "rotation":["variable.map_angle * 90.0",0,0]
+                    }
+                    },"loop":true
+                    },
+                    "animation.player.first_person.map_hold_main_hand":{
+                        "bones":{
+                            "rightarm":{
+                                "position":["14.50 - variable.is_vertical_splitscreen * 0.75","-8.25 + variable.short_arm_offset_right + math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 200.0) * 2.75 - variable.first_person_rotation_factor * variable.attack_time * 3.0 - variable.is_horizontal_splitscreen","11.5 + math.sin(variable.first_person_rotation_factor * variable.attack_time * 120.0) * 3.5 + variable.is_horizontal_splitscreen * 3.5"],"rotation":[195,182.5,-5],"scale":[0.75,0.75,0.75]}},"loop":true},
+                                    "animation.player.first_person.map_hold_off_hand":{"bones":{"leftarm":{"position":["-14.50 + variable.is_horizontal_splitscreen * 2.0 + variable.is_vertical_splitscreen * 8.7","-8.250 + variable.short_arm_offset_left","11.50 + variable.is_horizontal_splitscreen * 0.5"],"rotation":[195,182.5,2.5],"scale":[0.75,0.75,0.75]}},"loop":true},
+                                        "animation.player.first_person.swap_item":{"bones":{"leftarm":{"position":[0,"query.get_equipped_item_name('off_hand') == 'map' ? 0.0 : -10.0 * (1.0 - variable.player_arm_height)",0]},"rightarm":{"position":[0,"-10.0 * (1.0 - variable.player_arm_height)",0]}},"loop":true}},"format_version":"1.8.0"}

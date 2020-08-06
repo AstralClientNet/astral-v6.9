@@ -1,0 +1,266 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*   About Gesture Constrol. By now it's disable for all platforms. *
++*   However, maybe next version I add to Mouse and Controller. *
++*   Need be Credited:                                  *
++*   @HawfHuman. All rights reserved.    *
++*********************************************************/
+{
+  "namespace": "scrolling_janger",
+
+  "scrolling_panel": {
+    "type": "panel",
+    "$scrolling_panel_size|default": [ "default", "100%" ],
+    "$scrolling_panel_offset|default": [ 0, 0 ],
+    "$scroll_view_port_size|default": [ "default", "100%" ],
+    "$scroll_view_port_offset|default": [ 0, 0 ],
+    "$view_port_size|default": [ "default", "100%" ],
+    "$view_port_offset|default": [ 0, 0 ],
+    "$scroll_bar_size|default": [ 6, "100%" ],
+    "$scroll_bar_offset|default": [ 160, 0 ],
+    "$scroll_box_visible|default": true,
+    "controls": [
+      {
+        "scroll_mouse@scrolling_janger.scrolling_panel_base": {
+          "size": "$scrolling_panel_size",
+          "offset": "$scrolling_panel_offset"
+        }
+      }
+    ]
+  },
+
+  "scrolling_panel_base": {
+    "type": "input_panel",
+    "$scrolling_panel_anchor|default": "top_middle",
+    "anchor_to": "$scrolling_panel_anchor",
+    "anchor_from": "$scrolling_panel_anchor",
+    "$scroll_view_name|default": "scroll_view",
+    "controls": [
+      { "$scroll_view_name@scrolling_janger.scroll_view_control": {} }
+    ],
+    "$scrolling_panel_base_button_mappings|default": [],
+    "button_mappings": "$scrolling_panel_base_button_mappings"
+  },
+
+  "scroll_view_control": {
+    "type": "scroll_view",
+    "scroll_speed": 15,
+    "scrollbar_track_button": "button.scrollbar_skip_track",
+    "scrollbar_touch_button": "button.scrollbar_touch",
+    "touch_mode": false,
+    "always_listen_to_input": true,
+    "always_handle_pointer": true,
+    "$always_handle_scrolling|default": false,
+    "always_handle_scrolling": "$always_handle_scrolling",
+    "scrollbar_track": "track",
+    "scrollbar_box": "box",
+    "scroll_content": "scrolling_content",
+    "scroll_view_port": "scrolling_view_port",
+    "scroll_box_and_track_panel": "bar_and_track",
+    "$jump_to_bottom_on_update|default": false,
+    "jump_to_bottom_on_update": "$jump_to_bottom_on_update",
+    "$scroll_track_image_control|default": "scrolling_janger.scroll_track_image",
+    "$scroll_box_image_control|default": "scrolling_janger.scroll_box_image",
+    "button_mappings": "$something_button_mappings",
+    "$something_button_mappings|default": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.scrollbar_touch",
+        "mapping_type": "pressed",
+        "button_up_right_of_first_refusal": true
+      }
+    ],
+    "$scroll_view_control_bindings|default": [],
+    "bindings": "$scroll_view_control_bindings",
+    //I disabled this, 'cause I don't want that people can do scroll box get out of scrolling panel.
+    //I don't know, but maybe gamepad/controller need it.
+//"bindings": [
+//  {
+//    "binding_name": "#gesture_control_enabled"
+//  }
+//],
+    "controls": [
+      {
+        "panel": {
+          "type": "panel",
+          "anchor_to": "$scrolling_panel_anchor",
+          "anchor_from": "$scrolling_panel_anchor",
+          "controls": [
+            { "background_and_viewport@scrolling_janger.scroll_viewport": {} },
+            { "bar_and_track@scrolling_janger.scroll_bar_and_track": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "scroll_viewport": {
+    "type": "panel",
+    "size": "$view_port_size",
+    "offset": "$view_port_offset",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "clips_children": true,
+    "controls": [
+      {
+        "scrolling_view_port": {
+          "type": "panel",
+          "anchor_from": "$scrolling_panel_anchor",
+          "anchor_to": "$scrolling_panel_anchor",
+          "offset": "$scroll_view_port_offset",
+          "size": "$scroll_view_port_size",
+          "controls": [
+            { 
+              "scrolling_content@$scrolling_content": {
+	           "anchor_from": "$scrolling_panel_anchor",
+                "anchor_to": "$scrolling_panel_anchor"
+		    }
+	       }
+		]
+	   }
+      }
+    ]
+  },
+
+  "scroll_bar_and_track": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "offset": "$scroll_bar_offset",
+    "clips_children": true,
+    "layer": 35,
+    "controls": [
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "default", "100%" ],
+          "controls": [
+            {
+              "panel": {
+                "type": "panel",
+                "size": [ "100%c", "100%" ],
+                "controls": [
+                  {
+                    "centered_panel": {
+                      "type": "panel",
+                      "size": "$scroll_bar_size",
+                      "anchor_from": "center",
+                      "anchor_to": "center",
+                      "controls": [
+                        {
+                          "track@scrolling_janger.scrollbar_track": {
+                            "layer": 2,
+                            "anchor_from": "center",
+                            "anchor_to": "center"
+                          }
+                        },
+                        {
+                          "scroll_box@scrolling_janger.scroll_box": {
+                            "layer": 5,
+                            "anchor_from": "center",
+                            "anchor_to": "center"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "scrollbar_track": {
+    "type": "scroll_track",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.scrollbar_skip_track",
+        "mapping_type": "pressed"
+      }
+    ],
+    "controls": [
+      {
+        "bar_indent@$scroll_track_image_control": {
+          "visible": "$scroll_box_visible"
+        }
+      }
+    ]
+  },
+
+  "scroll_box": {
+    "type": "panel",
+    "controls": [
+      {
+        "box": {
+          "type": "scrollbar_box",
+          "anchor_to": "top_left",
+          "anchor_from": "top_left",
+          "layer": 1,
+          "visible": "$scroll_box_visible",
+          "contained": true,
+          "draggable": "vertical",
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.menu_select",
+              "mapping_type": "pressed",
+              "button_up_right_of_first_refusal": true
+            }
+          ],
+          "controls": [
+            {
+              "box@$scroll_box_image_control": {
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "scroll_track_image": {
+    "type": "image",
+    "texture": "legacyassets/assets/images/white",
+    "color": [ 0.0, 0.0, 0.0 ],
+    "layer": 1
+  },
+
+  "scroll_box_image": {
+    "type": "image",
+    "texture": "legacyassets/assets/images/scroll_box",
+    "size": [ 6, "100%" ],
+    "layer": 4
+  },
+
+  "scrolling_dirt_background": {
+    "type": "screen", //screen!? :/
+    "size": [ 0, 0 ],
+    "controls": [
+      {
+        "dirt_background": {
+          "type": "image",
+          "texture": "assets/minecraft/textures/gui/options_background",
+          "size": [ 2560, 2560 ],
+          "color": [ 0.13, 0.13, 0.13 ],
+          "offset": [ 0, 200 ],
+          "layer": 0,
+          "tiled": true,
+          "tiled_scale": [ 2, 2 ]
+        }
+      }
+    ]
+  },
+
+  "scrolling_shadow_by_scanning": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "layer": 30,
+    "controls": [
+
+    ]
+  }
+}

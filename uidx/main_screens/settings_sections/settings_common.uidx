@@ -1,0 +1,450 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "settings_common_dx",
+
+  /*//// Base ////*/
+  
+  "option_generic@settings_common.option_generic_core": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$enabled|default": true,
+    "$control_panel_name|default": "",
+    "$option_enabled_binding_name|default": "",
+    "controls": [
+      {
+        "$control_panel_name@$control_name": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      }
+    ],
+    "variables": [
+      {
+        "requires": "(not $enabled or not $option_enabled_binding_name)",
+        "$option_enabled_binding_type": "none",
+        "$option_enabled_binding_name": "#not_data_bound"
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "$option_enabled_binding_type",
+        "binding_name": "$option_enabled_binding_name",
+        "binding_name_override": "#enabled"
+      }
+    ]
+  },
+
+  /*//// Lang Button ////*/
+  
+  "lang_button_base": {
+    "type": "panel",
+    "size": [ 220, 18 ],
+    "$radio_label_bindings|default": [],
+    "$radio_label_color|default": "$main_header_text_color",
+    "$no_label|default": false,
+    "$is_pressed|default": false,
+    "$is_hover|default": false,
+    "controls": [
+      {
+        "hover_image": {
+          "type": "image",
+          "visible": "$is_hover",
+          "texture": "textures/ui/square_image_border_white",
+          "size": [ "100%", "100%" ]
+        }
+      },
+      {
+        "pressed_image": {
+          "type": "image",
+          "visible": "$is_pressed",
+          "texture": "textures/uidx/text_input_java",
+          "size": [ 220, 18 ]
+        }
+      },
+      {
+        "button_label@common_buttons_dx.button_label": {
+          "offset": [ 0, 2 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "ignored": "($no_label)",
+          "layer": 5,
+          "text": "$radio_label_text",
+          "bindings": "$radio_label_bindings"
+        }
+      }
+    ]
+  },
+
+  "lang_button_default@settings_common_dx.lang_button_base": {
+    "$text_color": [ 1.0, 1.0, 1.0 ]
+  },
+
+  "lang_button_hover@settings_common_dx.lang_button_base": {
+    "$text_color": "$hover_color",
+    "$is_hover": true
+  },
+
+  "lang_button_pressed@settings_common_dx.lang_button_base": {
+    "$text_color": [ 1.0, 1.0, 1.0 ],
+    "$no_label": false,
+    "$is_pressed": true
+  },
+
+  "lang_button_locked@settings_common_dx.lang_button_base": {
+    "$text_color": "$locked_color"
+  },
+
+  "lang_button": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "18px" ],
+    "controls": [
+      { 
+        "lang_button_core@settings_common.radio_with_label_core": {
+          "$unchecked_control": "settings_common_dx.lang_button_default",
+          "$checked_control": "settings_common_dx.lang_button_pressed",
+          "$unchecked_hover_control": "settings_common_dx.lang_button_hover",
+          "$checked_hover_control": "settings_common_dx.lang_button_pressed",
+          "$unchecked_locked_control": "settings_common_dx.lang_button_locked",
+          "$unchecked_locked_hover_control": "settings_common_dx.lang_button_locked",
+          "$checked_locked_control": "settings_common_dx.lang_button_locked",
+          "$checked_locked_hover_control": "settings_common_dx.lang_button_locked",
+          "size": [ 220, "100%c" ]
+        }
+      }
+    ]
+  },
+
+  /*//// Text input Button ////*/
+  
+  "option_text_edit@settings_common_dx.option_generic": {
+    "size": [ 202, 35 ],
+    "$with_button|default": false,
+    "$option_place_holder_text|default": "",
+    "$max_text_edit_length|default": 32,
+    "controls": [
+      {
+        "button_label@common_buttons_dx.button_label": {
+          "offset": [ 1, 0 ],
+          "color": [ 0.6, 0.6, 0.6 ],
+          "layer": 5,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "visible": "$show_option_label",
+          "text": "$option_label",
+          "bindings": "$radio_label_bindings"
+        }
+      },
+      {
+        "text_edit_box@common_dx.text_edit_box": {
+          "$text_offset": [ 5, 6.5 ],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "$text_background_default": "java_gui_common.text_input_java",
+          "$text_background_hover": "java_gui_common.text_input_java_hover",
+          "$text_background_locked": "java_gui_common.text_input_java_locked",
+          "size": [ "100%", 22 ],
+          "$text_edit_clipping_panel_size": [ 192, 12 ],
+          "max_length": "$max_text_edit_length",
+          "$text_edit_box_content_binding_name": "$option_binding_name",
+          "$text_edit_box_binding_collection_name": "$option_binding_name",
+          "$text_edit_box_binding_type": "global",
+          "$text_box_enabled_binding_name": "$option_enabled_binding_name",
+          "enabled": "$enabled",
+          "$place_holder_text": "$option_place_holder_text",
+          "$text_box_tts_header": "$option_label",
+          "$text_box_tts_name": "",
+          "variables": [
+            {
+              "requires": "(not $option_enabled_binding_name or not $enabled)",
+              "$text_box_enabled_binding_name": "#not_data_bound",
+              "$text_edit_box_enabled_binding_type": "none"
+            }
+          ]
+        }
+      },
+      {
+        "button@common_buttons_dx.main_button": {
+          "ignored": "(not $with_button)",
+          "enabled": "$enabled",
+          "$pressed_button_name|default": "unset_button_name",
+          "$button_text|default": "unset $button_text",
+          "size": [ 20, 20 ],
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ 22, -1 ]
+        }
+      }
+    ]
+  },
+
+  "option_text_edit_with_button@settings_common_dx.option_text_edit": {
+    "$with_button": true
+  },
+
+  "option_text_edit_alt@settings_common_dx.option_generic": {
+    "size": [ "100%", 22 ],
+    "$option_text_edit_size|default": [ 44, 22 ],
+    "$with_button|default": false,
+    "$option_place_holder_text|default": "",
+    "$max_text_edit_length|default": 32,
+    "controls": [
+      {
+        "button_label@common_buttons_dx.button_label": {
+          "offset": [ 1, -1 ],
+          "color": [ 1.0, 1.0, 1.0 ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [ "100%-46px", "default" ],
+          "layer": 5,
+          "shadow": false,
+          "visible": "$show_option_label",
+          "text": "$option_label",
+          "bindings": "$radio_label_bindings"
+        }
+      },
+      {
+        "text_edit_box@common_dx.text_edit_box": {
+          "$text_offset": [ 5, 6.5 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "$text_background_default": "java_gui_common.text_input_java",
+          "$text_background_hover": "java_gui_common.text_input_java_hover",
+          "$text_background_locked": "java_gui_common.text_input_java_locked",
+          "size": "$option_text_edit_size",
+          "$text_edit_clipping_panel_size": [ "100%-8px", 12 ],
+          "max_length": "$max_text_edit_length",
+          "$text_edit_box_content_binding_name": "$option_binding_name",
+          "$text_edit_box_binding_collection_name": "$option_binding_name",
+          "$text_edit_box_binding_type": "global",
+          "$text_box_enabled_binding_name": "$option_enabled_binding_name",
+          "enabled": "$enabled",
+          "$place_holder_text": "$option_place_holder_text",
+          "$text_box_tts_header": "$option_label",
+          "$text_box_tts_name": "",
+          "variables": [
+            {
+              "requires": "(not $option_enabled_binding_name or not $enabled)",
+              "$text_box_enabled_binding_name": "#not_data_bound",
+              "$text_edit_box_enabled_binding_type": "none"
+            }
+          ]
+        }
+      },
+      {
+        "button@common_buttons_dx.main_button": {
+          "ignored": "(not $with_button)",
+          "enabled": "$enabled",
+          "$pressed_button_name|default": "unset_button_name",
+          "$button_text|default": "unset $button_text",
+          "size": [ 20, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ -46, 1 ]
+        }
+      }
+    ]
+  },
+
+  /*//// Action Button ////*/
+  
+  "action_button@common_buttons_dx.main_button": {
+    "$pressed_button_name|default": "unset_button_name",
+    "$button_text|default": "unset $button_text",
+    "size": [ 200, 20 ]
+  },
+
+  /*//// Link Button ////*/
+  
+  "link_button@common_buttons_dx.main_button": {
+    "$pressed_button_name": "button.menu_open_uri",
+    "$button_text|default": "unset $button_text",
+    "size": [ 200, 20 ],
+    "$hyperlink|default": "",
+    "property_bag": {
+      "#hyperlink": "$hyperlink"
+    }
+  },
+
+  /*//// Toggle ////*/
+  
+  "checked_control@common_buttons_dx.default": {
+    "$is_on": true
+  },
+
+  "checked_control_hover@common_buttons_dx.hover": {
+    "$hover_text_checked_label_control|default": "$hover_text_label_control",
+    "$hover_text_label_control": "$hover_text_checked_label_control",
+    "$is_on": true
+  },
+
+  "checked_control_locked@common_buttons_dx.locked": {
+    "$is_on": true
+  },
+
+  "checked_control_locked_hover@common_buttons_dx.locked_hover": {
+    "$is_on": true
+  },
+
+  "option_toggle_control@settings_common.option_toggle_control": {
+    "size": [ "100%", 20 ],
+    "consume_hover_events": false,
+    "$unchecked_control": "common_buttons_dx.default",
+    "$checked_control": "settings_common_dx.checked_control",
+    "$unchecked_hover_control": "common_buttons_dx.hover",
+    "$checked_hover_control": "settings_common_dx.checked_control_hover",
+    "$unchecked_locked_control": "common_buttons_dx.locked",
+    "$unchecked_locked_hover_control": "common_buttons_dx.locked_hover",
+    "$checked_locked_control": "settings_common_dx.checked_control_locked",
+    "$checked_locked_hover_control": "settings_common_dx.checked_control_locked_hover",
+    "$button_content": "common_buttons_dx.button_label_toggle"
+  },
+
+  /*//// Toggle Alt ////*/
+
+  "option_toggle_control_alt": {
+    "type": "panel",
+    "size": [ "100%", 20 ],
+    "controls": [
+      {
+        "button_label@common_buttons_dx.button_label": {
+          "offset": [ 1, -1 ],
+          "color": [ 1.0, 1.0, 1.0 ],
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "size": [ "100%-46px", "default" ],
+          "layer": 5,
+          "shadow": false,
+          "visible": "$show_option_label",
+          "text": "$option_label",
+          "bindings": "$radio_label_bindings"
+        }
+      },
+      {
+        "option_toggle_control_alt@settings_common.option_toggle_control": {
+          "size": [ 44, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "$only_bindings": true,
+          "$unchecked_control": "common_buttons_dx.default",
+          "$checked_control": "settings_common_dx.checked_control",
+          "$unchecked_hover_control": "common_buttons_dx.hover",
+          "$checked_hover_control": "settings_common_dx.checked_control_hover",
+          "$unchecked_locked_control": "common_buttons_dx.locked",
+          "$unchecked_locked_hover_control": "common_buttons_dx.locked_hover",
+          "$checked_locked_control": "settings_common_dx.checked_control_locked",
+          "$checked_locked_hover_control": "settings_common_dx.checked_control_locked_hover",
+          "$button_content": "common_buttons_dx.button_label_toggle"
+        }
+      }
+    ]
+  },
+
+  /*//// Dropdown ////*/
+  
+  "options_dropdown_toggle_control@settings_common.options_dropdown_toggle_control": {
+    "$button_content": "$button_toggle_content",
+    "$unchecked_control": "common_buttons_dx.default",
+    "$checked_control": "common_buttons_dx.default",
+    "$unchecked_hover_control": "common_buttons_dx.hover",
+    "$checked_hover_control": "common_buttons_dx.default",
+    "$unchecked_locked_control": "common_buttons_dx.locked",
+    "$unchecked_locked_hover_control": "common_buttons_dx.locked_hover",
+    "$checked_locked_control": "common_buttons_dx.locked",
+    "$checked_locked_hover_control": "common_buttons_dx.locked_hover",
+    "size": [ "100%", 20 ]
+  },
+
+  "option_dropdown_control@settings_common.option_dropdown_control": {
+    "size": [ "100%", 20 ],
+    "$button_text_binding": "$options_dropdown_toggle_label_binding",
+    "$dropdown_background_control": "java_gui_common.text_input_java",
+    "$scroll_track_image_control": "common_menus_dx.java_scroll_track",
+    "$scroll_box_mouse_image_control": "common_menus_dx.java_scroll_box",
+    "controls": [
+      {
+        "dropdown@$option_dropdown_type": {
+          "$dropdown_background": "$dropdown_background_control",
+          "$dropdown_content|default": "unset_dropdown_content",
+          "$dropdown_name|default": "unset $dropdown_name",
+          "$options_dropdown_toggle_label_binding|default": "unset $options_dropdown_toggle_label_text",
+          "$locked_alpha": 0.5,
+          "$toggle_tts_header": "$option_label"
+        }
+      }
+    ]
+  },
+
+  "option_dropdown_control_no_scroll@settings_common_dx.option_dropdown_control": {
+    "$option_dropdown_type": "common.dropdown_no_scrollpanel"
+  },
+
+  /*//// Slider ////*/
+  
+  "option_slider_control": {
+    "type": "panel",
+    "size": [ "100%", 20 ],
+    "controls": [
+      {
+        "slider@common_slider_dx.slider": {
+          "size": [ "100% -8px", "100%" ],
+          "$slider_step_factory_control_ids": { },
+          "enabled": "$enabled",
+          "$slider_enabled_binding_name": "$option_enabled_binding_name",
+          "$slider_enabled_binding_type": "global",
+          "variables": [
+            {
+              "requires": "(not $option_enabled_binding_name or not $enabled)",
+              "$slider_enabled_binding_name": "#not_data_bound",
+              "$slider_enabled_binding_type": "none"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Controls ////*/
+
+  "option_toggle@settings_common_dx.option_generic": {
+    "size": [ 200, 20 ],
+    "$control_name": "settings_common_dx.option_toggle_control",
+    "$option_label|default": "",
+    "$toggle_tts_header": "",
+    "$toggle_tts_toggle_on_text": "",
+    "$toggle_tts_toggle_off_text": ""
+  },
+
+  "option_toggle_alt@settings_common_dx.option_generic": {
+    "size": [ "100%", 20 ],
+    "$control_name": "settings_common_dx.option_toggle_control_alt",
+    "$option_label|default": "",
+    "$toggle_tts_header": "",
+    "$toggle_tts_toggle_on_text": "",
+    "$toggle_tts_toggle_off_text": ""
+  },
+
+  "option_slider@settings_common_dx.option_generic": {
+    "size": [ 200, 20 ],
+    "$control_name": "settings_common_dx.option_slider_control"
+  },
+
+  "option_dropdown_no_scroll@settings_common_dx.option_generic": {
+    "$dropdown_toggle": "settings_common_dx.options_dropdown_toggle_control",
+    "$button_toggle_content|default": "common_buttons_dx.button_label_dropdown",
+    "$button_toggle_content": "common_buttons_dx.button_label_dropdown",
+    "size": [ 200, 20 ],
+    "$control_name": "settings_common_dx.option_dropdown_control_no_scroll"
+  },
+
+  "option_dropdown@settings_common_dx.option_generic": {
+    "$dropdown_toggle": "settings_common_dx.options_dropdown_toggle_control",
+    "$button_toggle_content|default": "common_buttons_dx.button_label_dropdown",
+    "$button_toggle_content": "common_buttons_dx.button_label_dropdown",
+    "size": [ 200, 20 ],
+    "$control_name": "settings_common_dx.option_dropdown_control"
+  }
+}

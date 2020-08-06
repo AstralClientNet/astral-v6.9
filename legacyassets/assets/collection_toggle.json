@@ -1,0 +1,241 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "collection_toggle_janger",
+
+  "ui_toggle_collection": {
+    "type": "panel",
+    "$toggle_binding_type|default": "none",
+    "$toggle_enabled_binding_type|default": "none",
+    "$toggle_tab_focus_binding_type|default": "none",
+    "$toggle_on_hover_binding_type|default": "none",
+    "$toggle_view_binding_name|default": "this_toggle",
+    "$template_toggle|default": "collection_toggle_janger.toggle_collection",
+    "$toggle_tab_focus_binding_name|default": "",
+    "$toggle_on_hover_binding_name|default": "",
+    "$toggle_unchecked|default": false,
+    "$toggle_unchecked_hover|default": false,
+    "$toggle_checked|default": false,
+    "$toggle_checked_hover|default": false,
+    "$toggle_locked|default": false,
+    "$toggle_focus_wrap_enabled|default": true,
+    "$toggle_focus_magnet_enabled|default": true,
+    "controls": [
+      {
+        // done as a child to allow for parent bindings
+        "$toggle_view_binding_name@$template_toggle": {
+          "focus_wrap_enabled": false,
+          "bindings": [
+            {
+              "binding_type": "$toggle_binding_type",
+              "binding_condition": "$toggle_binding_condition",
+              "binding_collection_name": "$toggle_grid_collection_name",
+              "binding_name": "$toggle_state_binding_name",
+              "binding_name_override": "#toggle_state"
+            },
+            {
+              "binding_type": "$toggle_enabled_binding_type",
+              "binding_condition": "$toggle_enabled_binding_condition",
+              "binding_collection_name": "$toggle_grid_collection_name",
+              "binding_name": "$toggle_enabled_binding_name",
+              "binding_name_override": "#enabled"
+            },
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$toggle_grid_collection_name"
+            },
+            {
+              "binding_type": "$toggle_tab_focus_binding_type",
+              "binding_name": "$toggle_tab_focus_binding_name",
+              "binding_name_override": "#default_focus_precedence"
+            },
+            {
+              "binding_type": "$toggle_on_hover_binding_type",
+              "binding_name": "$toggle_on_hover_binding_name",
+              "binding_name_override": "#toggle_on_hover"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "text_toggle_collection@collection_toggle_janger.ui_toggle_collection": {
+    "$toggle_type_panel": "collection_toggle_janger.toggle_label",
+    "$toggle_text|default": "",
+    // For text bindings
+    "$button_text_binding_type|default": "none",
+    "$button_text_grid_collection_name|default": "",
+    "$button_binding_condition|default": "none"
+  },
+
+  "toggle_collection@toggle_janger.toggle_common": {
+    "$on_text|default": "options.on",
+    "$off_text|default": "options.off",
+    "$toggle_state_panel|default": "toggle_janger.toggle_state_common",
+    "$toggle_type_panel|default": "collection_toggle_janger.toggle_label",
+    "$default_text_color|default": "$button_default_text_color",
+    "$hover_text_color|default": "$button_hover_text_color",
+    "$locked_text_color|default": "$button_locked_text_color",
+    "$default_position|default": [ 0, 66 ],
+    "$hover_position|default": [ 0, 86 ],
+    "$locked_position|default": [ 0, 46 ],
+    "$image_size|default": [ 200, 20 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "controls": [
+      {
+        "unchecked@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$default_text_color",
+          "$image_position": "$default_position",
+          "$toggle_unchecked": true,
+          "layer": 3
+        }
+      },
+      {
+        "unchecked_hover@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$hover_text_color",
+          "$image_position": "$hover_position",
+          "$toggle_unchecked_hover": true,
+          "$show_focus": true,
+          "layer": 4
+       }
+      },
+      {
+        "unchecked_locked@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "$toggle_locked": true,
+          "layer": 1
+        }
+      },
+      {
+        "unchecked_locked_hover@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "$toggle_locked": true,
+          "layer": 1
+        }
+      },
+      {
+        "checked@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$default_text_color",
+          "$image_position": "$default_position",
+          "$toggle_checked": true,
+          "layer": 3
+        }
+      },
+      {
+        "checked_hover@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$hover_text_color",
+          "$image_position": "$hover_position",
+          "$toggle_checked_hover": true,
+          "$show_focus": true,
+          "layer": 5
+       }
+      },
+      {
+        "checked_locked@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "$toggle_locked": true,
+          "layer": 1
+        }
+      },
+      {
+        "checked_locked_hover@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "$toggle_locked": true,
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  "toggle_label": {
+    "type": "label",
+    "$font_type|default": "default",
+    "$button_font_size|default": "normal",
+    "$text_anchor|default": "center",
+    "$toggle_text_size|default": [ "default", "default" ],
+    "$toggle_text_max_size|default": [ "100%", 10 ],
+    "$text_alignment|default": "center",
+    "$text_offset|default": [ 0, 0 ],
+    "layer": 2,
+    "text": "$toggle_text",
+    "color": "$text_color",
+    "font_type": "$font_type",
+    "font_size": "$button_font_size",
+    "offset": "$text_offset",
+    "anchor_from": "$text_anchor",
+    "anchor_to": "$text_anchor",
+    "shadow": true,
+    "size": "$toggle_text_size",
+    "max_size": "$toggle_text_max_size",
+    "text_alignment": "$text_alignment",
+    "bindings": "$toggle_label_bindings",
+    "$toggle_label_bindings|default": [
+      {
+        "binding_type": "$toggle_text_binding_type",
+        "binding_condition": "$button_binding_condition",
+        "binding_collection_name": "$toggle_text_grid_collection_name",
+        "binding_name": "$toggle_text",
+        "binding_name_override": "$toggle_text"
+      }
+    ]
+  },
+
+  "switch_toggle_collection@ui_toggle_collection": {
+  },
+
+  "base_text": {
+    "type": "label",
+    "color": "$text_color",
+    "shadow": true,
+    "layer": 10
+  },
+
+  "option_toggle_functionality_text_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%c", 10 ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$spacer|default": false,
+    "controls": [
+      {
+        "option_label@option_toggle_janger.base_text": {
+          "text": "$toggle_text",
+          "bindings": "$toggle_label_bindings"
+        }
+      },
+      {
+        "space@option_toggle_janger.base_text": {
+          "text": " ",
+          "ignored": "(not $spacer)"
+        }
+      },
+      {
+        "state_is_text@option_toggle_janger.base_text": {
+          "text": ": ",
+          "ignored": "$spacer"
+        }
+      },
+      {
+        "state_text@option_toggle_janger.base_text": {
+          "text": "$state_text"
+        }
+      }
+    ]
+  }
+}

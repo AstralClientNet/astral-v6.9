@@ -1,0 +1,186 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "option_toggle_janger",
+
+  "option_toggle": {
+    "type": "panel",
+    "size": "$toggle_size",
+    "$toggle_size|default": [ 150, 20 ],
+    "anchor_to": "top_left",
+    "anchor_from": "top_left",
+    "$toggle_control|default": "option_toggle_janger.toggle_option",
+    "$enabled|default": true,
+    "$option_enabled_binding_name|default": "",
+    "controls": [
+      { "control@$toggle_control": {} }
+    ]
+  },
+
+  "option_toggle_common@toggle_janger.toggle_common": {
+    "$toggle_tts_header": "",
+    "$toggle_state_binding_name|default": "$option_binding_name",
+    "$toggle_enabled_binding_name|default": "$option_enabled_binding_name",
+    "$toggle_enabled_binding_type|default": "global",
+    "$binding_type": "global",
+    "$binding_condition": "once",
+    "$enable_directional_toggling": false,
+    "enabled": "$enabled",
+    "variables": [
+      {
+        "requires": "(not $option_enabled_binding_name or not $enabled)",
+        "$toggle_enabled_binding_name": "#not_data_bound",
+        "$toggle_enabled_binding_type": "none"
+      }
+    ]
+  },
+
+  "toggle_option@option_toggle_janger.option_toggle_common": {
+    "$on_text|default": "options.on",
+    "$off_text|default": "options.off",
+    "$toggle_state_panel|default": "toggle_janger.toggle_state_common",
+    "$toggle_type_panel|default": "option_toggle_janger.option_toggle_text_panel",
+    "$default_text_color|default": "$button_default_text_color",
+    "$hover_text_color|default": "$button_hover_text_color",
+    "$locked_text_color|default": "$button_locked_text_color",
+    "$default_position|default": [ 0, 66 ],
+    "$hover_position|default": [ 0, 86 ],
+    "$locked_position|default": [ 0, 46 ],
+    "$image_size|default": [ 200, 20 ],
+    "controls": [
+      {
+        "unchecked@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$default_text_color",
+          "$image_position": "$default_position",
+          "layer": 3
+        }
+      },
+      {
+        "unchecked_hover@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$hover_text_color",
+          "$image_position": "$hover_position",
+          "$show_focus": true,
+          "layer": 4
+       }
+      },
+      {
+        "unchecked_locked@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "layer": 1
+        }
+      },
+      {
+        "unchecked_locked_hover@$toggle_state_panel": {
+          "$state_text": "$off_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "layer": 1
+        }
+      },
+      {
+        "checked@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$default_text_color",
+          "$image_position": "$default_position",
+          "layer": 3
+        }
+      },
+      {
+        "checked_hover@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$hover_text_color",
+          "$image_position": "$hover_position",
+          "$show_focus": true,
+          "layer": 5
+       }
+      },
+      {
+        "checked_locked@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "layer": 1
+        }
+      },
+      {
+        "checked_locked_hover@$toggle_state_panel": {
+          "$state_text": "$on_text",
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  "base_text": {
+    "type": "label",
+    "color": "$text_color",
+    "font_type": "smooth",
+    "shadow": true,
+    "layer": 10
+  },
+
+  "only_option_label@base_text": {
+    "type": "label",
+    "color": "$text_color",
+    "shadow": true,
+    "font_type": "smooth",
+    "text": "$option_label",
+    "bindings": "$label_bindings",
+    "layer": 10
+  },
+
+  "only_state_label": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "state_text@option_toggle_janger.base_text": {
+          "text": "$state_text"
+        }
+      }
+    ]
+  },
+
+  "option_toggle_text_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%c", 10 ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$spacer|default": false,
+    "controls": [
+      {
+        "option_label@option_toggle_janger.base_text": {
+          "text": "$option_label",
+          "bindings": "$label_bindings"
+        }
+      },
+      {
+        "space@option_toggle_janger.base_text": {
+          "text": " ", //I can change texts. Why did I make this? :/
+          "ignored": "(not $spacer)"
+        }
+      },
+      {
+        "state_is_text@option_toggle_janger.base_text": {
+          "text": ": ",
+          "ignored": "$spacer"
+        }
+      },
+      {
+        "state_text@option_toggle_janger.base_text": {
+          "text": "$state_text"
+        }
+      }
+    ]
+  }
+}

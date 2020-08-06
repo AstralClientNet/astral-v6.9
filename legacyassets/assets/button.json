@@ -1,0 +1,246 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "button_janger",
+
+  "button": {
+    "type": "button",
+    "$focus_id|default": "",
+    "$focus_override_down|default": "",
+    "$focus_override_up|default": "",
+    "$focus_override_left|default": "",
+    "$focus_override_right|default": "",
+    "focus_identifier": "$focus_id",
+    "focus_change_down": "$focus_override_down",
+    "focus_change_up": "$focus_override_up",
+    "focus_change_left": "$focus_override_left",
+    "focus_change_right": "$focus_override_right",
+    "focus_enabled": true,
+    "focus_magnet_enabled": true,
+    "$button_focus_precedence|default": 0,
+    "default_focus_precedence": "$button_focus_precedence",
+    "$button_tts_name|default": "accessibility.button.tts.title",
+    "$button_tts_header|default": "",
+    "$tts_section_header|default": "",
+    "$button_tts_control_type_order_priority|default": 100,
+    "tts_name": "$button_tts_name",
+    "tts_control_header": "$button_tts_header",
+    "tts_section_header": "$tts_section_header",
+    "tts_control_type_order_priority": "$button_tts_control_type_order_priority",
+    "layer": 1,
+    "sound_name": "random.click",
+    "sound_volume": 1.0,
+    "sound_pitch": 1.0,
+    "locked_control": "",
+    "default_control": "default",
+    "hover_control": "hover",
+    "pressed_control": "pressed",
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "$pressed_button_name",
+        "mapping_type": "focused"
+      }
+    ],
+    "$button_bindings|default": [],
+    "bindings": "$button_bindings"
+  },
+
+  "button_common@button_janger.button": {
+    "anchor_from": "top_left", //Parent
+    "anchor_to": "top_left", //Control
+    "locked_control": "locked",
+    "$default_state|default": false,
+    "$hover_state|default": false,
+    "$pressed_state|default": false,
+    "$locked_state|default": false
+  },
+
+  "button_state_common": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "$image_texture|default": "assets/minecraft/textures/gui/widgets",
+    "controls": [
+      { "controller_focus@common_janger.controller_focus": {} },
+      {
+        "image_content_panel": {
+          "type": "panel",
+          //It's needed height of 21px, because in some safe zone sizes "clips children"
+          //remove 0.5px from button image (black border).
+          "size": [ "100%", 21 ],
+          "clips_children": true,
+          "controls": [
+            {
+              "left_side_image_panel": {
+                "type": "panel",
+                "size": [ "50%", 21 ],
+                "clips_children": true,
+                "anchor_from": "left_middle",
+                "anchor_to": "left_middle",
+                "controls": [
+                  {
+                    "left_side_image": {
+                      "type": "image",
+                      "texture": "$image_texture",
+                      "anchor_from": "left_middle",
+                      "anchor_to": "left_middle",
+                      "uv": "$image_position",
+                      "uv_size": "$image_size",
+                      "size": "$image_size"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "right_side_image_panel": {
+                "type": "panel",
+                "size": [ "50%", 21 ],
+                "clips_children": true,
+                "anchor_from": "right_middle",
+                "anchor_to": "right_middle",
+                "controls": [
+                  {
+                    "right_side_image": {
+                      "type": "image",
+                      "texture": "$image_texture",
+                      "anchor_from": "right_middle",
+                      "anchor_to": "right_middle",
+                      "uv": "$image_position",
+                      "uv_size": "$image_size",
+                      "size": "$image_size"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "button_content_panel": {
+          "type": "panel",
+          "size": [ "100% - 4px", "100% - 4px" ],
+          "controls": [
+            { "$button_content@$button_content": {} },
+            {
+              "$button_type_panel@$button_type_panel": { 
+                "layer": 3
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "classic_button@button_janger.button_common": {
+    "size": "$button_size",
+    "$button_size|default": [ 200, 20 ],
+    "$button_state_panel|default": "button_janger.button_state_common",
+    "$button_type_panel|default": "button_janger.classic_button_label",
+    "$default_text_color|default": "$button_default_text_color",
+    "$hover_text_color|default": "$button_hover_text_color",
+    "$locked_text_color|default": "$button_locked_text_color",
+    "$button_text_binding_type|default": "none",
+    "$button_binding_condition|default": "none",
+    "$button_text_grid_collection_name|default": "",
+    "$default_position|default": [ 0, 66 ],
+    "$hover_position|default": [ 0, 86 ],
+    "$pressed_position|default": [ 0, 86 ],
+    "$locked_position|default": [ 0, 46 ],
+    "$image_size|default": [ 200, 20 ],
+    "controls": [
+      {
+        "default@$button_state_panel": {
+          "$text_color": "$default_text_color",
+          "$image_position": "$default_position",
+          "$default_state": true,
+          "layer": 3
+        }
+      },
+      {
+        "hover@$button_state_panel": {
+          "$text_color": "$hover_text_color",
+          "$image_position": "$hover_position",
+          "$hover_state": true,
+          "$show_focus": true,
+          "layer": 4
+        }
+      },
+      {
+        "pressed@$button_state_panel": {
+          "$text_color": "$hover_text_color",
+          "$image_position": "$pressed_position",
+          "$pressed_state": true,
+          "$show_focus": true,
+          "layer": 5
+        }
+      },
+      {
+        "locked@$button_state_panel": {
+          "$text_color": "$locked_text_color",
+          "$image_position": "$locked_position",
+          "$locked_state": true,
+          "layer": 1
+        }
+      }
+    ]
+  },
+
+  "classic_button_label": {
+    "type": "label",
+    "$font_type|default": "smooth",
+    "$button_font_size|default": "normal",
+    "$text_anchor|default": "center",
+    "$button_text_size|default": [ "default", "default" ],
+    "$button_text_max_size|default": [ "100%", 10 ],
+    "$text_alignment|default": "center",
+    "$text_offset|default": [ 0, 0 ],
+    "layer": 2,
+    "text": "$button_text",
+    "color": "$text_color",
+    "font_type": "smooth",
+    "font_size": "$button_font_size",
+    "offset": "$text_offset",
+    "anchor_from": "$text_anchor",
+    "anchor_to": "$text_anchor",
+    "shadow": true,
+    "size": "$button_text_size",
+    "max_size": "$button_text_max_size",
+    "text_alignment": "$text_alignment",
+    "bindings": [
+      {
+        "binding_type": "$button_text_binding_type",
+        "binding_condition": "$button_binding_condition",
+        "binding_collection_name": "$button_text_grid_collection_name",
+        "binding_name": "$button_text",
+        "binding_name_override": "$button_text"
+      }
+    ]
+  },
+
+  "action_button@button_janger.classic_button": {
+    "size": "$button_size",
+    "$button_size|default": [ 150, 20 ],
+    "$pressed_button_name": "button.menu_open_uri",
+    "$pressed_button_name|default": "unset_button_name",
+    "$button_text|default": "unset $button_text"
+  },
+
+  "link_button@button_janger.classic_button": {
+    "size": "$button_size",
+    "$button_size|default": [ 150, 20 ],
+    "$button_text|default": "unset $button_text",
+    "$pressed_button_name": "button.menu_open_uri",
+    "property_bag": {
+      "#hyperlink": "unset #hyperlink in property_bag"
+    }
+  }
+}

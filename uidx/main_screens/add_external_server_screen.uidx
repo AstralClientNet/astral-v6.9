@@ -1,0 +1,248 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "add_external_server_dx",
+
+  /*//// Panels ////*/
+  
+  "title_label@settings_dx.base_label": {
+    "text": "addServer.title",
+    "offset": [ 0, 19 ]
+  },
+
+  "panel_content": {
+    "type": "stack_panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 52 ],
+    "size": [ 202, "100%c" ],
+    "controls": [
+      {
+        "panel_0": {
+          "type": "panel",
+          "size": [ 202, 41 ],
+          "controls": [
+            {
+              "option_text_edit_0@settings_common_dx.option_text_edit": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "addExternalServerScreen.nameTextBoxLabel",
+                "$option_place_holder_text": "",
+                "$option_binding_name": "#name_text_box_content",
+                "$text_box_name": "#name_text_box"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "page_2_tab_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "panel_1": {
+          "type": "panel",
+          "size": [ 202, 39 ],
+          "controls": [
+            {
+              "option_text_edit_1@settings_common_dx.option_text_edit": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "addExternalServerScreen.ipTextBoxLabel",
+                "$option_place_holder_text": "",
+                "$option_binding_name": "#ip_text_box_content",
+                "$text_box_name": "#ip_text_box"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "page_2_tab_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "panel_2": {
+          "type": "panel",
+          "size": [ 202, 41 ],
+          "controls": [
+            {
+              "option_text_edit_2@settings_common_dx.option_text_edit": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "addExternalServerScreen.portTextBoxLabel",
+                "$option_binding_name": "#port_text_box_content",
+                "$text_box_name": "#port_text_box"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "page_2_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "panel_3": {
+          "type": "panel",
+          "size": [ 202, 39 ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "page_2_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "panel_4": {
+          "type": "panel",
+          "size": [ 202, 42 ],
+          "controls": [
+            {
+              "play_button@common_buttons_dx.main_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$pressed_button_name": "button.play_button",
+                "$button_text": "addExternalServerScreen.playButtonLabel",
+                "ignored": "$edit_mode",
+                "bindings": [
+                  {
+                    "binding_name": "#play_button_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            },
+            {
+              "remove_button@common_buttons_dx.main_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$pressed_button_name": "button.remove_button",
+                "$button_text": "addExternalServerScreen.removeButtonLabel",
+                "visible": "($edit_mode)"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_5": {
+          "type": "panel",
+          "size": [ 202, 24 ],
+          "controls": [
+            {
+              "save_button@common_buttons_dx.main_button": {
+                "size": [ 200, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "layer": 2,
+                "$pressed_button_name": "button.save_button",
+                "$button_text": "gui.done",
+                "bindings": [
+                  {
+                    "binding_name": "#save_button_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_5": {
+          "type": "panel",
+          "size": [ 202, 20 ],
+          "controls": [
+            {
+              "cancel_button@common_buttons_dx.main_button": {
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$pressed_button_name": "button.menu_exit",
+                "$button_text": "gui.cancel"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Screen ////*/
+
+  "full_screen": {
+    "type": "panel",
+    "controls": [
+      { "options_label@add_external_server_dx.title_label": { "layer": 2 } },
+      {
+        "page_navigation_panel": {
+          "type": "panel",
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 52 ],
+          "size": [ 202, 166 ],
+          "controls": [
+            {
+              "page_1_tab@settings_dx.button_tab": {
+                "size": [ 20, 20 ],
+                "$unchecked_control": "common_buttons_dx.default",
+                "$checked_control": "common_buttons_dx.locked",
+                "$unchecked_hover_control": "common_buttons_dx.hover",
+                "$checked_hover_control": "common_buttons_dx.locked",
+                "$button_text": "<",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ -22, 14 ],
+                "$toggle_name": "external_server_page_tab",
+                "$tab_view_binding_name": "page_1_tab_toggle",
+                "$toggle_group_forced_index": 0
+              }
+            },
+            {
+              "page_2_tab@settings_dx.button_tab": {
+                "size": [ 20, 20 ],
+                "$unchecked_control": "common_buttons_dx.default",
+                "$checked_control": "common_buttons_dx.locked",
+                "$unchecked_hover_control": "common_buttons_dx.hover",
+                "$checked_hover_control": "common_buttons_dx.locked",
+                "$button_text": ">",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "offset": [ 22, 14 ],
+                "$toggle_name": "external_server_page_tab",
+                "$tab_view_binding_name": "page_2_tab_toggle",
+                "$toggle_group_forced_index": 1
+              }
+            }
+          ]
+        }
+      },
+      { "panel_content@add_external_server_dx.panel_content": { "layer": 2 } },
+      { "options_background@java_gui_common.options_background": { "layer": -10, "ignored": "$is_holographic"  } }
+    ]
+  },
+
+  "center_screen": {
+    "type": "panel",
+    "controls": [
+      { "options_background@java_gui_common.options_background": { "layer": -10, "ignored": "(not $is_holographic)"   } }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "inventory_java_dx",
+
+  "inventory_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/minecraft/textures/gui/container/inventory"
+  },
+
+  /*//// Main Panel ////*/
+
+  "dialog_bg_inventory@inventory_java_dx.inventory_base": {
+    "$uv_size": [ 176, 166 ]
+  },
+
+  /*//// Recipe Toggle ////*/
+
+  "recipe_button_default@inventory_java_dx.inventory_base": {
+    "$uv": [ -178, 0 ],
+    "$uv_size": [ 20, 18 ]
+  },
+
+  "recipe_button_hover@inventory_java_dx.recipe_button_default": {
+    "$uv": [ -178, -19 ]
+  },
+
+  /*//// Mob Effect Background ////*/
+
+  "mob_effect_bg@inventory_java_dx.inventory_base": {
+    "$uv": [ 0, -166 ],
+    "$uv_size": [ 120, 32 ]
+  }
+}

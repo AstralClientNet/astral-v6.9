@@ -1,0 +1,26 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "crafting_table_java_dx",
+
+  "crafting_table_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/minecraft/textures/gui/container/crafting_table"
+  },
+
+  /*//// Main Panel ////*/
+
+  "dialog_bg_crafting_table@crafting_table_java_dx.crafting_table_base": {
+    "$uv_size": [ 176, 166 ]
+  },
+
+  /*//// Recipe Toggle ////*/
+
+  "recipe_button_default@crafting_table_java_dx.crafting_table_base": {
+    "$uv": [ 0, -168 ],
+    "$uv_size": [ 20, 18 ]
+  },
+
+  "recipe_button_hover@crafting_table_java_dx.recipe_button_default": {
+    "$uv": [ 0, -187 ]
+  }
+}

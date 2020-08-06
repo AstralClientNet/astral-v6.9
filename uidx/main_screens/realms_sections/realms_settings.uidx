@@ -1,0 +1,96 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "realms_settings_dx",
+
+  /*////// PANELS //////*/
+
+  "panel_cotent": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 200, 205 ],
+    "controls": [
+      {
+        "title_label@settings_dx.options_label": {
+          "layer": 2,
+          "offset": [ 0, 16 ],
+          "text": "menu.settings"
+        }
+      },
+      {
+        "close_realm_button@common_buttons_dx.main_button": {
+          "size": [ 100, 20 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 38 ],
+          "$button_text": "realmsSettingsScreen.closeRealmButton",
+          "$pressed_button_name": "menu_close_realm",
+          "bindings": [
+            {
+              "binding_name": "#close_realm_button_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "open_realm_button@common_buttons_dx.main_button": {
+          "size": [ 100, 20 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 38 ],
+          "$button_text": "realmsSettingsScreen.openRealmButton",
+          "$pressed_button_name": "menu_open_realm",
+          "bindings": [
+            {
+              "binding_name": "#open_realm_button_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "option_text_edit_0@settings_common_dx.option_text_edit": {
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 73 ],
+          "$option_label": "realmsSettingsScreen.realmNameLabel",
+          "$option_binding_name": "#realm_name",
+          "$option_enabled_binding_name": "#realm_name_enabled",
+          "$option_place_holder_text": "realmsSettingsScreen.realmNameEditPlaceholder",
+          "$text_box_name": "realm_name_text_box"
+        }
+      },
+      {
+        "option_text_edit_1@settings_common_dx.option_text_edit": {
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 123 ],
+          "$option_label": "feed.clubdescription",
+          "$option_binding_name": "#club_description",
+          "$option_enabled_binding_name": "#realm_name_enabled",
+          "$option_place_holder_text": "realmsSettingsScreen.realmDescriptionEditPlaceholder",
+          "$text_box_name": "club_description_text_box"
+        }
+      },
+      {
+        "back_button_tab@realms_main_dx.back_button_tab": {
+          "size": [ 200, 20 ],
+          "$button_text": "gui.done",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+
+  "settings_panel": {
+    "type": "panel",
+    "controls": [
+      { "panel_content@realms_settings_dx.panel_cotent": { "layer": 2 } },
+      { "bg@java_gui_common.options_background": { "layer": -1, "ignored": "(not $is_pregame)" } },
+      { "bg_world@java_gui_common.screen_background": { "layer": -1, "ignored": "$is_pregame" } }
+    ]
+  }
+}

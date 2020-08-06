@@ -1,0 +1,173 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "world_advanced_dx",
+
+  /*//// Stack panels ////*/
+  
+  "panel_cotent": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_midddle",
+    "anchor_to": "top_midddle",
+    "size": [ 220, "100%c" ],
+    "$categorie_shadow": true,
+    "controls": [
+      {
+        "top_panel": {
+          "type": "panel",
+          "size": [ 1, 4 ]
+        }
+      },
+      {
+        "panel_0@start_dx.stacked_row": {
+          "controls": [
+            {
+              "multiplayer_game_toggle@settings_common_dx.option_toggle_alt": {
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.multiplayergame",
+                "$option_binding_name": "#multiplayer_game",
+                "$option_enabled_binding_name": "#multiplayer_game_enabled",
+                "$toggle_name": "multiplayer_game"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_2@start_dx.stacked_row": {
+          "controls": [
+            {
+              "server_visible_toggle@settings_common_dx.option_toggle_alt": {
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.servervisible",
+                "$option_binding_name": "#server_visible",
+                "$option_enabled_binding_name": "#server_visibility_enabled",
+                "$toggle_name": "server_visible"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#can_be_server_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "panel_1@start_dx.stacked_row": {
+          "controls": [
+            {
+              "xbl_settings_dropdown@settings_common_dx.option_dropdown": {
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "enabled": "not $is_xboxlive_enabled",
+                "$option_label": "xblLogin.LoginMessageTitle",
+                "$dropdown_content": "world_section.xbl_broadcast_dropdown_content",
+                "$dropdown_area": "content_area",
+                "$dropdown_name": "xbl_broadcast_dropdown",
+                "$options_dropdown_toggle_label_binding": "#xbl_broadcast_dropdown_toggle_label",
+                "$option_enabled_binding_name": "#xbl_show_broadcast_dropdown",
+                "$dropdown_scroll_content_size": [ "100%", 60 ],
+                "bindings": [
+                  {
+                    "binding_name": "#can_be_xbl_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#can_be_server_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "panel_3@start_dx.stacked_row": {
+          "controls": [
+            {
+              "option_dropdown_permissions@settings_common_dx.option_dropdown": {
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "ignored": "$education_edition",
+                "$option_label": "permissions.title",
+                "$dropdown_content": "permissions.permission_level_dropdown_content",
+                "$dropdown_area": "content_area",
+                "$dropdown_name": "player_permissions_dropdown",
+                "$button_type_panel": "permissions.permission_level_dropdown_state_content",
+                "$options_dropdown_toggle_label_binding": "#player_permissions_dropdown_toggle_label",
+                "$option_enabled_binding_name": "#player_permissions_dropdown_enabled",
+                "$dropdown_scroll_content_size": [ "100%", "385%" ],
+                "$is_world_settings": true
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#show_permissions_dropdown",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "panel_4@start_dx.stacked_row": {
+          "controls": [
+            {
+              "server_sim_distance_slider@settings_common_dx.option_slider": {
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "#server_sim_distance_slider_label",
+                "$slider_name": "server_sim_distance",
+                "$slider_value_binding_name": "#server_sim_distance",
+                "$option_enabled_binding_name": "#server_sim_distance_enabled",
+                "$slider_steps_binding_name": "#server_sim_distance_steps",
+                "$label_bindings": [ { "binding_name": "#server_sim_distance_slider_label" } ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Scrolling Panel ////*/
+  
+  "scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 256, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "world_advanced_dx.panel_cotent"
+  },
+
+  /*//// Screen ////*/
+  
+  "world_advanced_label@settings_dx.base_label": {
+    "text": "createWorldScreen.multiplayer.settings",
+    "offset": [ 0, 4 ]
+  },
+
+  "world_advanced_done_button@create_world_dx.more_done_button": {
+    "size": [ 200, 20 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -7 ]
+  },
+
+  "world_advanced_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "world_advanced_dx.world_advanced_label",
+    "$middle_content": "world_advanced_dx.scrolling_panel",
+    "$bottom_content": "world_advanced_dx.world_advanced_done_button"
+  }
+}

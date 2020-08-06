@@ -1,0 +1,351 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "realms_whitelist_dx",
+
+  "null_panel": {
+    "type": "panel",
+    "size": [ "100%", 14 ]
+  },
+
+  /*////// Members //////*/
+
+  "member_players_panel": {
+    "type": "panel",
+    "controls": [
+      { "list_label@realms_players_dx.list_label": { "text": "realmsInvitationScreen.members" } },
+      { 
+        "players_scroll_panel@realms_players_dx.players_scroll_panel": {
+          "$middle_content": "realms_whitelist_dx.members_friends_content"
+        }
+      },
+      {
+        "invited_list_button_tab@realms_players_dx.invited_list_button_tab": {
+          "size": [ 158, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 53 ]
+        }
+      },
+      {
+        "manage_feed_button@common_buttons_dx.main_button": {
+          "size": [ 158, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 78 ],
+          "$button_text": "feed.manage_feed",
+          "$pressed_button_name": "menu_manage_feed",
+          "bindings": [
+            {
+              "binding_name": "#manage_feed_button_enabled",
+              "binding_name_override": "#enabled"
+            },
+            {
+              "binding_name": "#manage_feed_button_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "clear_members@common_buttons_dx.main_button": {
+          "size": [ 158, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 103 ],
+          "$button_text": "realmsClearMembers.clear",
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.clear_members",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "button.clear_members",
+              "mapping_type": "focused"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#members_list_enabled",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      },
+      {
+        "members_page_panel@realms_players_dx.page_panel": {
+          "$next_button_name": "next_page_button_members",
+          "$prev_button_name": "prev_page_button_members",
+          "$this_page_index_text": "#members_page_index_text",
+          "$is_visible_binding_name": "#members_buttons_visible",
+          "$is_prev_visible": "#members_prevButton_visible",
+          "$is_next_visible": "#members_nextButton_visible"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "members_list_tab_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "members_friends_content@realms_players_dx.players_list_content": {
+    "$is_uninvited": false,
+    "collection_name": "members_collection",
+    "factory": {
+      "name": "factory",
+      "control_ids": {
+        "small_button": "@realms_whitelist_dx.members_gamer_grid_item",
+        "large_button": "@realms_whitelist.member_factory_linked_account"
+      }
+    },
+    "bindings": [
+      {
+        "binding_name": "#members_section_content",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "members_gamer_grid_item@realms_players_dx.gamer_grid_item": {
+    "$is_uninvited": false,
+    "$collection_binding_name": "invited_friends_collection"
+  },
+
+  /*////// Invited //////*/
+
+  "invited_friends_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "list_label@realms_players_dx.list_label": {
+          "text": "realmsInvitationScreen.invitedFriends"
+        }
+      },
+      {
+        "players_scroll_panel@realms_players_dx.players_scroll_panel": {
+          "$middle_content": "realms_whitelist_dx.invited_friends_content"
+        }
+      },
+      { "uninvited_list_button_tab@realms_players_dx.uninvited_list_button_tab": {} },
+      {
+        "invited_friends_page_panel@realms_players_dx.page_panel": {
+          "$next_button_name": "next_page_button_invited_friends",
+          "$prev_button_name": "prev_page_button_invited_friends",
+          "$this_page_index_text": "#invited_friends_page_index_text",
+          "$is_visible_binding_name": "#invited_friends_buttons_visible",
+          "$is_prev_visible": "#invited_friends_prevButton_visible",
+          "$is_next_visible": "#invited_friends_nextButton_visible"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "invited_list_tab_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "invited_friends_content@realms_players_dx.players_list_content": {
+    "$is_uninvited": false,
+    "collection_name": "invited_friends_collection",
+    "factory": {
+      "name": "factory",
+      "control_ids": {
+        "small_button": "@realms_whitelist_dx.invited_gamer_grid_item",
+        "large_button": "@realms_whitelist.invited_factory_linked_account"
+      }
+    },
+    "bindings": [
+      {
+        "binding_name": "#invited_section_content",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "invited_gamer_grid_item@realms_players_dx.gamer_grid_item": {
+    "$is_uninvited": false,
+    "$collection_binding_name": "invited_friends_collection"
+  },
+
+  /*////// Uninvited //////*/
+
+  "uninvited_friends_panel": {
+    "type": "panel",
+    "controls": [
+      { "list_label@realms_players_dx.list_label": { "text": "realmsInvitationScreen.friends" } },
+      {
+        "players_scroll_panel@realms_players_dx.players_scroll_panel": {
+          "$middle_content": "realms_whitelist_dx.uninvited_friends_content"
+        }
+      },
+      { "locked_list_button_tab@realms_players_dx.locked_list_button_tab": {} },
+      {
+        "find_friends_button@common_buttons_dx.main_button": {
+          "size": [ 158, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 78 ],
+          "$button_text": "realmsInvitationScreen.findFriends",
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.realms_invite_find_friends",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "button.realms_invite_find_friends",
+              "mapping_type": "focused"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#members_list_enabled",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      },
+      {
+        "share_by_link_button@common_buttons_dx.main_button": {
+          "size": [ 158, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 103 ],
+          "$button_text": "realmsInvitationScreen.shareByLink",
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_select",
+              "to_button_id": "button.realms_invite_share_by_link",
+              "mapping_type": "pressed"
+            },
+            {
+              "from_button_id": "button.menu_ok",
+              "to_button_id": "button.realms_invite_share_by_link",
+              "mapping_type": "focused"
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#members_list_enabled",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      },
+      {
+        "uninvited_friends_page_panel@realms_players_dx.page_panel": {
+          "$next_button_name": "next_page_button_uninvited_friends",
+          "$prev_button_name": "prev_page_button_uninvited_friends",
+          "$this_page_index_text": "#uninvited_friends_page_index_text",
+          "$is_visible_binding_name": "#uninvited_friends_buttons_visible",
+          "$is_prev_visible": "#uninvited_friends_prevButton_visible",
+          "$is_next_visible": "#uninvited_friends_nextButton_visible"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "uninvited_list_tab_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "uninvited_friends_content@realms_players_dx.players_list_content": {
+    "collection_name": "uninvited_friends_collection",
+    "factory": {
+      "name": "factory",
+      "control_ids": {
+        "small_button": "@realms_whitelist_dx.uninvited_gamer_grid_item",
+        "large_button": "@realms_whitelist.uninvited_factory_linked_account"
+      }
+    },
+    "bindings": [
+      {
+        "binding_name": "#uninvited_section_content",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "uninvited_gamer_grid_item@realms_players_dx.gamer_grid_item": {
+    "$collection_binding_name": "uninvited_friends_collection",
+    "$is_uninvited": true
+  },
+
+  /*////// Blocked //////*/
+
+  "blocked_friends_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "list_label@realms_players_dx.list_label": {
+          "text": "realmsInvitationScreen.blocked"
+        }
+      },
+      {
+        "players_scroll_panel@realms_players_dx.players_scroll_panel": {
+          "$middle_content": "realms_whitelist_dx.locked_friends_content"
+        }
+      },
+      { "members_list_button_tab@realms_players_dx.members_list_button_tab": {} },
+      {
+        "blocked_players_page_panel@realms_players_dx.page_panel": {
+          "$next_button_name": "next_page_button_blocked_players",
+          "$prev_button_name": "prev_page_button_blocked_players",
+          "$this_page_index_text": "#blocked_players_page_index_text",
+          "$is_visible_binding_name": "#blocked_players_buttons_visible",
+          "$is_prev_visible": "#blocked_players_prevButton_visible",
+          "$is_next_visible": "#blocked_players_nextButton_visible"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "locked_list_tab_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "locked_friends_content@realms_players_dx.players_list_content": {
+    "$is_uninvited": true,
+    "$is_blocked": true,
+    "collection_name": "blocked_players_collection",
+    "factory": {
+      "name": "factory",
+      "control_ids": {
+        "small_button": "@realms_whitelist_dx.locked_gamer_grid_item",
+        "large_button": "@realms_whitelist.blocked_factory_linked_account"
+      }
+    },
+    "bindings": [
+      {
+        "binding_name": "#blocked_section_content",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "locked_gamer_grid_item@realms_players_dx.gamer_grid_item": {
+    "$is_uninvited": true,
+    "$is_blocked": true,
+    "$collection_binding_name": "blocked_players_collection"
+  }
+}

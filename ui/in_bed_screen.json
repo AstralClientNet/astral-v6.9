@@ -1,0 +1,16 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "in_bed_screen": {
+    "variables": [
+      {
+        "requires": "$desktop_screen",
+        "$screen_content": "bed_dx.center_screen",
+        "$screen_bg_content": "bed_dx.full_screen",
+        "$use_loading_bars": false,
+        "$screen_animations": [ ],
+        "$background_animations": [ ]
+      }
+    ]
+  }
+}

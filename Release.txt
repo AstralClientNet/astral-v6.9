@@ -1,0 +1,76 @@
+────────────────────────────
+**WELCOME TO THE OFFICIAL RELEASE OF ASTRAL CLIENT V6!**
+────────────────────────────
+This version brings a lot of improvements and optimizations compared to the last version. It also adds new features (that were previouly missing and new)
+to make the whole user experience better. This update is also known as the **Mega Update**.
+────────────────────────────
+**LICENSE AND COPYRIGHT NOTICES**:
+As some of the code (Especially the Java UI) is under the GNU GPL license, you are free to modify contents of the contents of both **Astral** and **Java UI**
+as long as you follow the license terms. For more information, click here:
+https://www.gnu.org/licenses/gpl-faq.en.html
+────────────────────────────
+This version will be the last of the resource pack versions. This may not be the case and can change without prior notice. 
+────────────────────────────
+**CHANGELOG**: 
+────────────────────────────
+- New Java Screens
+ ▪️ Death Screen
+ ▪️ Bed Screen
+ ▪️ Play Screen (Singleplayer, Multiplayer and Realms)
+ ▪️ Disconnect Screen
+ ▪️ First Person Screen (to match with Java's hands)
+ ▪️ Revamped Settings Screen
+ ▪️ Revamped Profile Screen
+ ▪️ Storage Screen 
+ ▪️ Revamped Resource Packs Screen
+ ▪️ Revamped World Options, World Resource Packs, World Behavior Packs and World Gamerules screen
+
+- New Panorama.
+- Moved the logo and text to the bottom right of containers.
+- Improved the pause screen.
+- Added export world option and import world options.
+- Added the old GUI textures with some changes and made it the default GUI.
+- Added bottomchat (Toggable)
+- Default Lowfire instead of a custom colored one.
+- Added Reset Default to all Settings
+- Water is now more see-able while remaining clear-like.
+────────────────────────────
+**BUG FIXES**:
+────────────────────────────
+- Fixed Resource Pack Buttons error on World Resource Packs 
+- Fixed Potion HUD rendering error 
+- Fixed the controller focus issue
+- Fixed the need to double click a button in order for it to press
+- Fixed the change profiles dropdown not appearing in-game
+- Fixed the bubbles button not appearing in-game
+- Fixed the Mojang copyright issue
+- Fixed unable to sign in again after signing out of xbox live
+- Fixed Feed button not appearing in Realms
+- Fixed names not fitting properly in the feedback button of the home screen
+- Fixed the smooth redstone wire not being smooth when interconnected
+- Fixed shift clicking X on custom inventory crash
+- Fixed shift clicking items on custom inventory doesn't remove the item 
+- Fixed clicking an item with another item not deleting the item
+- Fixed gone recipe book button on the survival custom inventory
+- Fixed item names not appearing when hovered over an item in the custom inventory
+────────────────────────────
+**LITE VERSION**:
+────────────────────────────
+We've noticed that Astral V6 is a heavy UI pack. To compensate for low-end devices, we've decided to make
+a Lite version.
+
+**What features are not on the Lite version?**
+1. Java UI for the **Play Screen**
+2. Panorama
+3. Custom inventory, containers, hotbar, buttons and dialogs.
+4. Shaders (No Fog and Highlight selection)
+────────────────────────────
+The Default Edits and Archives of previous versions are on the website.
+It is **not** recommended to use bottom chat if you're a mobile player. It may cause a lot of issues and bugs. Bottom Chat
+is meant to be for Win10 edition players. If you wish to use it, use it at your own risk.
+────────────────────────────
+**Download the latest version of Astral Client here**: https://astralclient.net
+────────────────────────────
+
+
+

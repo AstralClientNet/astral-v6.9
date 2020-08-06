@@ -1,0 +1,45 @@
+/********************************************************
++*   (c) Mojang. All rights reserved             *
++*   (c) Microsoft. All rights reserved.        *
++*   Modified by:                                             *
++*   @FMarquesPTO. All rights reserved.  *
++*********************************************************/
+{
+  "namespace": "pause",
+
+  "pause_screen@screen_janger.base_screen": {
+    "cache_screen": true,
+    "$screen_animations": [
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_continue",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.controller_start",
+        "to_button_id": "button.menu_continue",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_vr_realign",
+        "to_button_id": "button.menu_vr_realign",
+        "mapping_type": "global",
+        "scope": "controller"
+      },
+      {
+        "from_button_id": "button.controller_select",
+        "to_button_id": "button.menu_skins",
+        "mapping_type": "global",
+        "scope": "controller"
+      }
+    ],
+    "$screen_content": "pause_menu_janger.pause_menu_screen_content_panel",
+    "$screen_bg_content": "common_janger.dark_gray_background"
+  }
+}

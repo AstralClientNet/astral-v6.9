@@ -1,0 +1,81 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "screen_world_create": {
+    "$title_text": "createWorldScreen.header.local",
+    "$screen_content": "create_world_dx.center_screen",
+    "$screen_bg_content": "create_world_dx.full_screen",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "screen_template_create": {
+    "$title_text": "createWorldScreen.header.local",
+    "$screen_content": "create_world_dx.center_screen",
+    "$screen_bg_content": "create_world_dx.full_screen",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "screen_world_edit": {
+    "$title_text": "createWorldScreen.header.editLocal",
+    "$screen_content": "create_world_dx.center_screen",
+    "$screen_bg_content": "create_world_dx.full_screen",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_edit_screen": true,
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "screen_controls_and_settings": {
+    "$screen_content": "settings_dx.center_screen",
+    "$screen_bg_content": "settings_dx.full_screen",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "screen_world_controls_and_settings": {
+    "$screen_content": "settings_dx.center_screen",
+    "$screen_bg_content": "settings_dx.full_screen",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  }/* ,
+
+  "screen_realm_controls_and_settings": {
+    "$include_realm_section": true,
+    "$is_realms": true,
+    "$include_controls_and_settings_sections": true,
+    "$screen_content": "common_dx.null_panel",
+    "$screen_bg_content": "settings_dx.settings_screen_content",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  },
+
+  "screen_realm_settings": {
+    "$include_realm_section": true,
+    "$screen_content": "common_dx.null_panel",
+    "$screen_bg_content": "realms_main_dx.realms_settings_screen_content",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  } */
+}

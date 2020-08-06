@@ -1,0 +1,375 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "realms_java_dx",
+
+  /*////// Realms //////*/
+
+  /* Title */
+
+  "title_minecraft_realms": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/title/realms"
+  },
+
+  /* On icon */
+
+  "on_icon": {
+    "type": "image",
+    "size": [ 10, 28 ],
+    "texture": "assets/realms/textures/gui/realms/on_icon"
+  },
+
+  /* Off icon */
+
+  "off_icon": {
+    "type": "image",
+    "size": [ 10, 28 ],
+    "texture": "assets/realms/textures/gui/realms/off_icon"
+  },
+
+  /* Expired icon */
+
+  "expired_icon": {
+    "type": "image",
+    "size": [ 10, 28 ],
+    "texture": "assets/realms/textures/gui/realms/expired_icon"
+  },
+
+  /* Popup */
+
+  "popup": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/popup"
+  },
+
+  /* Slot frame */
+
+  "slot_frame": {
+    "type": "image",
+    "size": [ 80, 80 ],
+    "texture": "assets/realms/textures/gui/realms/slot_frame"
+  },
+
+  /* Cross Player Icon button */
+
+  "cross_player_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/cross_player_icon",
+    "$base_size": [ 8, 14 ]
+  },
+
+  "cross_player_icon_default@realms_java_dx.cross_player_icon_base": {
+    "$uv_size": [ 8, 7 ]
+  },
+
+  "cross_player_icon_hover@realms_java_dx.cross_player_icon_base": {
+    "$uv": [ 0, -7 ]
+  },
+
+  /* Plus Icon button */
+
+  "plus_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/plus_icon",
+    "$base_size": [ 15, 30 ]
+  },
+
+  "plus_icon_default@realms_java_dx.plus_icon_base": {
+    "$uv_size": [ 15, 15 ]
+  },
+
+  "plus_icon_hover@realms_java_dx.plus_icon_default": {
+    "$uv": [ 0, -15 ]
+  },
+
+  /* User Icon button */
+
+  "user_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/user_icon",
+    "$base_size": [ 8, 14 ]
+  },
+
+  "user_icon_default@realms_java_dx.user_icon_base": {
+    "$uv_size": [ 8, 7 ]
+  },
+
+  "user_icon_hover@realms_java_dx.user_icon_default": {
+    "$uv": [ 0, -7 ]
+  },
+
+  /* Operator Icon button */
+
+  "op_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/op_icon",
+    "$base_size": [ 8, 14 ]
+  },
+
+  "op_icon_default@realms_java_dx.op_icon_base": {
+    "$uv_size": [ 8, 7 ]
+  },
+
+  "op_icon_hover@realms_java_dx.op_icon_default": {
+    "$uv": [ 0, -7 ]
+  },
+
+  /* Restore icon button */
+
+  "restore_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/restore_icon",
+    "$base_size": [ 11.5, 28 ]
+  },
+
+  "restore_icon_default@realms_java_dx.restore_icon_base": {
+    "$uv_size": [ 11.5, 14 ]
+  },
+
+  "restore_icon_hover@realms_java_dx.restore_icon_default": {
+    "$uv": [ 0, -14 ]
+  },
+
+  /* Question mark button */
+
+  "questionmark_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/questionmark",
+    "$base_size": [ 40, 20 ]
+  },
+
+  "questionmark_default@realms_java_dx.questionmark_base": {
+    "$uv_size": [ 20, 20 ]
+  },
+
+  "questionmark_hover@realms_java_dx.questionmark_default": {
+    "$uv": [ -20, 0 ]
+  },
+
+  /* Cross button icon */
+
+  "cross_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/cross_icon",
+    "$base_size": [ 12, 24 ]
+  },
+
+  "cross_icon_default@realms_java_dx.cross_icon_base": {
+    "$uv_size": [ 12, 12 ]
+  },
+
+  "cross_icon_hover@realms_java_dx.cross_icon_default": {
+    "$uv": [ 0, -12 ]
+  },
+
+  /* Configure button icon */
+
+  "configure_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/configure_icon",
+    "$base_size": [ 56, 28 ]
+  },
+
+  "configure_icon_default@realms_java_dx.configure_icon_base": {
+    "$uv_size": [ 28, 28 ]
+  },
+
+  "configure_icon_hover@realms_java_dx.configure_icon_default": {
+    "$uv": [ -28, 0 ]
+  },
+
+  /* Leave button icon */
+
+  "leave_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/leave_icon",
+    "$base_size": [ 56, 28 ]
+  },
+
+  "leave_icon_default@realms_java_dx.leave_icon_base": {
+    "$uv_size": [ 28, 28 ]
+  },
+
+  "leave_icon_hover@realms_java_dx.leave_icon_default": {
+    "$uv": [ -28, 0 ]
+  },
+
+  /* Invitation */
+
+  "invite_icon@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/invite_icon",
+    "$base_size": [ 31, 25 ]
+  },
+
+  "invitation_default@realms_java_dx.invite_icon": {
+    "$uv_size": [ 15, 25 ]
+  },
+
+  "invitation_hover@realms_java_dx.invitation_default": {
+    "$uv": [ -16, 0 ]
+  },
+
+  /* Invitation iconss */
+
+  "invitation_icons_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/invitation_icons",
+    "$base_size": [ 48, 16 ]
+  },
+
+  "invitation_icons_1@realms_java_dx.invitation_icons_base": {
+    "$uv_size": [ 8, 8 ]
+  },
+
+  "invitation_icons_1_hover@realms_java_dx.invitation_icons_1": {
+    "$uv": [ 0, -8 ]
+  },
+
+  "invitation_icons_2@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -8, 0 ]
+  },
+
+  "invitation_icons_2_hover@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -8, -8 ]
+  },
+
+  "invitation_icons_3@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -16, 0 ]
+  },
+
+  "invitation_icons_3_hover@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -16, -8 ]
+  },
+
+  "invitation_icons_4@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -24, 0 ]
+  },
+
+  "invitation_icons_4_hover@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -24, -8 ]
+  },
+
+  "invitation_icons_5@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -32, 0 ]
+  },
+
+  "invitation_icons_5_hover@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -32, -8 ]
+  },
+
+  "invitation_icons_more@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -40, 0 ]
+  },
+
+  "invitation_icons_more_hover@realms_java_dx.invitation_icons_1": {
+    "$uv": [ -40, -8 ]
+  },
+
+  /* Accept icon */
+
+  "accept_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/accept_icon",
+    "$base_size": [ 37, 18 ]
+  },
+
+  "accept_icon_default@realms_java_dx.accept_icon_base": {
+    "$uv_size": [ 18, 18 ]
+  },
+
+  "accept_icon_hover@realms_java_dx.accept_icon_default": {
+    "$uv": [ -19, 0 ]
+  },
+
+  /* Reject icon */
+
+  "reject_icon_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/realms/textures/gui/realms/reject_icon",
+    "$base_size": [ 37, 18 ]
+  },
+
+  "reject_icon_default@realms_java_dx.reject_icon_base": {
+    "$uv_size": [ 18, 18 ]
+  },
+
+  "reject_icon_hover@realms_java_dx.reject_icon_default": {
+    "$uv": [ -19, 0 ]
+  },
+
+  /* Realms Images */
+
+  "balloon_trip": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/balloon_trip"
+  },
+
+  "desert": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/desert"
+  },
+
+  "dornenstein_estate": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/dornenstein_estate"
+  },
+
+  "escher_tunnel": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/escher_tunnel"
+  },
+
+  "factory_floor": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/factory_floor"
+  },
+
+  "flower_mountain": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/flower_mountain"
+  },
+
+  "gray": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/gray"
+  },
+
+  "halloween_woods": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/halloween_woods"
+  },
+
+  "imperium": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/imperium"
+  },
+
+  "ludo": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/ludo"
+  },
+
+  "makersspleef": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/makersspleef"
+  },
+
+  "negentropy": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/negentropy"
+  },
+
+  "pumpkin_party": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/pumpkin_party"
+  },
+
+  "sand_castle": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/sand_castle"
+  },
+
+  "sparrenhout": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/sparrenhout"
+  },
+
+  "spindlewood": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/spindlewood"
+  },
+
+  "tree_houses": {
+    "type": "image",
+    "texture": "assets/realms/textures/gui/realms/images/tree_houses"
+  }
+}

@@ -1,0 +1,383 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*   The most useless file I ever made :/  *
++*********************************************************/
+{
+  "namespace": "screen_janger",
+
+  "base_screen": {
+    "type": "screen",
+    "vr_mode": "$is_holographic",
+    "$screen_content|default": "common.base_screen_empty_panel",
+    "$screen_bg_content|default": "common.base_screen_empty_panel",
+    "$screen_animations|default": [
+      "@common.screen_exit_animation_push_offset",
+      "@common.screen_exit_animation_pop_offset",
+      "@common.screen_entrance_animation_push_offset",
+      "@common.screen_entrance_animation_pop_offset",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ],
+    "$background_animations|default": [
+      "@common.screen_exit_animation_push_alpha",
+      "@common.screen_exit_animation_pop_alpha",
+      "@common.screen_entrance_animation_push_alpha",
+      "@common.screen_entrance_animation_pop_alpha"
+    ],
+    "controls": [
+      {
+        "variables_button_mappings_and_controls": {
+          "type": "input_panel",
+          "hover_enabled": false,
+          "prevent_touch_input": false,
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_up",
+              "to_button_id": "button.menu_up",
+              "mapping_type": "global",
+              "scope": "view"
+            },
+            {
+              "from_button_id": "button.menu_down",
+              "to_button_id": "button.menu_down",
+              "mapping_type": "global",
+              "scope": "view"
+            },
+            {
+              "from_button_id": "button.menu_left",
+              "to_button_id": "button.menu_left",
+              "mapping_type": "global",
+              "scope": "view"
+            },
+            {
+              "from_button_id": "button.menu_right",
+              "to_button_id": "button.menu_right",
+              "mapping_type": "global",
+              "scope": "view"
+            }
+          ],
+          "controls": [
+            {
+              "bg_no_safezone_screen_panel@$screen_bg_content": {
+                "anims": "$background_animations",
+                "animation_reset_name": "screen_animation_reset",
+                "propagate_alpha": true,
+                "disable_anim_fast_forward": true,
+                "layer": -10
+              }
+            },
+            {
+              "safezone_screen_matrix@common.safezone_outer_matrix": {
+                "anims": "$screen_animations",
+                "animation_reset_name": "screen_animation_reset",
+                "propagate_alpha": true,
+                "disable_anim_fast_forward": true,
+                "layer": 2
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "base_screen_without_safe_zone": {
+    "type": "screen",
+    "vr_mode": "$is_holographic",
+    "$screen_content|default": "common.base_screen_empty_panel",
+    "$screen_bg_content|default": "common.base_screen_empty_panel",
+    "$screen_animations|default": [
+      "@common.screen_exit_animation_push_offset",
+      "@common.screen_exit_animation_pop_offset",
+      "@common.screen_entrance_animation_push_offset",
+      "@common.screen_entrance_animation_pop_offset",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ],
+    "$background_animations|default": [
+      "@common.screen_exit_animation_push_alpha",
+      "@common.screen_exit_animation_pop_alpha",
+      "@common.screen_entrance_animation_push_alpha",
+      "@common.screen_entrance_animation_pop_alpha"
+    ],
+    "controls": [
+      {
+        "variables_button_mappings_and_controls": {
+          "type": "input_panel",
+          "hover_enabled": false,
+          "prevent_touch_input": false,
+          "button_mappings": [
+            {
+              "from_button_id": "button.menu_up",
+              "to_button_id": "button.menu_up",
+              "mapping_type": "global",
+              "scope": "view"
+            },
+            {
+              "from_button_id": "button.menu_down",
+              "to_button_id": "button.menu_down",
+              "mapping_type": "global",
+              "scope": "view"
+            },
+            {
+              "from_button_id": "button.menu_left",
+              "to_button_id": "button.menu_left",
+              "mapping_type": "global",
+              "scope": "view"
+            },
+            {
+              "from_button_id": "button.menu_right",
+              "to_button_id": "button.menu_right",
+              "mapping_type": "global",
+              "scope": "view"
+            }
+          ],
+          "controls": [
+            {
+              "bg_no_safezone_screen_panel@$screen_bg_content": {
+                "anims": "$background_animations",
+                "animation_reset_name": "screen_animation_reset",
+                "propagate_alpha": true,
+                "disable_anim_fast_forward": true,
+                "layer": -10
+              }
+            },
+            {
+              "screen_panel@common.screen_panel": {
+                "size": [ "100%", "100%" ],
+                "anims": "$screen_animations",
+                "animation_reset_name": "screen_animation_reset",
+                "propagate_alpha": true,
+                "disable_anim_fast_forward": true,
+                "layer": 2
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "container_screen_common@base_screen": {
+    "cache_screen": true,
+    "$gamepad_cursor|default": true,
+    "gamepad_cursor": "$gamepad_cursor",
+    "$screen_animations|default": [
+      "@common.container_screen_exit_animation_push",
+      "@common.container_screen_exit_animation_pop",
+      "@common.container_screen_entrance_animation_push",
+      "@common.container_screen_entrance_animation_pop",
+      "@common.screen_exit_animation_push_fade",
+      "@common.screen_exit_animation_pop_fade",
+      "@common.screen_entrance_animation_push_fade",
+      "@common.screen_entrance_animation_pop_fade"
+    ],
+    "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_inventory_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.menu_up",
+        "to_button_id": "button.menu_up",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_down",
+        "to_button_id": "button.menu_down",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_left",
+        "to_button_id": "button.menu_left",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_right",
+        "to_button_id": "button.menu_right",
+        "mapping_type": "global",
+        "scope": "view"
+      },
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.cursor_drop_all",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_secondary_select",
+        "to_button_id": "button.cursor_drop_one",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.cursor_drop_all",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.controller_select",
+        "to_button_id": "button.cursor_drop_one",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.controller_secondary_select",
+        "to_button_id": "button.cursor_drop_all",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.controller_secondary_select_left",
+        "to_button_id": "button.focus_left",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.controller_secondary_select_right",
+        "to_button_id": "button.focus_right",
+        "mapping_type": "global"
+      },
+      {
+        "from_button_id": "button.chat",
+        "to_button_id": "button.chat",
+        "mapping_type": "global"
+      }
+    ]
+  },
+
+  "screen_base": {
+    "type": "panel",
+    "$top_panel_size|default": [ "100%", 32 ],
+    "$middle_panel_size|default": [ "100%", "fill" ],
+    "$bottom_panel_size|default": [ "100%", 32 ],
+    "$top_content_panel|default": "screen_janger.screen_base_top_content_panel",
+    "$middle_content_panel|default": "",
+    "$bottom_content_panel|default": "",
+    "$bg|default": true,
+    "$scroll_panel|default": false,
+    "$scroll_panel_size|default": [ 310, "100%" ],
+    "$scroll_offset|default": [ 160, 0 ],
+    "controls": [
+      { "bg@screen_janger.dirt_background": { "visible": "$bg" } },
+      { "substitute_bg@screen_janger.in_game_background": { "visible": "(not $bg)", "ignored": "$ignored_sb_bg" } },
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "top_panel": {
+                "type": "panel",
+                "size": "$top_panel_size",
+                "controls": [
+                  { "$top_content_panel@$top_content_panel": {} }
+                ]
+              }
+            },
+            {
+              "middle_panel": {
+                "type": "panel",
+                "size": "$middle_panel_size",
+                "controls": [
+                  { "$middle_content_panel@$middle_content_panel": {} },
+                  { "border_shadow@screen_janger.border_shadow": { "ignored": "(not $scroll_panel)" } },
+                  { "scrolling_panel@scrolling_panel_janger.scrolling_panel": { "ignored": "(not $scroll_panel)" } }
+                ]
+              }
+            },
+            {
+              "bottom_panel": {
+                "type": "panel",
+                "size": "$bottom_panel_size",
+                "controls": [
+                  { "$bottom_content_panel@$bottom_content_panel": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "screen_base_top_content_panel": {
+    "type": "panel",
+    "controls": [
+      { "@screen_title": {} }
+    ]
+  },
+
+  "screen_title":{
+    "type": "label",
+    "text": "$screen_title",
+    "color": "white",
+    "shadow": true,
+    "offset": "$offset_title",
+    "$offset_title|default": [ 0, 0 ],
+    "$anchor_title|default": "center",
+    "anchor_from": "$anchor_title",
+    "anchor_to": "$anchor_title",
+    "layer": 10,
+    "bindings": "$screen_title_bindings",
+    "$screen_title_bindings|default": [] 
+  },
+
+  "scroll_dark_bg": {
+    "type": "screen",
+    "controls": [
+      {
+        "background@screen_janger.dirt_background": {
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "layer": 0,
+          "offset": [ 0, -100 ],
+          "size": [ 1000, 2000 ]
+        }
+      }
+    ]
+  },
+
+  "border_shadow": {
+    "type": "panel",
+    "layer": 10,
+    "controls": [
+     
+    ]
+  },
+
+  "dirt_background": {
+    "type": "image",
+    "texture": "texture",
+    "tiled": true,
+    "alpha": 0.6,
+    "size": [ "300%", "300%" ],
+    "tiled_scale": "$options_bg_tiled_scale",
+    "layer": -2
+  },
+
+  "in_game_background": {
+    "type": "image",
+    "texture": "$white_base_image_texture",
+    "size": [ 2000, 2000 ],
+    "alpha": "$screen_bg_alpha",
+    "$screen_bg_alpha|default": 0.6,
+    "layer": -10
+  },
+
+  "in_container_background@in_game_background": {
+    "$screen_bg_alpha": "$in_container_background_alpha"
+  }
+
+  
+}
+
+  

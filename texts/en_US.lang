@@ -1,0 +1,469 @@
+bracket.left=(
+bracket.right=)
+
+##Audible texts
+##Discontinued
+
+##Generals
+accessibility.button.tts.title=Button
+accessibility.sectionbutton.tts.title=Section Button ##Section Buttons don't work. Focus is not enabled, 'cause of controller focus bugs.
+accessibility.slider.tts.title=Slider
+accessibility.tab.tts.title=Tab
+accessibility.textbox.tts.title=Textbox
+accessibility.toggle.tts.title=Toggle
+
+##Specifics
+seedPicker.seedButton=Seed
+seedPicker.searchSeed=Search Seeds
+
+##Ended Audible texts section
+
+gui.recipebook.toggleRecipes.all=Showing all
+gui.recipebook.toggleRecipes.craftable=Showing craftable
+
+menu.play=Play
+menu.singleplayer=Singleplayer
+menu.multiplayer=Multiplayer
+menu.online=Minecraft Realms
+menu.achievements=Achievements
+menu.store=Minecraft Marketplace
+menu.options=Options...
+menu.quit=Quit Game
+menu.skins=Change Skin
+menu.takeScreenshot=Take Screenshot
+menu.players=Players...
+menu.players.invite=Invite Players
+menu.players.permissions=Players Permissions
+menu.chat=Open Chat
+menu.feedback=Feedback
+menu.disconnect=Disconnect
+menu.savingLevel=Saving world
+
+createWorldScreen.gameMode.survival=Survival Mode
+createWorldScreen.gameMode.adventure=Adventure Mode
+createWorldScreen.gameMode.creative=Creative Mode
+
+selectWorld.title=Select World
+selectWorld.select=Play Selected World
+selectWorld.worldSize=Size: 
+selectWorld.create=Create New World
+selectWorld.import=Import
+selectWorld.edit=Edit
+selectWorld.edit.title=Edit World
+selectWorld.enterName=World Name
+selectWorld.enterSeed=Seed for the world generator
+selectWorld.seedInfo=Leave blank for a random seed
+selectWorld.gameMode=Game Mode
+selectWorld.gameModePersonal=Personal
+selectWorld.gameMode.survival=Survival
+selectWorld.gameMode.survival.line1=Search for resources, crafting, gain
+selectWorld.gameMode.survival.line2=levels, health and hunger
+selectWorld.gameMode.creative=Creative
+selectWorld.gameMode.creative.line1=Unlimited resources, free flying and
+selectWorld.gameMode.creative.line2=destroy blocks instantly
+selectWorld.gameMode.adventure=Adventure
+selectWorld.gameMode.adventure.line1=Same as survival mode, but blocks can't
+selectWorld.gameMode.adventure.line2=be added or removed
+selectWorld.moreWorldOptions=More World Options...
+selectWorld.newFeatures=Experimental Gameplay
+selectWorld.newFeatures.info=Try out the new features coming up
+selectWorld.mapType=World Type
+selectWorld.allowCommands=Allow Cheats
+selectWorld.allowCommands.info=Commands like /gamemode, /experience
+generator.default=Default
+generator.small=Small
+generator.flat=Superflat
+createWorld.settings=Game Settings...
+createWorld.settings.title=Game Settings
+createWorldScreen.serverSimDistance=Simulation Distance
+createWorldScreen.serverSimDistanceFormat=%s chunks
+createWorld.settings.preferences=Preferences...
+createWorld.settings.preferences.title=World Preferences
+createWorld.settings.bonusItems=Bonus Chest
+createWorld.settings.startWithMap=Start with Map
+createWorld.settings.immediateRespawn=Immediate Respawn
+createWorld.settings.pvp=PVP
+createWorld.settings.naturalRegeneration=Natural Regeneration
+createWorld.settings.tntExplodes=TNT Explodes
+createWorld.settings.fireSpreads=Fire Spreads
+createWorld.settings.mobLoot=Mob Loot
+createWorld.settings.tileDrops=Tile Drops
+createWorld.settings.cheats=Cheats...
+createWorld.settings.randomTickSpeed=Random Tick Speed
+createWorld.settings.cheats.title=World Cheats
+createWorld.settings.classroomSettings=Classroom Settings
+createWorld.settings.codeBuilder=Code Builder
+createWorld.settings.alwaysDay=Always Day
+createWorld.settings.perfectWeather=Perfect Weather
+createWorld.settings.playerDamage=Player Damage
+createWorld.settings.pvpDamage=PVP Damage
+createWorld.settings.allowMobs=Allow Destructive Items
+createWorld.settings.allowMobs=Allow Mobs
+createWorld.settings.immutableWorld=Immutable World
+createWorld.settings.daylightCycle=Do Daylight Cycle
+createWorld.settings.weatherCycle=Weather Cycle
+createWorld.settings.keepInventory=Keep Inventory
+createWorld.settings.mobSpawn=Mob Spawning
+createWorld.settings.mobGriefing=Mob Griefing
+createWorld.settings.entitiesDropLoot=Drop Loot
+createWorld.settings.commands=Allow Commands
+createWorld.settings.educationFeatures=Education Features
+
+seedPicker.title=Seed Picker
+
+multiplayer.title=Play Multiplayer
+multiplayer.add_friend=Add Friend
+selectServer.select=Join Server
+selectServer.edit=Edit
+selectServer.add=Add Server
+selectServer.delete=Delete
+
+networkWorld.add_friend=§fAdd Friend
+networkWorld.add_server=§fAdd Server
+networkWorld.add_label=§fAdd
+networkWorld.join_server=§fJoin Server
+networkWorld.joinByCode=§fJoin Realm
+selectWorld.create=§fCreate New World
+selectWorld.createNew=§fCreate New
+options.changeGamertag=§fChange Gamertag
+options.manageAccount=§fManage Account
+options.xboxLive.privacyControl=§fManage who can send you invites
+contentlog.clear_files=§fDelete Old Content Logs
+contentlog.history.title=§fContent Log History
+
+addServer.title=Edit Server Info
+addServer.enterName=Server Name
+addServer.enterIp=Server Address
+addServer.enterPort=Server Port
+addServer.add=Done
+
+options.visible=Shown
+options.hidden=Hidden
+options.off=OFF
+options.on=ON
+options.reset=Reset Settings
+options.title=Options
+options.fov.format=%s
+options.difficulty=Difficulty
+options.difficulty.peaceful=Peaceful
+options.difficulty.easy=Easy
+options.difficulty.normal=Normal
+options.difficulty.hard=Hard
+options.accessibility=Accessibility Settings...
+options.accessibility.title=Accessibility Settings
+options.accessibility.uiSpeech=UI Speech
+options.accessibility.chatSpeech=Chat Speech
+options.broadcast=Broadcast...
+options.broadcast.title=Broadcast Settings
+options.perspective=POV
+options.perspective.own=Own
+options.perspective.back=3rd Back
+options.perspective.front=3rd Front
+options.showCoordinates=Show Coordinates
+options.profile=Profile...
+options.profile.title=User and Profile Options
+options.sounds=Music & Sounds...
+options.sounds.title=Music & Sound Options
+options.music=Music Volume
+options.sound=Sound Volume
+options.video=Video Settings...
+options.video.title=Video Settings
+options.graphics=Graphics
+options.graphics.fancy=Fancy
+options.graphics.fast=Fast
+options.fov.dynamic=Dynamic FOV
+options.guiScale.optionName=GUI Scale
+options.ao=Smooth Lighting
+options.gamma=Brightness
+options.fullscreen=Fullscreen
+options.skies=Skies
+options.skies.fancy=Fancy
+options.skies.fast=Fast
+options.transparentleaves=Leaves
+options.transparentleaves.fancy=Fancy
+options.transparentleaves.fast=Fast
+options.bubbleparticles=Bubbles
+options.bubbleparticles.fancy=Fancy
+options.bubbleparticles.fast=Fast
+options.selection=Selection
+options.selection.outline=Outline
+options.selection.highlight=Highlight
+options.hud=HUD
+options.hand=Hand
+options.paperdoll=Paper Doll
+options.autosaveicon=Show Autosave Icon
+options.ingamePlayerNames=In-game Names
+options.maxFramerate=Max Framerate
+options.renderClouds=Clouds
+options.interfaceOpacity=HUD Opacity
+options.uiprofile=Interface
+options.uiprofile.classic=Classic
+options.uiprofile.pocket=Pocket
+options.viewBobbing=View Bobbing
+options.language=Language...
+options.language.title=Language...
+options.languageWarning=Language translations may not be 100%% accurate
+options.storage=Storage...
+options.storage.title=Storage Management
+options.resourcepack=Resource Packs...
+options.behaviorpack=Behavior Packs...
+options.controls=Controls...
+options.controls.mouse=Mouse
+options.controls.controller=Controller
+options.controls.touch=Touch
+controls.title=Controls
+options.autojump=Auto-Jump
+options.buttonSize=Button Size
+options.mouse=Mouse...
+options.mouseSettings=Mouse Settings...
+options.mouseSettings.title=Mouse Settings
+options.controller=Controller...
+options.controllerSettings=Controller Settings...
+options.controllerSettings.title=Controller Settings
+options.touch=Touch...
+
+resourcePacks.title=Select Resource Packs
+resourcePacks.behavior.title=Select Behavior Packs
+resourcePack.available.title=§lAvailable Resource Packs
+resourcePack.selected.title=§lSelected Resource Packs
+resourcePack.behavior.available.title=§lAvailable Behavior Packs
+resourcePack.behavior.selected.title=§lSelected Behavior Packs
+options.resourcePacks.defaultTexture.description=The Default Pack for Minecraft.
+resourcePack.forcePlayers=Force Players
+resourcePack.available.add=Activate
+button.add=Activate
+button.remove=Deactivate
+$button.add=Activate
+$button.remove=Deactivate
+resourcePack.selected.remove=Deactivate
+resourcePack.forcePlayersInfo=(Players only can join if they accept to use your resource packs)
+map.position=XYZ: %s / %s / %s
+
+container.inventory=Inventory
+container.crafting=Crafting
+container.repair.cost=Enchantment Cost: %1$d
+container.grindstone_title=Repair & Disenchant
+container.cartography_table=Cartography Table
+container.enchant=Enchant
+container.stonecutter=Stonecutter
+
+merchant.trades=Trades
+
+itemGroup.construction=Construction
+itemGroup.equipment=Equipment
+itemGroup.items=Items
+itemGroup.nature=Nature
+itemGroup.search=Search Items
+itemGroup.inventory=Survival Inventory
+inventory.binSlot=Destroy Item
+
+advMode.setCommand=Set Console Command for Block
+advMode.command=Console Command
+advMode.nearestPlayer=Use \"@p\" to target nearest player
+advMode.randomPlayer=Use \"@r\" to target random player
+advMode.allPlayers=Use \"@a\" to target all players
+advMode.allEntities=Use \"@e\" to target all entities
+advMode.self=Use \"@s\" to target the executing entity
+advMode.previousOutput=Previous Output
+advMode.mode.sequence=Chain
+advMode.mode.auto=Repeat
+advMode.mode.redstone=Impulse
+advMode.mode.conditional=Conditional
+advMode.mode.unconditional=Unconditional
+advMode.mode.redstoneTriggered=Needs Redstone
+advMode.mode.autoexec.bat=Always Active
+advMode.tickexec=Execute on First Tick
+
+block.minecraft.beacon.primary=Primary Power
+block.minecraft.beacon.secondary=Secondary Power
+
+structure_block.title=Structure Block
+structure_block.structure_name=Structure Name
+structure_block.position=Relative Position
+structure_block.size=Structure Size
+structure_block.mode.save=Save
+structure_block.mode.load=Load
+structure_block.mode.data=Data
+structure_block.mode.3d.export=Export
+structure_block.mode_info.save=Save mode - write to file
+structure_block.mode_info.load=Load mode - load from file
+structure_block.mode_info.data=Data mode - game logic marker
+structure_block.mode_info.3d.export=3D Export mode
+structure_block.button.save=SAVE
+structure_block.button.load=LOAD
+structure_block.reset=Reset
+structure_block.remove_blocks=Remove blocks:
+structure_block.remove_blocks.remove=REMOVE
+structure_block.include_entities=Include entities:
+structure_block.include_players=Include players:
+structure_block.show_structure=Show structure viewer:
+structure_block.hide_structure=Hide Structure Viewer
+structure_block.redstone_save=Redstone save to:
+structure_block.redstone_save.memory=MEMORY
+structure_block.redstone_save.disk=DISK
+
+astral.a=§fAbout
+astral.features=§9Clean and Neat Visuals
+
+astral.features1=§9Quick Toggles for View, Hand and HUD
+
+astral.features2=§9Ulocked settings such as Max Framerate, V-Sync, 
+astral.features3=§9Debug UI (beta only) and able to change your language in-game.
+
+astral.features4=§9Chroma Selection Box and Circle (for mobile), 
+astral.features5=§9Fullbright, Fast Grass and Clear Water."
+
+astral.features6=§9Autocomplete feature on chat. (for mobile)
+
+astral.features7=§9Less Intrusive Minecraft Textures 
+astral.features8=§9and Quieter Sounds for nether portals etc.
+
+astral.features9=§9A built in 4x4 Pack for Max FPS.
+
+astral.features10=§9A built in 16x16 Default Edit Special Astral Client PvP Pack 
+astral.features11=§9for fellow pvpers out there.
+
+
+dis.1=§cMinecraft classes. It is a simply a concept in a form of a
+dis.2=§cresource pack that shows what the future of
+dis.3=§cMinecraft Bedrock Edition clients might look like.
+dev.1=§dZenFrosty#6434, MichaelBricks#4477
+client.1=client-resource pack for Minecraft Bedrock Edition.
+credits.1=§dCREDITS:
+credits.2=§egengHAr15 §f(Chroma Selection) (It wasn't actually praxer.)
+credits.3=§eWe don't use HJN's home screen anymore in this version.
+credits.4=§eIForgotToBreath §f(NoFog)
+credits.5=§eOffroaders 123 §f(Dark Mode GUI)
+credits.61=§eDerpyPlayz18 §f(Less Intrusive Textures)
+credits.63=§eFhizzle §f(SimpleTweaks / Addition to the Less Intrusive Textures)
+
+credits.7=§dOther than that, code taken from:
+credits.9=§dhttps://github.com/ZtechNetwork/MCBVanillaResourcePack
+credits.10=§dhttps://www.minecraft.net/en-us/addons/
+
+
+credits.11=§fSpecial thanks to PolrFlare, Azka, Omotivation and Kim
+credits.12=§ffor the White outline selection, particle multiplier and the new panorama and logo.
+
+item.golden_apple.name=§bGapple
+item.appleEnchanted.name=§bGod Apple
+
+##  Start
+menu.play=Play Game
+menu.options=Options...
+menu.quit=Quit Game
+menu.store=Minecraft Marketplace
+
+##  Accessibility Settings
+options.enableChatTextToSpeech=TTS For Chat
+options.enableAutoPlatformTextToSpeech=TTS with Device
+options.enableUITextToSpeech=UI Screen Reader
+options.enableOpenChatMessage=Open Chat Message
+
+##  Video Settings
+options.graphics.fancy.tooltip=Fancy graphics balances performance and quality for the majority of machines. Weather, clouds and particles may not appear behind translucent blocks or water.
+options.graphics.fast.tooltip=Fast graphics reduces the amount of visible rain and snow. Transparency effects are disabled for various blocks such as tree-leaves.
+
+options.vsync=Use VSync
+options.vsync.off=OFF
+options.vsync.on=ON
+options.vsync.adaptive=Adaptive
+
+options.renderClouds=Clouds
+
+options.maxFramerate=Max Framerate
+
+options.fov.toggle=FOV Can Be Altered
+
+options.thirdperson=Perspective
+options.thirdperson.firstperson=1st Person
+options.thirdperson.thirdpersonback=3rd Person Back
+options.thirdperson.thirdpersonfront=3rd Person Front
+
+##  Packs
+pack.available.title=§lAvailable
+pack.selected.title=§lSelected
+
+resourcePack.title=Select Resource Packs
+dataPack.title=Select Data Packs
+
+selectWorld.resourcePack=Resource
+selectWorld.dataPack=Data
+
+pack.resources.dropInfo=Drag and drop files into "resource_packs" folder directory to add Packs
+pack.data.dropInfo=Drag and drop files into "behavior_packs" folder directory to add Packs
+
+##  Recipe Book
+gui.recipebook.search_hint=§oSearch...
+gui.recipebook.toggleRecipes.all=Showing all
+gui.recipebook.toggleRecipes.craftable=Showing craftable
+gui.recipebook.toggleRecipes.smeltable=Showing smeltable
+gui.recipebook.toggleRecipes.blastable=Showing blastable
+gui.recipebook.toggleRecipes.smokable=Showing smokable
+
+## Creative
+inventory.binSlot=Destroy Item
+
+##  Trade v2
+merchant.deprecated=Villagers restock up to two times per day
+
+##  Worlds
+selectWorld.tooltip.beta=Don't forget to backup this world before you load it in this beta.
+
+##  Realms
+mco.selectServer.popup=Realms is a safe, simple way to enjoy an online Minecraft world with up to ten friends at a time.   It supports loads of minigames and plenty of custom worlds! Only the owner of the realm needs to pay.
+
+##  Toggle OFF/ON
+options.off=OFF
+options.on=ON
+
+##  Realms
+mco.invites.title=Pending Invites
+mco.invites.pending=New invites!
+mco.invites.nopending=No pending invites!
+mco.invites.button.accept=Accept
+mco.invites.button.reject=Reject
+
+## Profile Screen
+profile.user=User
+profile.connected=Connected
+
+## Gamerule
+selectWorld.gameRules=Game Rules
+  
+editGamerule.title=Edit game rules
+editGamerule.default=Default: 
+
+gamerule.doImmediateRespawn=Respawn immediately
+gamerule.keepInventory=Keep inventory after death
+gamerule.naturalRegeneration=Regenerate health
+gamerule.spawnRadius=Respawn location radius
+gamerule.doMobSpawning=Spawn mobs
+gamerule.doMobSpawning.description=Some entities might have separate rules
+gamerule.doEntityDrops=Drop entity equipment
+gamerule.doEntityDrops.description=Controls drops from minecarts (including inventories), item frames, boats, etc.
+gamerule.doMobLoot=Drop mob loot
+gamerule.doMobLoot.description=Controls resource drops, including experience orbs
+gamerule.doTileDrops=Drop blocks
+gamerule.doTileDrops.description=Controls resource drops, including experience orbs
+gamerule.doDaylightCycle=Advance in-game time
+gamerule.doFireTick=Update fire
+gamerule.doWeatherCycle=Update weather
+gamerule.randomTickSpeed=Random tick speed rate
+gamerule.mobGriefing=Mob Griefing
+gamerule.category.player=§lPlayer
+gamerule.category.mobs=§lMobs
+gamerule.category.spawning=§lSpawning
+gamerule.category.drops=§lDrops
+gamerule.category.updates=§lWorld updates
+gamerule.category.misc=§lMiscellaneous
+
+##  Raid Texts Input
+raid.name=Raid	#
+raid.progress=Mobs remaining:	#
+
+##  Raid Texts Output
+bar.event.raid.name=Raid	#
+bar.event.raid.remaining.2=Raid - Mobs remaining: 2	#
+bar.event.raid.remaining.1=Raid - Mobs remaining: 1	#
+bar.event.raid.remaining.0=Raid - Mobs remaining: 0	#

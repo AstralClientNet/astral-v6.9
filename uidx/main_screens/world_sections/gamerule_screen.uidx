@@ -1,0 +1,790 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "gamerule_dx",
+
+  "gamerule_hover_text": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 4, 3 ],
+    "size": [ "100%cm", "100%c" ],
+    "$default_value_text|default": "false",
+    "$ignore_gamerule_description|default": true,
+    "controls": [
+      {
+        "command_panel": {
+          "type": "panel",
+          "size": [ "100%cm", 12 ],
+          "controls": [
+            {
+              "command_text@common_dx.hover_text_label": {
+                "color": [ 1.0, 1.0, 0.33 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 0 ,0 ],
+                "size": [ "default", "default" ],
+                "text": "$gamerule_command_text"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "description_panel": {
+          "type": "panel",
+          "size": [ "100%cm", "100%cm" ],
+          "ignored": "$ignore_gamerule_description",
+          "controls": [
+            { 
+              "description_text_text@common_dx.hover_text_label": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "font_scale_factor": 1.0,
+                "line_padding": 0.0,
+                "offset": [ 0 ,-1 ],
+                "$description_text_size|default": [ "default", "default" ],
+                "size": "$description_text_size",
+                "text": "$gamerule_description_text"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "default_value_text_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", 10 ],
+          "controls": [
+            {
+              "default_panel": {
+                "type": "panel",
+                "size": [ "100%cm", 10 ],
+                "controls": [
+                  { 
+                    "default_text@common_dx.hover_text_label": {
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "offset": [ 0 ,0 ],
+                      "color": [ 0.6667, 0.6667, 0.6667 ],
+                      "size": [ "default", 10 ],
+                      "text": "editGamerule.default"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "value_panel": {
+                "type": "panel",
+                "size": [ "100%cm", 10 ],
+                "controls": [
+                  { 
+                    "default_value_text@common_dx.hover_text_label": {
+                      "anchor_from": "top_left",
+                      "anchor_to": "top_left",
+                      "offset": [ 0 ,0 ],
+                      "color": [ 0.6667, 0.6667, 0.6667 ],
+                      "size": [ "default", 10 ],
+                      "text": "$default_value_text"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Stack panels ////*/
+  
+  "panel_cotent": {
+    "type": "stack_panel",
+    "size": [ 220, "100%c" ],
+    "$categorie_shadow": true,
+    "$ignore_hover_text": false,
+    "$hover_text_label_control": "gamerule_dx.gamerule_hover_text",
+    "controls": [
+      { 
+        "players_categorie_label@controls_dx.categories_text_panel": {
+          "$categorie_text": "gamerule.category.player",
+          "$categorie_color|default": [ 1.0, 1.0, 0.33 ],
+          "$categorie_text_offset": [ 0, 8 ],
+          "size": [ "100%", 28 ]
+        }
+      },
+      {
+        "panel_0@start_dx.stacked_row": {
+          "controls": [
+            {
+              "immediate_respawn_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "doImmediateRespawn",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.worldSettings",
+                "$option_label": "gamerule.doImmediateRespawn",
+                "$option_binding_name": "#immediaterespawn",
+                "$option_enabled_binding_name": "#immediaterespawn_enabled",
+                "$toggle_name": "doimmediaterespawn",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_1@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "keep_inventory_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$gamerule_command_text": "keepInventory",
+                "bindings": [
+                  {
+                    "binding_name": "(not #keep_inventory_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "keep_inventory_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "keepInventory",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "$option_label": "gamerule.keepInventory",
+                "$option_binding_name": "#keep_inventory",
+                "$option_enabled_binding_name": "#keep_inventory_enabled",
+                "$toggle_name": "keep_inventory",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_2@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "natural_regeneration_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "naturalRegeneration",
+                "$default_value_text": "true",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.worldSettings",
+                "$option_label": "gamerule.naturalRegeneration",
+                "$option_binding_name": "#natural_regeneration",
+                "$option_enabled_binding_name": "#natural_regeneration_enabled",
+                "$toggle_name": "natural_regeneration",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "pvp_panel@start_dx.stacked_row": {
+          "controls": [
+            {
+              "pvp_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "pvp",
+                "$default_value_text": "true",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "ignored": "$education_edition",
+                "$option_label": "createWorldScreen.pvp",
+                "$option_binding_name": "#pvp",
+                "$option_enabled_binding_name": "#pvp_enabled",
+                "$toggle_name": "pvp",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_3@start_dx.stacked_row": {
+          "controls": [
+            {
+              "respawn_radius@settings_common_dx.option_text_edit_alt": {
+                "$gamerule_command_text": "spawnRadius",
+                "$default_value_text": "5",
+                "offset": [ 0, -1 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "gamerule.spawnRadius",
+                "$option_binding_name": "#respawn_radius",
+                "$option_enabled_binding_name": "#respawn_radius_enabled",
+                "$text_box_name": "respawn_radius_text_box",
+                "$max_text_edit_length": 8,
+                "$text_edit_box_text_type": "NumberChars"
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "mobs_categorie_label@controls_dx.categories_text_panel": {
+          "$categorie_text": "gamerule.category.mobs",
+          "$categorie_color|default": [ 1.0, 1.0, 0.33 ],
+          "$categorie_text_offset": [ 0, 4 ],
+          "size": [ "100%", 24 ],
+          "ignored": "$education_edition"
+        }
+      },
+      {
+        "panel_4@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "mob_griefing_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$default_value_text": "true",
+                "$gamerule_command_text": "mobGriefing",
+                "bindings": [
+                  {
+                    "binding_name": "(not #mob_griefing_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "mob_griefing_toggle@settings_common_dx.option_toggle_alt": {
+                "$default_value_text": "true",
+                "$gamerule_command_text": "mobGriefing",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "$option_label": "gamerule.mobGriefing",
+                "$option_binding_name": "#mob_griefing",
+                "$option_enabled_binding_name": "#mob_griefing_enabled",
+                "$toggle_name": "mob_griefing",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "generate_categorie_label@controls_dx.categories_text_panel": {
+          "$categorie_text": "gamerule.category.spawning",
+          "$categorie_color|default": [ 1.0, 1.0, 0.33 ],
+          "$categorie_text_offset": [ 0, 4 ],
+          "size": [ "100%", 24 ],
+          "ignored": "$education_edition"
+        }
+      },
+      {
+        "panel_5@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "mob_spawn_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$default_value_text": "true",
+                "$gamerule_command_text": "doMobSpawning",
+                "$gamerule_description_text": "gamerule.doMobSpawning.description",
+                "$ignore_gamerule_description": false,
+                "$description_text_size": [ 122, "default" ],
+                "bindings": [
+                  {
+                    "binding_name": "(not #mob_spawn_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "mob_spawn_toggle@settings_common_dx.option_toggle_alt": {
+                "$default_value_text": "true",
+                "$gamerule_command_text": "doMobSpawning",
+                "$gamerule_description_text": "gamerule.doMobSpawning.description",
+                "$ignore_gamerule_description": false,
+                "$description_text_size": [ 122, "default" ],
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "$option_label": "gamerule.doMobSpawning",
+                "$option_binding_name": "#mob_spawn",
+                "$option_enabled_binding_name": "#mob_spawn_enabled",
+                "$toggle_name": "mob_spawn",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "drops_categorie_label@controls_dx.categories_text_panel": {
+          "$categorie_text": "gamerule.category.drops",
+          "$categorie_color|default": [ 1.0, 1.0, 0.33 ],
+          "$categorie_text_offset": [ 0, 4 ],
+          "size": [ "100%", 24 ],
+          "ignored": "$education_edition"
+        }
+      },
+      {
+        "panel_6@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "entities_drop_loot_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$default_value_text": "true",
+                "$gamerule_description_text": "gamerule.doEntityDrops.description",
+                "$ignore_gamerule_description": false,
+                "$description_text_size": [ 130, "default" ],
+                "$gamerule_command_text": "doEntityDrops",
+                "bindings": [
+                  {
+                    "binding_name": "(not #entities_drop_loot_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "entities_drop_loot_toggle@settings_common_dx.option_toggle_alt": {
+                "$default_value_text": "true",
+                "$gamerule_description_text": "gamerule.doEntityDrops.description",
+                "$ignore_gamerule_description": false,
+                "$description_text_size": [ 130, "default" ],
+                "$gamerule_command_text": "doEntityDrops",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "$option_label": "gamerule.doEntityDrops",
+                "$option_binding_name": "#entities_drop_loot",
+                "$option_enabled_binding_name": "#entities_drop_loot_enabled",
+                "$toggle_name": "entities_drop_loot",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "mob_loot_panel@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "mob_loot_toggle@settings_common_dx.option_toggle_alt": {
+                "$default_value_text": "true",
+                "$gamerule_description_text": "gamerule.doMobLoot.description",
+                "$ignore_gamerule_description": false,
+                "$description_text_size": [ 140, "default" ],
+                "$gamerule_command_text": "doMobLoot",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.worldSettings",
+                "ignored": "$education_edition",
+                "$option_label": "gamerule.doMobLoot",
+                "$option_binding_name": "#mob_loot",
+                "$option_enabled_binding_name": "#mob_loot_enabled",
+                "$toggle_name": "mob_loot",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_7@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "tile_drops_toggle@settings_common_dx.option_toggle_alt": {
+                "$default_value_text": "true",
+                "$gamerule_description_text": "gamerule.doTileDrops.description",
+                "$ignore_gamerule_description": false,
+                "$description_text_size": [ 140, "default" ],
+                "$gamerule_command_text": "doTileDrops",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.worldSettings",
+                "$option_label": "gamerule.doTileDrops",
+                "$option_binding_name": "#tile_drops",
+                "$option_enabled_binding_name": "#tile_drops_enabled",
+                "$toggle_name": "tile_drops",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "worlds_categorie_label@controls_dx.categories_text_panel": {
+          "$categorie_text": "gamerule.category.updates",
+          "$categorie_color|default": [ 1.0, 1.0, 0.33 ],
+          "$categorie_text_offset": [ 0, 4 ],
+          "size": [ "100%", 24 ],
+          "ignored": "$education_edition"
+        }
+      },
+      {
+        "always_day_panel@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "always_day_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$gamerule_command_text": "alwaysDay",
+                "bindings": [
+                  {
+                    "binding_name": "(not #always_day_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "always_day_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "alwaysDay",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "$option_label": "createWorldScreen.alwaysDay",
+                "$option_binding_name": "#always_day",
+                "$option_enabled_binding_name": "#always_day_enabled",
+                "$toggle_name": "always_day",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_8@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "daylight_cycle_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$gamerule_command_text": "doDaylightCycle",
+                "$default_value_text": "true",
+                "bindings": [
+                  {
+                    "binding_name": "(not #daylight_cycle_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "daylight_cycle_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "doDaylightCycle",
+                "$default_value_text": "true",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "$option_label": "gamerule.doDaylightCycle",
+                "$option_binding_name": "#daylight_cycle",
+                "$option_enabled_binding_name": "#daylight_cycle_enabled",
+                "$toggle_name": "daylight_cycle",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tnt_explodes_panel@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "tnt_explodes_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "tntexplodes",
+                "$default_value_text": "true",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.worldSettings",
+                "ignored": "$education_edition",
+                "$option_label": "createWorldScreen.tntexplodes",
+                "$option_binding_name": "#tnt_explodes",
+                "$option_enabled_binding_name": "#tnt_explodes_enabled",
+                "$toggle_name": "tnt_explodes",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_9@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "fire_spreads_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "doFireTick",
+                "$default_value_text": "true",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.worldSettings",
+                "ignored": "$education_edition",
+                "$option_label": "gamerule.doFireTick",
+                "$option_binding_name": "#fire_spreads",
+                "$option_enabled_binding_name": "#fire_spreads_enabled",
+                "$toggle_name": "fire_spreads",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_10@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "weather_cycle_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$gamerule_command_text": "doWeatherCycle",
+                "$default_value_text": "true",
+                "bindings": [
+                  {
+                    "binding_name": "(not #always_day_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "weather_cycle_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "doWeatherCycle",
+                "$default_value_text": "true",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "ignored": "$education_edition",
+                "$option_label": "gamerule.doWeatherCycle",
+                "$option_binding_name": "#weather_cycle",
+                "$option_enabled_binding_name": "#weather_cycle_enabled",
+                "$toggle_name": "weather_cycle",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_11@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "random_tick_speed_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 66, "100%" ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$gamerule_command_text": "randomTickSpeed",
+                "$default_value_text": "1",
+                "bindings": [
+                  {
+                    "binding_name": "(not #random_tick_speed_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "random_tick_speed@settings_common_dx.option_text_edit_alt": {
+                "$gamerule_command_text": "randomTickSpeed",
+                "$default_value_text": "1",
+                "offset": [ 0, -1 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$with_button": true,
+                "$option_label": "gamerule.randomTickSpeed",
+                "$option_binding_name": "#random_tick_speed",
+                "$option_enabled_binding_name": "#random_tick_speed_enabled",
+                "$max_text_edit_length": 4,
+                "$text_edit_box_text_type": "NumberChars",
+                "$option_text_edit_control_size": [ "50%", "100%" ],
+                "$text_box_name": "random_tick_speed_text_box",
+                "$button_content": "common_buttons_dx.reset_icon",
+                "$button_text": "createWorldScreen.randomtickspeed.reset",
+                "$pressed_button_name": "reset_random_tick_speed"
+              }
+            }
+          ]
+        }
+      },
+      { 
+        "misc_categorie_label@controls_dx.categories_text_panel": {
+          "$categorie_text": "gamerule.category.misc",
+          "$categorie_color|default": [ 1.0, 1.0, 0.33 ],
+          "$categorie_text_offset": [ 0, 4 ],
+          "size": [ "100%", 24 ],
+          "ignored": "$education_edition"
+        }
+      },
+      {
+        "panel_13@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "show_coordinates_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "showCoordinates",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "createWorldScreen.showCoordinates",
+                "$option_binding_name": "#show_coordinates",
+                "$option_enabled_binding_name": "#show_coordinates_enabled",
+                "$toggle_name": "show_coordinates",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_14@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "controls": [
+            {
+              "command_blocks_enabled_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$gamerule_command_text": "commandblocksenabled",
+                "$default_value_text": "true",
+                "bindings": [
+                  {
+                    "binding_name": "(not #command_blocks_enabled_on)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "command_blocks_enabled_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "commandblocksenabled",
+                "$default_value_text": "true",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "ignored": "$education_edition",
+                "$option_label": "createWorldScreen.commandblocksenabled",
+                "$option_binding_name": "#command_blocks_enabled",
+                "$option_enabled_binding_name": "#command_blocks_enabled_on",
+                "$toggle_name": "command_blocks_enabled",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP",
+                "$toggle_binding_condition": "always_when_visible"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "education_panel@start_dx.stacked_row": {
+          "ignored": "$education_edition",
+          "$is_last_button": true,
+          "controls": [
+            {
+              "education_toggle_disabled@video_dx.hover_text_button_panel": {
+                "size": [ 44, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$gamerule_command_text": "Education",
+                "bindings": [
+                  {
+                    "binding_name": "(not #education_toggle_enabled)",
+                    "binding_name_override": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "education_toggle@settings_common_dx.option_toggle_alt": {
+                "$gamerule_command_text": "Education",
+                "size": [ 220, 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$tts_section_header": "createWorldScreen.cheatSettings",
+                "$option_label": "createWorldScreen.educationtoggle",
+                "$option_binding_name": "#education_toggle",
+                "$option_enabled_binding_name": "#education_toggle_enabled",
+                "$toggle_name": "education_toggle",
+                "$focus_override_right": "FOCUS_OVERRIDE_STOP"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Scrolling Panel ////*/
+  
+  "scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 256, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "gamerule_dx.panel_cotent"
+  },
+
+  /*//// Screen ////*/
+  
+  "gamerule_label@settings_dx.base_label": {
+    "text": "editGamerule.title",
+    "offset": [ 0, 19 ]
+  },
+
+  "gamerule_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content_size": [ "100%", 43 ],
+    "$top_content": "gamerule_dx.gamerule_label",
+    "$middle_content": "gamerule_dx.scrolling_panel",
+    "$bottom_content": "gamerule_dx.done_panel"
+  },
+
+  "done_panel": {
+    "type": "panel",
+    "controls": [
+      { "more_world_options_done_button@create_world_dx.more_world_options_done_button": { "size": [ 200, 20 ] } }
+    ]
+  }
+}

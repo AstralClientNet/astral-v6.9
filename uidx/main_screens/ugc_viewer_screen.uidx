@@ -1,0 +1,310 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "ugc_viewer_dx",
+
+  "seed_grid_items_main@ugc_viewer_dx.seed_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 2 ],
+    "layer": 2,
+    "$ignore_select_button": true,
+    "$item_control": "ugc_viewer_dx.seed_items_buttons_panel"
+  },
+
+  "seed_grid_items_bottom@ugc_viewer_dx.seed_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  "seed_items_buttons_panel": {
+    "type": "panel",
+    "size": [ "100%", 38 ],
+    "$item_mode|default": "default",
+    "$grid_item_template": "ugc_viewer_dx.seed_items_buttons",
+    "controls": [
+      { "hold_grid_panel@common_play_grid_dx.hold_grid_panel": {} }
+    ]
+  },
+  
+  "seed_items_buttons@common_play_grid_dx.play_main_buttons": {
+    "size": [ "100%", 38 ],
+    "$is_custom_button": false
+  },
+
+  /*//// Grid Items ////*/
+
+  "seed_grid_items@cris_play_grid_items.base_panel": {
+    "controls": [
+      { "001@$item_control": { "$item_number": "001", "$item_index": 1 } },
+      { "002@$item_control": { "$item_number": "002", "$item_index": 2 , "$item_position": [ 0, 1  ] } },
+      { "003@$item_control": { "$item_number": "003", "$item_index": 3 , "$item_position": [ 0, 2  ] } },
+      { "004@$item_control": { "$item_number": "004", "$item_index": 4 , "$item_position": [ 0, 3  ] } },
+      { "005@$item_control": { "$item_number": "005", "$item_index": 5 , "$item_position": [ 0, 4  ] } },
+      { "006@$item_control": { "$item_number": "006", "$item_index": 6 , "$item_position": [ 0, 5  ] } },
+      { "007@$item_control": { "$item_number": "007", "$item_index": 7 , "$item_position": [ 0, 6  ] } },
+      { "008@$item_control": { "$item_number": "008", "$item_index": 8 , "$item_position": [ 0, 7  ] } },
+      { "009@$item_control": { "$item_number": "009", "$item_index": 9 , "$item_position": [ 0, 8  ] } },
+      { "010@$item_control": { "$item_number": "010", "$item_index": 10, "$item_position": [ 0, 9  ] } },
+      { "011@$item_control": { "$item_number": "011", "$item_index": 11, "$item_position": [ 0, 10 ] } },
+      { "012@$item_control": { "$item_number": "012", "$item_index": 12, "$item_position": [ 0, 11 ] } },
+      { "013@$item_control": { "$item_number": "013", "$item_index": 13, "$item_position": [ 0, 12 ] } },
+      { "014@$item_control": { "$item_number": "014", "$item_index": 14, "$item_position": [ 0, 13 ] } },
+      { "015@$item_control": { "$item_number": "015", "$item_index": 15, "$item_position": [ 0, 14 ] } },
+      { "016@$item_control": { "$item_number": "016", "$item_index": 16, "$item_position": [ 0, 15 ] } },
+      { "017@$item_control": { "$item_number": "017", "$item_index": 17, "$item_position": [ 0, 16 ] } },
+      { "018@$item_control": { "$item_number": "018", "$item_index": 18, "$item_position": [ 0, 17 ] } }
+    ]
+  },
+
+  "ugc_bottom_buttons": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 100, 20 ],
+    "controls": [
+      {
+        "use_seed_button@common_buttons_dx.main_button": {
+          "size": [ 100, 20 ],
+          "layer": 37,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$button_text": "createWorld.customize.presets.select",
+          "$pressed_button_name": "button.ugc_item",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Grid ////*/
+  
+  "seed_button": {
+    "type": "panel",
+    "size": [ "100%", 38 ],
+    "$button_content": "ugc_viewer_dx.button_content",
+    "controls": [
+      { "button_content@$button_content": { } }
+    ]
+  },
+
+  "button_content": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%-12px", "100%-4px" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 1 ],
+    "layer": 5,
+    "controls": [
+      {
+        "picture": {
+          "type": "panel",
+          "size": [ 34, "100%" ],
+          "controls": [
+            {
+              "seed_icon": {
+                "type": "image",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$fit_to_width": [ 32, 32 ],
+                "force_texture_reload": true,
+                "size": [ 32, 32 ],
+                "fill": true,
+                "offset": [ 1, 1 ],
+                "layer": 2,
+                "bindings": [
+                  {
+                    "binding_name": "#texture_name",
+                    "binding_name_override": "#texture",
+                    "binding_type": "collection",
+                    "binding_collection_name": "ugc_items"
+                  },
+                  {
+                    "binding_name": "#texture_locationtype",
+                    "binding_name_override": "#texture_file_system",
+                    "binding_type": "collection",
+                    "binding_collection_name": "ugc_items"
+                  }
+                ]
+              }
+            },
+            {
+              "border": {
+                "type": "image",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ 34, 34 ],
+                "layer": 1,
+                "texture": "textures/uidx/java_menu_presets_select_grid"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ 4, "100%" ]
+        }
+      },
+      {
+        "text_panel": {
+          "type": "panel",
+          "size": [ "fill", "100%" ],
+          "controls": [
+            { "text_panel@ugc_viewer_dx.text_panel": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "text_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "world_label": {
+          "type": "label",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 0, 14 ],
+          "color": [ 1.0, 1.0, 1.0 ],
+          "text": "#text",
+          "size": [ "100%", "default" ],
+          "bindings": [
+            {
+              "binding_type": "collection",
+              "binding_collection_name": "ugc_items",
+              "binding_name": "#text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Scroll stack panels ////*/
+  
+  "seed_picker_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "size": [ 220, "100%c" ],
+    "clips_children": true,
+    "controls": [
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ "100%", 2 ],
+          "controls": [
+            { "seed_grid_items_main@ugc_viewer_dx.seed_grid_items_main": { } }
+          ]
+        }
+      },
+      {
+        "grid_content@ugc_viewer.grid_content": {
+          "grid_item_template": "ugc_viewer_dx.seed_button"
+        }
+      }
+    ]
+  },
+
+  /*//// Scroll panels ////*/
+  
+  "scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 260, "100%" ],
+    "$scroll_view_port_size_touch": [ 260, "100%" ],
+    "$scrolling_content": "ugc_viewer_dx.seed_picker_stack_panel"
+  },
+
+  /*//// Panels ////*/
+  
+  "main_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "ugc_viewer_dx.seed_picker_top_content",
+    "$top_content_size": [ "100%", 48 ],
+    "$middle_content": "ugc_viewer_dx.scrolling_panel",
+    "$bottom_content": "ugc_viewer_dx.seed_picker_bottom_content"
+  },
+
+  "seed_picker_top_content": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 310, 62 ],
+    "controls": [
+      {
+        "seed_picker_label@settings_dx.base_label": {
+          "text": "seedPicker.title",
+          "offset": [ 0, 7 ]
+        }
+      },
+      {
+        "search_box@common_dx.text_edit_box": {
+          "size": [ 202, 22 ],
+          "offset": [ 0, 21 ],
+          "$text_offset": [ 5, 6.5 ],
+          "$text_edit_clipping_panel_size": [ "100%-8px", 12 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "$text_background_default": "java_gui_common.text_input_java",
+          "$text_background_hover": "java_gui_common.text_input_java_hover",
+          "$text_background_locked": "java_gui_common.text_input_java_locked",
+          "$text_edit_box_content_binding_name": "#search_box_binding",
+          "$text_box_name": "#search_box_name",
+          "$place_holder_text": "seedPicker.search"
+        }
+      }
+    ]
+  },
+
+  "seed_picker_bottom_content": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -7 ],
+    "size": [ 205, 20 ],
+    "controls": [
+      { "seed_grid_items_bottom@ugc_viewer_dx.seed_grid_items_bottom": { } },
+      {
+        "use_seed_button_locked@common_buttons_dx.locked": {
+          "size": [ 100, 20 ],
+          "$button_text": "createWorld.customize.presets.select",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "layer": 4
+        }
+      },
+      {
+        "cancel_button@play_dx.cancel_button": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "size": [ 100, 20 ],
+          "layer": 4
+        }
+      }
+    ]
+  },
+
+  /*//// Screen ////*/
+  
+  "screen_content": {
+    "type": "panel",
+    "$item_mode": "seed_items",
+    "$toggle_name": "seed_toggle_items",
+    "$bottom_grid_item_template": "ugc_viewer_dx.ugc_bottom_buttons",
+    "$collection_name": "ugc_items",
+    "$middle_clips_children": false,
+    "controls": [
+      { "main_control@ugc_viewer_dx.main_screen_panel": {} }
+    ]
+  }
+}

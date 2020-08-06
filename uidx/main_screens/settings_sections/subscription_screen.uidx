@@ -1,0 +1,51 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "subscription_dx",
+
+  /*//// Stack panels ////*/
+  
+  "subscription_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 310, "100%c" ],
+    "controls":[
+      { 
+        "view_subscriptions_section@general_section.view_subscriptions_section": {
+          "ignored": "$education_edition"
+        }
+      }
+    ]
+  },
+
+  /*//// Scrolling Panel ////*/
+  
+  "subscription_scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 324, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "subscription_dx.subscription_stack_panel"
+  },
+
+  /*//// Screen ////*/
+  
+  "subscription_label@settings_dx.base_label": {
+    "text": "realmsSettingsScreen.subscriptionSectionTitle",
+    "offset": [ 0, 4 ]
+  },
+
+  "subscription_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "subscription_dx.subscription_label",
+    "$middle_content": "subscription_dx.subscription_scrolling_panel",
+    "$bottom_content": "subscription_dx.null_navigation_tab"
+  },
+  
+  "null_navigation_tab@settings_dx.null_navigation_tab": {
+    "size": [ 150, 20 ],
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -9 ],
+    "layer": 4
+  }
+}

@@ -1,0 +1,83 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "title_minecraft_java_dx",
+
+  "title_minecraft_base": {
+    "type": "image",
+    "texture": "assets/minecraft/textures/gui/title/minecraft",
+    "size": [ "100%", "100%" ],
+    "$title_minecraft_uv|default": [ 0, 0 ],
+    "$title_minecraft_uv_size|default": [ 0, 0 ],
+    "uv": "$title_minecraft_uv",
+    "uv_size": "$title_minecraft_uv_size"
+  },
+
+  /*//// Main Button ////*/
+
+  "title_left@title_minecraft_java_dx.title_minecraft_base": {
+    "size": [ 155, 44 ],
+    "variables": [
+      {
+        "requires": "($title_minecraft_resolution = 256x)",
+        "$title_minecraft_uv_size": [ 155, 44 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 512x)",
+        "$title_minecraft_uv_size": [ 310, 88 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 1024x)",
+        "$title_minecraft_uv_size": [ 620, 176 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 2048x)",
+        "$title_minecraft_uv_size": [ 1240, 352 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 4096x)",
+        "$title_minecraft_uv_size": [ 2480, 704 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 8192x)",
+        "$title_minecraft_uv_size": [ 4960, 1408 ]
+      }
+    ]
+  },
+
+  "title_right@title_minecraft_java_dx.title_minecraft_base": {
+    "size": [ 119, 44 ],
+    "variables": [
+      {
+        "requires": "($title_minecraft_resolution = 256x)",
+        "$title_minecraft_uv": [ 0, 45 ],
+        "$title_minecraft_uv_size": [ 119, 44 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 512x)",
+        "$title_minecraft_uv": [ 0, 90 ],
+        "$title_minecraft_uv_size": [ 238, 88 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 1024x)",
+        "$title_minecraft_uv": [ 0, 180 ],
+        "$title_minecraft_uv_size": [ 476, 176 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 2048x)",
+        "$title_minecraft_uv": [ 0, 360 ],
+        "$title_minecraft_uv_size": [ 952, 352 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 4096x)",
+        "$title_minecraft_uv": [ 0, 720 ],
+        "$title_minecraft_uv_size": [ 1904, 704 ]
+      },
+      {
+        "requires": "($title_minecraft_resolution = 8192x)",
+        "$title_minecraft_uv": [ 0, 1440 ],
+        "$title_minecraft_uv_size": [ 3808, 1408 ]
+      }
+    ]
+  }
+}

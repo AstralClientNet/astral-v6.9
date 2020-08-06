@@ -1,0 +1,9 @@
+{
+  "chat_screen": {
+    "$screen_content": "chat_dx.chat_screen_content",
+    "$screen_bg_content": "null",
+    "$use_loading_bars": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  }
+}

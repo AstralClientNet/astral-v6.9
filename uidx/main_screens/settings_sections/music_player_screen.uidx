@@ -1,0 +1,485 @@
+/*File made by @CrisXolt.
+//Original assets by AgentMindStorm (@agentms_)!*/
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "music_player_dx",
+
+  /*//// Information panel ////*/
+
+  "information_popup_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "popup_panel@realms_java_dx.popup": {
+          "size": [ 310, 166 ],
+          "layer": 150,
+          "controls": [
+            {
+              "close_button@common_toggles_dx.toggle_panel": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "layer": 154,
+                "offset": [ 4, 4 ],
+                "size": [ 12, 12 ],
+                "$is_back_button": true,
+                "$unchecked_control": "realms_java_dx.cross_icon_default",
+                "$unchecked_hover_control": "realms_java_dx.cross_icon_hover",
+                "$toggle_name": "music_player_popup_button",
+                "$tab_view_binding_name": "music_player_popup_close",
+                "$toggle_default_state": true,
+                "$toggle_group_forced_index": 0,
+                "$toggle_focus_enabled": false
+              }
+            },
+            {
+              "title_label": {
+                "type": "label",
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "font_type": "normal",
+                "font_scale_factor": 1.0,
+                "line_padding": 0.0,
+                "layer": 152,
+                "offset": [ 0, 6 ],
+                "color": "$title_text_color",
+                "text": "tab.music_player.show_information_section"
+              }
+            },
+            { "main_desc_panel@music_player_dx.1st_desc_panel": { } },
+            {
+              "page_2_panel": {
+                "type": "panel",
+                "controls": [
+                  { "main_desc_panel@music_player_dx.2nd_desc_panel": { } },
+                  {
+                    "page_3_panel": {
+                      "type": "panel",
+                      "controls": [
+                        { "main_desc_panel@music_player_dx.3rd_desc_panel": { } },
+                        {
+                          "page_4_panel": {
+                            "type": "panel",
+                            "controls": [
+                              { "main_desc_panel@music_player_dx.4th_desc_panel": { } },
+                              { "main_desc_panel@music_player_dx.5th_desc_panel": { } }
+                            ],
+                            "bindings": [
+                              {
+                                "binding_type": "view",
+                                "source_control_name": "page_4_view_toggle",
+                                "source_property_name": "#toggle_state",
+                                "target_property_name": "#visible"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "bindings": [
+                        {
+                          "binding_type": "view",
+                          "source_control_name": "page_3_view_toggle",
+                          "source_property_name": "#toggle_state",
+                          "target_property_name": "#visible"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "page_2_view_toggle",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "bg@common.button": {
+          "sound_name": "null",
+          "layer": 149,
+          "size": [ "100%", "100%" ],
+          "controls": [
+            { "bg@play.join_by_code_popup_background": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "left_button@common_toggles_dx.main_menu_button_toggle": {
+    "size": [ 20, 20 ],
+    "offset": [ 5, -5 ],
+    "$button_text": "<",
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "$toggle_default_state": true,
+    "$toggle_group_forced_index": 0,
+    "$toggle_focus_enabled": false,
+    "$is_custom_button": true,
+    "$custom_from_button_id": "button.menu_tab_left",
+    "$custom_to_button_id": "button.menu_ok",
+    "$custom_mapping_type": "global"
+  },
+
+  "right_button@common_toggles_dx.main_menu_button_toggle": {
+    "size": [ 20, 20 ],
+    "offset": [ -5, -5 ],
+    "$button_text": ">",
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "$toggle_group_forced_index": 1,
+    "$toggle_focus_enabled": false,
+    "$is_custom_button": true,
+    "$custom_from_button_id": "button.menu_tab_right",
+    "$custom_to_button_id": "button.menu_ok",
+    "$custom_mapping_type": "global"
+  },
+
+  "desc_label": {
+    "type": "label",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "font_type": "normal",
+    "font_scale_factor": 1.0,
+    "line_padding": 0.0,
+    "layer": 152,
+    "offset": [ 6, 25 ],
+    "size": [ 300, 134 ],
+    "color": "$title_text_color"
+  },
+
+  "1st_desc_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "desc_label@music_player_dx.desc_label": {
+          "text": "tab.music_player.information"
+        }
+      },
+      {
+        "right_button@music_player_dx.right_button": {
+          "$toggle_name": "2nd_page_button",
+          "$tab_view_binding_name": "page_2_view_toggle"
+        }
+      },
+      {
+        "bottom_page_text@music_player_dx.desc_label": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "default", "default" ],
+          "offset": [ 0, -10 ],
+          "text": "1 / 5"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "page_2_view_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "2nd_desc_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "left_button@music_player_dx.left_button": {
+          "$toggle_name": "2nd_page_button",
+          "$tab_view_binding_name": "page_1_view_toggle"
+        }
+      },
+      {
+        "desc_label@music_player_dx.desc_label": {
+          "text": "tab.music_player.information.stop_song"
+        }
+      },
+      {
+        "right_button@music_player_dx.right_button": {
+          "$toggle_name": "3rd_page_button",
+          "$tab_view_binding_name": "page_3_view_toggle"
+        }
+      },
+      {
+        "bottom_page_text@music_player_dx.desc_label": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "default", "default" ],
+          "offset": [ 0, -10 ],
+          "text": "2 / 5"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "page_3_view_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "3rd_desc_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "left_button@music_player_dx.left_button": {
+          "$toggle_name": "3rd_page_button",
+          "$tab_view_binding_name": "page_2_view_toggle"
+        }
+      },
+      {
+        "desc_label@music_player_dx.desc_label": {
+          "text": "tab.music_player.information.custom_music"
+        }
+      },
+      {
+        "right_button@music_player_dx.right_button": {
+          "$toggle_name": "4th_page_button",
+          "$tab_view_binding_name": "page_4_view_toggle"
+        }
+      },
+      {
+        "bottom_page_text@music_player_dx.desc_label": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "default", "default" ],
+          "offset": [ 0, -10 ],
+          "text": "3 / 5"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "page_4_view_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "4th_desc_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "left_button@music_player_dx.left_button": {
+          "$toggle_name": "4th_page_button",
+          "$tab_view_binding_name": "3rd_page_toggle"
+        }
+      },
+      {
+        "desc_label@music_player_dx.desc_label": {
+          "text": "$desc_text",
+          "$desc_text|default": "tab.music_player.information.no_automatic_music",
+          "variables": [
+            {
+              "requires": "(not $is_music_plus)",
+              "$desc_text": "tab.music_player.information.mute_music"
+            }
+          ]
+        }
+      },
+      {
+        "right_button@music_player_dx.right_button": {
+          "$toggle_name": "5th_page_button",
+          "$tab_view_binding_name": "page_5_view_toggle"
+        }
+      },
+      {
+        "bottom_page_text@music_player_dx.desc_label": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "default", "default" ],
+          "offset": [ 0, -10 ],
+          "text": "4 / 5"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "page_5_view_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "5th_desc_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "left_button@music_player_dx.left_button": {
+          "$toggle_name": "5th_page_button",
+          "$tab_view_binding_name": "4th_page_toggle"
+        }
+      },
+      {
+        "desc_label@music_player_dx.desc_label": {
+          "text": "tab.music_player.information.marketplace"
+        }
+      },
+      {
+        "bottom_page_text@music_player_dx.desc_label": {
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "size": [ "default", "default" ],
+          "offset": [ 0, -10 ],
+          "text": "5 / 5"
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "page_5_view_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  /*//// Stack panels ////*/
+
+  "music_player_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 310, "100%c" ],
+    "layer": 16,
+    "$always_show_information_section": false,
+    "$always_show_custom_section": false,
+    "$is_music_plus": true,
+    "controls": [
+      {
+        "fill_panel_0": {
+          "type": "panel",
+          "size": [ 1, 4 ]
+        }
+      },
+      {
+        "custom_section@music_player_section.music_player_custom_section": {
+          "bindings": "$custom_section_bindings",
+          "$custom_section_bindings|default": [
+            {
+              "binding_type": "view",
+              "source_control_name": "custom_section_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "variables": [
+            { "requires": "$always_show_custom_section", "$custom_section_bindings": [] }
+          ]
+        }
+      },
+      { "album_section@music_player_section.music_player_album_section": {} },
+      { "volume_alpha_section@music_player_section.music_player_volume_alpha_section": {} },
+      { "volume_beta_section@music_player_section.music_player_volume_beta_section": {} },
+      { "update_aquatic_section@music_player_section.music_player_update_aquatic_section": { "ignored": "(not $is_music_plus and not $pre_release)" } },
+      { "nether_update_section@music_player_section.music_player_nether_update_section": { "ignored": "(not $is_music_plus and not $pre_release)" } },
+      { "festive_remixes_section@music_player_section.music_player_festive_remixes_section": { "ignored": "(not $is_music_plus)" } },
+      { "other_section@music_player_section.music_player_other_section": {} }
+    ]
+  },
+
+  /*//// Scrolling Panel ////*/
+  
+  "music_player_scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 324, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "music_player_dx.music_player_stack_panel"
+  },
+
+  /*//// Screen ////*/
+
+  "music_player_top_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "music_player_label@settings_dx.base_label": {
+          "text": "tab.music_player.name",
+          "offset": [ 0, 4 ]
+        }
+      },
+      {
+        "information_button@common_toggles_dx.toggle_panel": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ -17, 6 ],
+          "size": [ 20, 20 ],
+          "$unchecked_control": "java_gui_common.help_default",
+          "$unchecked_hover_control": "java_gui_common.help_hover",
+          "$checked_control": "java_gui_common.help_default",
+          "$checked_hover_control": "java_gui_common.help_hover",
+          "$toggle_name": "music_player_popup_button",
+          "$tab_view_binding_name": "music_player_popup_toggle",
+          "$toggle_group_forced_index": 1
+        }
+      }
+    ]
+  },
+
+  "music_player_screen_panel@music_player_section.music_player_button_panel_base": {
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "music_player_screen_panel@common_menus_dx.java_menu_panel_template": {
+          "$top_content": "music_player_dx.music_player_top_content",
+          "$middle_content": "music_player_dx.music_player_scrolling_panel",
+          "$bottom_content": "music_player_dx.music_player_bottom_content"
+        }
+      },
+      {
+        "information_popup_panel@music_player_dx.information_popup_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "music_player_popup_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "custom_section_toggle@settings_common_dx.option_toggle_control": {
+    "size": [ 150, 20 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$option_label": "tab.music_player.show_custom_section",
+    "$toggle_name": "custom_section",
+    "$toggle_state_binding_name": "#custom_section"
+  },
+
+  "music_player_bottom_content": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -9 ],
+    "size": [ 310, 20 ],
+    "controls": [
+      { "custom_section_toggle@music_player_dx.custom_section_toggle": { } },
+      {
+        "null_navigation_tab@settings_dx.null_navigation_tab": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "layer": 4
+        }
+      }
+    ]
+  }
+}

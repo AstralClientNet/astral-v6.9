@@ -1,0 +1,8 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "realms_pending_invitations_screen": {
+    "$screen_content": "common_dx.null_panel",
+    "$screen_bg_content": "realms_invites_dx.realms_invitation_screen_content"
+  }
+}

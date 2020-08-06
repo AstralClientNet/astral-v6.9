@@ -1,0 +1,9 @@
+
+// This is to redirect the start screen to another start_screen so that Minecraft doesn't decide to overlap what is missing.
+{
+  "start_screen@common.base_screen": {
+    "$screen_content": "start_astral_screen.content",
+    "$screen_bg_content": "background.background",
+ 	  "$screen_animations": []
+  }
+}

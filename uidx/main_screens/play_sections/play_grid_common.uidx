@@ -1,0 +1,648 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "common_play_grid_dx",
+
+  "local_world_item": {
+    "type": "panel",
+    "size": [ "100%", 36 ],
+    "orientation": "horizontal",
+    "$world_item_button_content|default": "",
+    "$play_button_pressed_button_name|default": "",
+    "$secondary_play_button_pressed_button_name|default": "",
+    "$is_friends_network|default": false,
+    "controls": [
+      { "local_world_item_button@$world_item_button_content": { "layer": 4 }
+      },
+      {
+        "main_button": {
+          "type": "panel",
+          "controls": [
+            {
+              "play_button@common_play_grid_dx.play_button": {
+                "$pressed_button_name": "$play_button_pressed_button_name"
+              }
+            },
+            {
+              "play_button_large@common_play_grid_dx.play_button_large": {
+                "$pressed_button_name": "$play_button_pressed_button_name"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "edit_mode_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "secondary_button": {
+          "type": "panel",
+          "controls": [
+            {
+              "edit_button@common_play_grid_dx.play_button": {
+                "$pressed_button_name": "$secondary_play_button_pressed_button_name"
+              }
+            },
+            {
+              "edit_button_large@common_play_grid_dx.play_button_large": {
+                "$pressed_button_name": "$secondary_play_button_pressed_button_name"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "edit_mode_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "play_button@common.button": {
+    "size": [ 32, 32 ],
+    "ignored": "$is_friends_network",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 2, 2 ],
+    "layer": 16,
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$collection_name"
+      }
+    ],
+    "controls": [
+      { "default@common_dx.null_panel": {} },
+      {
+        "hover@common_dx.null_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ 150, 36 ],
+          "offset": [ -2, -2 ],
+          "$hover_text_size": [ 170, "default" ],
+          "$hover_panel_text": "selectWorld.tooltip.beta",
+          "$hover_panel_text_color": [ 1.0, 0.6, 0.0 ],
+          "controls": [
+            {
+              "local_button": {
+                "type": "panel",
+                "size": [ 32, 32 ],
+                "offset": [ 2, 2 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "ignored": "$is_network",
+                "controls": [
+                  {
+                    "default@world_selection_java_dx.select_world_button_hover": {
+                      "ignored": "($ignore_select_button or $pre_release)",
+                      "layer": 16,
+                      "size": [ 32, 32 ]
+                    }
+                  },
+                  {
+                    "default_warning@world_selection_java_dx.warning_button_yellow_hover": {
+                      "ignored": "($ignore_select_button or not $pre_release)",
+                      "layer": 16,
+                      "size": [ 32, 32 ]
+                    }
+                  },
+                  {
+                    "default_arrow_warning@world_selection_java_dx.select_world_button_warning_hover": {
+                      "ignored": "($ignore_select_button or not $pre_release)",
+                      "layer": 16,
+                      "size": [ 32, 32 ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "network_button": {
+                "type": "panel",
+                "size": [ 32, 32 ],
+                "offset": [ 2, 2 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "ignored": "(not $is_network)",
+                "controls": [
+                  {
+                    "default@world_selection_java_dx.select_world_button_hover": {
+                      "layer": 16,
+                      "size": [ 32, 32 ]
+                    }
+                  }
+                ]
+              }
+            },
+            { "hover_text@common_dx.hover_text_panel": { "ignored": "(not $pre_release or $is_network)" } },
+            { "java_menu_select_grid@java_gui_common.java_menu_select_grid": { "layer": 12 } }
+          ]
+        }
+      },
+      {
+        "pressed@common_dx.null_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ 150, 36 ],
+          "offset": [ -2, -2 ],
+          "controls": [
+            { "java_menu_select_grid@java_gui_common.java_menu_select_grid": { "layer": 12 } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "play_button_large@common.button": {
+    "size": [ "100%", 36 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "ignored": "(not $is_friends_network)",
+    "layer": 16,
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$collection_name"
+      }
+    ],
+    "controls": [
+      { "default@common_dx.null_panel": {} },
+      {
+        "hover@common_dx.null_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%", 36 ],
+          "controls": [
+            {
+              "hover_image": {
+                "type": "image",
+                "visible": "$is_hover",
+                "texture": "textures/ui/square_image_border_white",
+                "size": [ "100%", "100%" ]
+              }
+            }
+          ]
+        }
+      },
+      { "pressed@common_dx.null_panel": {} }
+    ]
+  },
+
+  "realms_world_item": {
+    "type": "panel",
+    "size": [ "100%", 36 ],
+    "orientation": "horizontal",
+    "$play_button_pressed_button_name|default": "",
+    "$ignore_select_button|default": false,
+    "$hover_text_offset": [ 0, -4.5 ],
+    "$hover_anchor_from": "top_right",
+    "$hover_anchor_to": "top_right",
+    "controls": [
+      { "local_world_item_button@play_realms_dx.realms_world_item_button_content": { "layer": 4 } },
+      { "play_button@common_play_grid_dx.play_button": { "ignored": "$ignore_select_button" } },
+      {
+        "status@play_realms_dx.realms_world_game_status_icon": {
+          "size": [ 10, 28 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ -41, 4 ],
+          "layer": 10
+        }
+      },
+      {
+        "edit_panel": {
+          "type": "panel",
+          "controls": [
+            { "realms_world_edit_button@play_realms_dx.realms_world_edit_button": { "layer": 10 } }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#realms_edit_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$realms_worlds_collection_name"
+            }
+          ]
+        }
+      },
+      {
+        "leave_realm_panel": {
+          "type": "panel",
+          "controls": [
+            { "leave_friends_realm_button@play_realms_dx.leave_friends_realm_button": { "layer": 10 } }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#leave_realm_button_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$realms_worlds_collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "selected_worlds_buttons_panel": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      {
+        "play_world_button_locked@common_buttons_dx.locked": {
+          "size": [ 150, 20 ],
+          "$button_text": "selectWorld.select",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "layer": 1
+        }
+      },
+      {
+        "edit_wold_button_locked@common_buttons_dx.locked": {
+          "size": [ 72, 20 ],
+          "$button_text": "options.edit",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "layer": 1
+        }
+      },
+      { "local_world_items_bottom@cris_play_grid_items.local_world_items_bottom": { "layer": 37 } }
+    ]
+  },
+
+  /*////// PLAY ITEM TOGGLE //////*/
+
+  "unchecked@common_dx.null_panel": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": "$texture_size",
+    "controls": [
+      {
+        "button_content@$button_content": {
+          "layer": 2
+        }
+      }
+    ]
+  },
+
+  "unchecked_hover@common_dx.null_panel": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "local_button": {
+          "type": "panel",
+          "size": [ 32, 32 ],
+          "offset": [ 2, 2 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "ignored": "$is_network",
+          "controls": [
+            {
+              "default@world_selection_java_dx.select_world_button": {
+                "ignored": "($ignore_select_button or $pre_release)",
+                "layer": 10,
+                "size": [ 32, 32 ]
+              }
+            },
+            {
+              "default_warning@world_selection_java_dx.warning_button_yellow": {
+                "ignored": "($ignore_select_button or not $pre_release)",
+                "layer": 10,
+                "size": [ 32, 32 ]
+              }
+            },
+            {
+              "default_arrow_warning@world_selection_java_dx.select_world_button_warning": {
+                "ignored": "($ignore_select_button or not $pre_release)",
+                "layer": 10,
+                "size": [ 32, 32 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "network_button": {
+          "type": "panel",
+          "size": [ 32, 32 ],
+          "offset": [ 2, 2 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "ignored": "(not $is_network)",
+          "controls": [
+            {
+              "default@world_selection_java_dx.select_world_button": {
+                "ignored": "($ignore_select_button)",
+                "layer": 10,
+                "size": [ 32, 32 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "java_menu_select_grid@java_gui_common.java_menu_select_grid": {
+          "layer": 9,
+          "ignored": "$ignore_select_button"
+        }
+      },
+      { "button_content@$button_content": { "layer": 2 } }
+    ]
+  },
+
+  "checked@java_gui_common.text_input_java": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      { "button_content@$button_content": { "layer": 2 } }
+    ]
+  },
+
+  "checked_hover@java_gui_common.text_input_java": {
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "default@world_selection_java_dx.select_world_button": {
+          "ignored": "($ignore_select_button or $pre_release)",
+          "layer": 10,
+          "offset": [ 2, 2 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ 32, 32 ]
+        }
+      },
+      {
+        "default_warning@world_selection_java_dx.warning_button_yellow": {
+          "ignored": "($ignore_select_button or not $pre_release)",
+          "layer": 10,
+          "offset": [ 2, 2 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ 32, 32 ]
+        }
+      },
+      {
+        "default_arrow_warning@world_selection_java_dx.select_world_button_warning": {
+          "ignored": "($ignore_select_button or not $pre_release)",
+          "layer": 10,
+          "offset": [ 2, 2 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ 32, 32 ]
+        }
+      },
+      { "java_menu_select_grid@java_gui_common.java_menu_select_grid": { "layer": 9, "ignored": "$ignore_select_button" } },
+      { "button_content@$button_content": { "layer": 2 } }
+    ]
+  },
+
+  "play_item_buttons_panel": {
+    "type": "panel",
+    "size": [ "100%", 36 ],
+    "$item_mode|default": "default",
+    "$grid_item_template": "common_play_grid_dx.play_main_buttons",
+    "controls": [
+      { "hold_grid_panel@common_play_grid_dx.hold_grid_panel": {} }
+    ]
+  },
+  
+  "play_main_buttons@common_toggles_dx.toggle_panel": {
+    "size": [ "100%", 36 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$ignore_select_button|default": false,
+    "$item_mode|default": "default",
+    "$unchecked_control": "common_play_grid_dx.unchecked",
+    "$checked_control": "common_play_grid_dx.checked",
+    "$unchecked_hover_control": "common_play_grid_dx.unchecked_hover",
+    "$checked_hover_control": "common_play_grid_dx.checked_hover",
+    "$toggle_focus_enabled": false,
+    "$item_index|default": 0,
+    "$toggle_name|default": "default_toggle",
+    "toggle_name": "$toggle_name",
+    "$tab_view_binding_name": "($item_mode + _ + $item_number + _toggle)",
+    "$toggle_group_forced_index": "$item_index",
+
+    "$is_custom_button": true,
+    "$custom_from_button_id": "button.menu_select",
+    "$custom_mapping_type": "double_pressed",
+
+    "$toggle_collection_details_type": "collection_details",
+    "$toggle_collection_detail_name": "$collection_name"
+  },
+
+  "multiplayer_main_buttons@common_play_grid_dx.play_main_buttons": {
+    "bindings": [
+      {
+        "binding_type": "collection_details",
+        "binding_collection_name": "$collection_name"
+      },
+      {
+        "binding_name": "#cross_platform_enabled",
+        "binding_name_override": "#enabled"
+      },
+      {
+        "binding_type": "collection",
+        "binding_name": "#is_server_info_available_collection",
+        "binding_name_override": "#enabled",
+        "binding_collection_name": "$collection_name"
+      },
+      {
+        "binding_type": "collection",
+        "binding_name": "$toggle_index_binding_name",
+        "binding_collection_name": "$collection_name"
+      }
+    ]
+  },
+  
+  "item_number_label": {
+    "type": "label",
+    "shadow": true,
+    "layer": 16,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "text": "$item_number"
+  },
+
+  /*////// BOTTOM BUTTONS GRID //////*/
+
+  "play_item_grid_panel": {
+    "type": "panel",
+    "$item_mode|default": "default",
+    "$grid_item_template": "$bottom_grid_item_template",
+    "controls": [
+      { "hold_grid_panel@common_play_grid_dx.hold_grid_panel": {} }
+    ],
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "($item_mode + _ + $item_number + _toggle)",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "hold_grid_panel@common_dx.grid_panel": {
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$grid_dimensions": [ 1, 500 ],
+    "$grid_position": "$item_position"
+  },
+
+  "play_bottom_buttons": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 150, 44 ],
+    "controls": [
+      {
+        "local_world_item_button@common_buttons_dx.main_button": {
+          "size": [ 150, 20 ],
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$button_text": "selectWorld.select",
+          "$pressed_button_name": "button.menu_start_local_world",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      {
+        "local_world_edit_button@common_buttons_dx.main_button": {
+          "size": [ 72, 20 ],
+          "offset": [ 0, 24 ],
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$button_text": "options.edit",
+          "$pressed_button_name": "button.menu_local_world_item_edit",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "server_bottom_buttons": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 100, 44 ],
+    "controls": [
+      {
+        "server_item_button@common_buttons_dx.main_button": {
+          "size": [ 100, 20 ],
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$button_text": "selectServer.select",
+          "$pressed_button_name": "button.menu_network_world_item",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      },
+      {
+        "server_edit_button@common_buttons_dx.main_button": {
+          "$ignore_edit_button|default": false,
+          "ignored": "$ignore_edit_button",
+          "size": [ 100, 20 ],
+          "offset": [ 0, 24 ],
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$button_text": "options.edit",
+          "$pressed_button_name": "button.menu_network_server_world_edit",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "realms_bottom_buttons": {
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 100, 44 ],
+    "controls": [
+      {
+        "realms_feed_button@common_buttons_dx.main_button": {
+          "size": [ 90, 20 ],
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$button_text": "pauseScreen.feed",
+          "$pressed_button_name": "button.menu_realms_feed",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$realms_worlds_collection_name"
+            },
+            {
+              "binding_name": "#menu_realms_feed_enabled",
+              "binding_name_override": "#visible",
+              "binding_collection_name": "$realms_worlds_collection_name",
+              "binding_type": "collection"
+            }
+          ]
+        }
+      },
+      {
+        "realms_play_button@common_buttons_dx.main_button": {
+          "size": [ 90, 20 ],
+          "offset": [ 97, 0 ],
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$button_text": "realmsSettingsScreen.playRealmButton",
+          "$pressed_button_name": "button.menu_start_realms_world",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$realms_worlds_collection_name"
+            },
+            {
+              "binding_name": "#realms_game_online",
+              "binding_name_override": "#visible",
+              "binding_type": "collection",
+              "binding_collection_name": "$realms_worlds_collection_name"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,552 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "common_menus_dx",
+
+  /* Main Panel */
+
+  "java_menu_panel_template": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+
+    "$top_content|default": "",
+    "$middle_content|default": "",
+    "$bottom_content|default": "",
+
+    "$top_content_size|default": [ "100%", 32 ],
+    "$middle_panel_size|default": [ 200, "100%" ],
+    "$bottom_content_size|default": [ "100%", 32 ],
+
+    "$middle_clips_children|default": true,
+
+    "$bg|default": "java_gui_common.options_background",
+    "$bg_middle|default": "java_gui_common.options_background_middle",
+    "$bg_invis|default": "java_gui_common.options_background_invis",
+
+    "$twin_middle_content|default": false,
+    "$middle_content_right|default": "",
+
+    "controls": [
+      { "java_menu_stack_panel@common_menus_dx.menu_stack_panel": { "layer": 3 } },
+      { "bg@$bg": { "layer": -20, "ignored": "(not $middle_clips_children)" } }
+    ]
+  },
+
+  "menu_stack_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "top@$bg": {
+          "size": "$top_content_size",
+          "layer": 50,
+          "controls": [
+            {
+              "top_stack_panel": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "left_safezone": {
+                      "type": "panel",
+                      "size": "$left_horizontal_safezone_size"
+                    }
+                  },
+                  { 
+                    "middle_safezone": {
+                      "type": "panel",
+                      "size": [ "fill", "100%" ],
+                      "controls": [
+                        { "top_content@$top_content": { "layer": 52 } }
+                      ]
+                    }
+                  },
+                  {
+                    "right_safezone": {
+                      "type": "panel",
+                      "size": "$right_horizontal_safezone_size"
+                    }
+                  }
+                ]
+              }
+            },
+            { "panel@common_menus_dx.panel_toggle": {} }
+          ]
+        }
+      },
+      {
+        "middle_panel": {
+          "type": "panel",
+          "size": [ "100%", "fill" ],
+          "layer": 1,
+          "controls": [
+            { "middle_panel@common_menus_dx.middle_panel": { "ignored": "$twin_middle_content" } },
+            { "middle_panel_twin@common_menus_dx.middle_panel_twin": { "ignored": "(not $twin_middle_content)" } }
+          ]
+        }
+      },
+      {
+        "bottom@$bg": {
+          "size": "$bottom_content_size",
+          "layer": 50,
+          "controls": [
+            {
+              "bottom_stack_panel": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "left_safezone": {
+                      "type": "panel",
+                      "size": "$left_horizontal_safezone_size"
+                    }
+                  },
+                  { 
+                    "middle_safezone": {
+                      "type": "panel",
+                      "size": [ "fill", "100%" ],
+                      "controls": [
+                        { "bottom_content@$bottom_content": { "layer": 52 } }
+                      ]
+                    }
+                  },
+                  {
+                    "right_safezone": {
+                      "type": "panel",
+                      "size": "$right_horizontal_safezone_size"
+                    }
+                  }
+                ]
+              }
+            },
+            { "panel@common_menus_dx.panel_toggle": {} }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "middle_panel": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "clips_children": "$middle_clips_children",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "bg_overlay_border": {
+          "type": "image",
+          "layer": 40,
+          "texture": "textures/uidx/java_middle_bg_border",
+          "size": [ "100%", "100%" ]
+        }
+      },
+      { "middle_content@$middle_content": { "layer": 5 } },
+      { "bg@$bg_middle": { "layer": 1 } }
+    ]
+  },
+
+  "middle_panel_twin": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "orientation": "horizontal",
+    "controls": [
+      {
+        "padding_left": {
+          "type": "panel",
+          "size": [ "fill", "100%" ],
+          "controls": [
+            { 
+              "bg@$bg": {
+                "size": [ "100%", "100%" ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "layer": 1
+              }
+            }
+          ]
+        }
+      },
+      { "middle_panel_left@common_menus_dx.middle_panel": { "size": "$middle_panel_size" } },
+      { 
+        "padding_middle": {
+          "type": "panel",
+          "size": [ 8, "100%" ],
+          "controls": [
+            { 
+              "bg@$bg": {
+                "size": [ "100%", "100%" ],
+                "layer": 1
+              }
+            }
+          ]
+        }
+      },
+      {
+        "middle_panel_right@common_menus_dx.middle_panel": {
+          "size": "$middle_panel_size",
+          "controls": [
+            {
+              "bg_overlay_border": {
+                "type": "image",
+                "layer": 40,
+                "texture": "textures/uidx/java_middle_bg_border",
+                "size": [ "100%", "100%" ]
+              }
+            },
+            { "middle_content@$middle_content_right": { "layer": 5 } },
+            { "bg@$bg_middle": { "layer": 1 } }
+          ]
+        }
+      },
+      {
+        "padding_right": {
+          "type": "panel",
+          "size": [ "fill", "100%" ],
+          "controls": [
+            {
+              "bg@$bg": {
+                "size": [ "100%", "100%" ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "layer": 1
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /* Menu panel template! */
+
+  "middle_bg": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "bg_overlay": {
+          "type": "image",
+          "layer": 1,
+          "texture": "textures/uidx/java_middle_bg",
+          "size": [ "100%", "100%" ]
+        }
+      },
+      {
+        "bg@$bg": {
+          "layer": 0,
+          "color": [ 1.0, 1.0, 1.0, 1.0 ]
+        }
+      }
+    ]
+  },
+
+  "java_world_item_button@common.button": {
+    "size": [ "100%", 36 ],
+    "$texture_size|default": [ "100%", "100%" ],
+    "$ignore_select_grid|default": false,
+    "controls": [
+      {
+        "default@common_dx.null_panel": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": "$texture_size",
+          "controls": [
+            { "button_content@$button_content": { "layer": 2 } }
+          ]
+        }
+      },
+      {
+        "hover@java_gui_common.text_input_java": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": "$texture_size",
+          "$is_hover": true,
+          "controls": [
+            { "java_menu_select_grid@java_gui_common.java_menu_select_grid": { "layer": 12, "ignored": "$ignore_select_grid" } },
+            { "button_content@$button_content": { "layer": 2 } }
+          ]
+        }
+      },
+      {
+        "pressed@java_gui_common.text_input_java": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": "$texture_size",
+          "$is_hover": true,
+          "controls": [
+            { "java_menu_select_grid@java_gui_common.java_menu_select_grid": { "layer": 12 } },
+            { "button_content@$button_content": { "layer": 2 } }
+          ]
+        }
+      }
+    ]
+  },
+
+  "panel_toggle@common_toggles_dx.toggle_panel": {
+    "$sound_name": "null",
+    "$toggle_focus_enabled": false,
+    "layer": 21
+  },
+
+  "java_menu_stack_panel": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "top_panel": {
+          "type": "panel",
+          "size": "$top_content_size",
+          "layer": 50,
+          "controls": [
+            { 
+              "bg_top@$bg": {
+                "layer": 1,
+                "size": [ "100%+128px", 64 ],
+                "offset": [ -63.99999999, -63.99999999 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left"
+              }
+            },
+            { 
+              "bg_left@$bg": {
+                "layer": 1,
+                "size": [ 64, "100.1%" ],
+                "offset": [ -63.99999999, 0 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left"
+              }
+            },
+            { "top_content@$top_content": { "layer": 20 } },
+            { 
+              "bg@$bg": {
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ "100%+64px", "100%" ],
+                "layer": 1
+              }
+            },
+            { "panel@common_menus_dx.panel_toggle": {} }
+          ]
+        }
+      },
+      {
+        "middle_panel": {
+          "type": "panel",
+          "size": [ "100%", "fill" ],
+          "layer": 1,
+          "controls": [
+            { "middle_panel@common_menus_dx.middle_panel": { "ignored": "$twin_middle_content" } },
+            { "middle_panel_twin@common_menus_dx.middle_panel_twin": { "ignored": "(not $twin_middle_content)" } }
+          ]
+        }
+      },
+      {
+        "bottom_panel": {
+          "type": "panel",
+          "size": "$bottom_content_size",
+          "layer": 50,
+          "controls": [
+            { "bottom_content@$bottom_content": { "layer": 37 } },
+            { 
+              "bg@$bg": {
+                "layer": 1,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "size": [ "100%+64px", "100%+64px" ]
+              }
+            },
+            { 
+              "bg_left@$bg": {
+                "layer": 1,
+                "size": [ 64, "100%+64px" ],
+                "offset": [ -63.99999999, 0 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left"
+              }
+            },
+            { "panel@common_menus_dx.panel_toggle": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  /* Scroll template! */
+
+  "java_scroll_box": {
+    "type": "image",
+    "layer": 48,
+    "texture": "textures/uidx/java_scroll_box"
+  },
+
+  "java_scroll_track": {
+    "type": "image",
+    "texture": "textures/uidx/java_scroll_track"
+  },
+
+  "java_menu_scroll_panel@common.scrolling_panel": {
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "layer": 3,
+    "$scrolling_pane_size": [ "100%", "100%" ],
+    "$scrolling_content": "$scrolling_content",
+    "$scroll_view_port_size": [ 328, "100%" ],
+    "$scroll_size": [ 6, "100%" ],
+    "$scroll_offset": [ 8, 0 ],
+    "$scroll_bar_contained|default": true,
+    "$scroll_background_image_control": "",
+    "$scroll_track_image_control": "common_menus_dx.java_scroll_track",
+    "$scroll_box_mouse_image_control": "common_menus_dx.java_scroll_box",
+    "controls": [
+      {
+        "scroll_mouse@common_menus_dx.java_menu_scrolling_panel_base": {
+          "offset": "$scrolling_pane_offset",
+          "size": "$scrolling_pane_size"
+        }
+      }
+    ]
+  },
+
+  "java_menu_scrolling_panel_base@common.scrolling_panel_base": {
+    "controls": [
+      {
+        "$scroll_view_name@common.scroll_view_control": {
+          "controls": [
+            {
+              "panel": {
+                "type": "panel",
+                "ignored": "(not $scroll_bar_contained)",
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "$view_port_size|default": [ "100%", "100%" ],
+                "controls": [
+                  { "background_and_viewport@common_menus_dx.viewport": {} },
+                  { "bar_and_track@common_menus_dx.scroll_bar_and_track": {} }
+                ]
+              }
+            },
+            {
+              "stack_panel": {
+                "type": "stack_panel",
+                "orientation": "horizontal",
+                "ignored": "$scroll_bar_contained",
+                "anchor_to": "top_left",
+                "anchor_from": "top_left",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "scrolling_view_port": {
+                      "layer": 1,
+                      "type": "panel",
+                      "size": [ "fill", "100%" ],
+                      "controls": [
+                        {
+                          "scrolling_content@$bg_middle": {
+                            "size": [ "100%", "100%c" ],
+                            "layer": 1,
+                            "$scrolling_content_anchor_from|default": "top_left",
+                            "$scrolling_content_anchor_to|default": "top_left",
+                            "anchor_from": "$scrolling_content_anchor_from",
+                            "anchor_to": "$scrolling_content_anchor_to",
+                            "controls": [
+                              {
+                                "content@$scrolling_content": {
+                                  "anchor_from": "top_middle",
+                                  "anchor_to": "top_middle"
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "bar_and_track@common_menus_dx.scroll_bar_and_track": {
+                      "size": "$scroll_size"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "viewport@common.scroll_background_and_viewport": {
+    "clips_children": false,
+    "controls": [
+      {
+        "scrolling_view_port": {
+          "layer": 1,
+          "type": "panel",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$scroll_view_port_offset",
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "controls": [
+            {
+              "scrolling_content@$bg_invis": {
+                "size": [ "100%", "100%c" ],
+                "layer": 1,
+                "$scrolling_content_anchor_from|default": "top_left",
+                "$scrolling_content_anchor_to|default": "top_left",
+                "anchor_from": "$scrolling_content_anchor_from",
+                "anchor_to": "$scrolling_content_anchor_to",
+                "controls": [
+                  {
+                    "content@$scrolling_content": {
+                      "anchor_from": "top_middle",
+                      "anchor_to": "top_middle"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "scroll_bar_and_track@common.scroll_bar_and_track": {
+    "size": "$scroll_view_port_size",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "centered_panel": {
+          "type": "panel",
+          "size": "$scroll_size",
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "controls": [
+            {
+              "track@common.scrollbar_track": {
+                "layer": 20,
+                "anchor_from": "center",
+                "anchor_to": "center"
+              }
+            },
+            {
+              "scroll_box@common.scroll_box": {
+                "layer": 25,
+                "anchor_from": "center",
+                "anchor_to": "center"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

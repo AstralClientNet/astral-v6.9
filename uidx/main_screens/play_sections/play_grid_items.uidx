@@ -1,0 +1,293 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "cris_play_grid_items",
+
+  "base_panel": {
+    "type": "$grid_item_type",
+    "size": "$grid_item_size"
+  },
+
+  /*//// Select Worlds Grid Items ////*/
+
+  "local_world_items_main@cris_play_grid_items.local_world_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 4 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "local_world_items_bottom@cris_play_grid_items.local_world_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  /*//// Multiplayer Grid Items ////*/
+
+  "servers_items_main@cris_play_grid_items.first_part_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 4 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "more_servers_items_main@cris_play_grid_items.second_part_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 4 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "lan_items_main@cris_play_grid_items.third_part_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 0 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "friends_items_main@cris_play_grid_items.fourth_part_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 0 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "servers_items_bottom@cris_play_grid_items.first_part_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  "more_servers_items_bottom@cris_play_grid_items.second_part_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  "lan_items_bottom@cris_play_grid_items.third_part_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  "friends_items_bottom@cris_play_grid_items.fourth_part_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  /*//// Realms Grid Items ////*/
+
+  "personal_realms_items_main@cris_play_grid_items.first_part_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 2 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "realms_items_main@cris_play_grid_items.second_part_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 0 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "personal_realms_items_bottom@cris_play_grid_items.first_part_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  "realms_items_bottom@cris_play_grid_items.second_part_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  /*//// Realms Backup Grid Items ////*/
+
+  "realms_backup_items_main@cris_play_grid_items.first_part_grid_items": {
+    "$grid_item_type": "stack_panel",
+    "$grid_item_size": [ "100%", "100%c" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 0, 2 ],
+    "layer": 2,
+    "$item_control": "common_play_grid_dx.play_item_buttons_panel"
+  },
+
+  "realms_backup_items_right@cris_play_grid_items.first_part_grid_items": {
+    "$grid_item_type": "panel",
+    "$grid_item_size": [ "100%", "100%" ],
+    "$item_control": "common_play_grid_dx.play_item_grid_panel"
+  },
+
+  /*//// Grid Items Templates ////*/
+
+  "first_part_grid_items@cris_play_grid_items.base_panel": {
+    "controls": [
+      { "001@$item_control": { "$item_number": "001", "$item_index": 1 } },
+      { "002@$item_control": { "$item_number": "002", "$item_index": 2 , "$item_position": [ 0, 1 ] } },
+      { "003@$item_control": { "$item_number": "003", "$item_index": 3 , "$item_position": [ 0, 2 ] } },
+      { "004@$item_control": { "$item_number": "004", "$item_index": 4 , "$item_position": [ 0, 3 ] } },
+      { "005@$item_control": { "$item_number": "005", "$item_index": 5 , "$item_position": [ 0, 4 ] } },
+      { "006@$item_control": { "$item_number": "006", "$item_index": 6 , "$item_position": [ 0, 5 ] } },
+      { "007@$item_control": { "$item_number": "007", "$item_index": 7 , "$item_position": [ 0, 6 ] } },
+      { "008@$item_control": { "$item_number": "008", "$item_index": 8 , "$item_position": [ 0, 7 ] } },
+      { "009@$item_control": { "$item_number": "009", "$item_index": 9 , "$item_position": [ 0, 8 ] } },
+      { "010@$item_control": { "$item_number": "010", "$item_index": 10, "$item_position": [ 0, 9 ] } }
+    ]
+  },  
+
+  "second_part_grid_items@cris_play_grid_items.base_panel": {
+    "controls": [
+      { "011@$item_control": { "$item_number": "011", "$item_index": 11 } },
+      { "012@$item_control": { "$item_number": "012", "$item_index": 12, "$item_position": [ 0, 1 ] } },
+      { "013@$item_control": { "$item_number": "013", "$item_index": 13, "$item_position": [ 0, 2 ] } },
+      { "014@$item_control": { "$item_number": "014", "$item_index": 14, "$item_position": [ 0, 3 ] } },
+      { "015@$item_control": { "$item_number": "015", "$item_index": 15, "$item_position": [ 0, 4 ] } },
+      { "016@$item_control": { "$item_number": "016", "$item_index": 16, "$item_position": [ 0, 5 ] } },
+      { "017@$item_control": { "$item_number": "017", "$item_index": 17, "$item_position": [ 0, 6 ] } },
+      { "018@$item_control": { "$item_number": "018", "$item_index": 18, "$item_position": [ 0, 7 ] } },
+      { "019@$item_control": { "$item_number": "019", "$item_index": 19, "$item_position": [ 0, 8 ] } },
+      { "020@$item_control": { "$item_number": "020", "$item_index": 20, "$item_position": [ 0, 9 ] } }
+    ]
+  },
+
+  "third_part_grid_items@cris_play_grid_items.base_panel": {
+    "controls": [
+      { "021@$item_control": { "$item_number": "021", "$item_index": 21 } },
+      { "022@$item_control": { "$item_number": "022", "$item_index": 22, "$item_position": [ 0, 1 ] } },
+      { "023@$item_control": { "$item_number": "023", "$item_index": 23, "$item_position": [ 0, 2 ] } },
+      { "024@$item_control": { "$item_number": "024", "$item_index": 24, "$item_position": [ 0, 3 ] } },
+      { "025@$item_control": { "$item_number": "025", "$item_index": 25, "$item_position": [ 0, 4 ] } },
+      { "026@$item_control": { "$item_number": "026", "$item_index": 26, "$item_position": [ 0, 5 ] } },
+      { "027@$item_control": { "$item_number": "027", "$item_index": 27, "$item_position": [ 0, 6 ] } },
+      { "028@$item_control": { "$item_number": "028", "$item_index": 28, "$item_position": [ 0, 7 ] } },
+      { "029@$item_control": { "$item_number": "029", "$item_index": 29, "$item_position": [ 0, 8 ] } },
+      { "030@$item_control": { "$item_number": "030", "$item_index": 30, "$item_position": [ 0, 9 ] } }
+    ]
+  },
+
+  "fourth_part_grid_items@cris_play_grid_items.base_panel": {
+    "controls": [
+      { "031@$item_control": { "$item_number": "031", "$item_index": 31 } },
+      { "032@$item_control": { "$item_number": "032", "$item_index": 32, "$item_position": [ 0, 1 ] } },
+      { "033@$item_control": { "$item_number": "033", "$item_index": 33, "$item_position": [ 0, 2 ] } },
+      { "034@$item_control": { "$item_number": "034", "$item_index": 34, "$item_position": [ 0, 3 ] } },
+      { "035@$item_control": { "$item_number": "035", "$item_index": 35, "$item_position": [ 0, 4 ] } },
+      { "036@$item_control": { "$item_number": "036", "$item_index": 36, "$item_position": [ 0, 5 ] } },
+      { "037@$item_control": { "$item_number": "037", "$item_index": 37, "$item_position": [ 0, 6 ] } },
+      { "038@$item_control": { "$item_number": "038", "$item_index": 38, "$item_position": [ 0, 7 ] } },
+      { "039@$item_control": { "$item_number": "039", "$item_index": 39, "$item_position": [ 0, 8 ] } },
+      { "040@$item_control": { "$item_number": "040", "$item_index": 40, "$item_position": [ 0, 9 ] } }
+    ]
+  },
+
+  "local_world_grid_items@cris_play_grid_items.base_panel": {
+    "controls": [
+      { "001@$item_control": { "$item_number": "001", "$item_index": 1 } },
+      { "002@$item_control": { "$item_number": "002", "$item_index": 2 , "$item_position": [ 0, 1  ] } },
+      { "003@$item_control": { "$item_number": "003", "$item_index": 3 , "$item_position": [ 0, 2  ] } },
+      { "004@$item_control": { "$item_number": "004", "$item_index": 4 , "$item_position": [ 0, 3  ] } },
+      { "005@$item_control": { "$item_number": "005", "$item_index": 5 , "$item_position": [ 0, 4  ] } },
+      { "006@$item_control": { "$item_number": "006", "$item_index": 6 , "$item_position": [ 0, 5  ] } },
+      { "007@$item_control": { "$item_number": "007", "$item_index": 7 , "$item_position": [ 0, 6  ] } },
+      { "008@$item_control": { "$item_number": "008", "$item_index": 8 , "$item_position": [ 0, 7  ] } },
+      { "009@$item_control": { "$item_number": "009", "$item_index": 9 , "$item_position": [ 0, 8  ] } },
+      { "010@$item_control": { "$item_number": "010", "$item_index": 10, "$item_position": [ 0, 9  ] } },
+      { "011@$item_control": { "$item_number": "011", "$item_index": 11, "$item_position": [ 0, 10 ] } },
+      { "012@$item_control": { "$item_number": "012", "$item_index": 12, "$item_position": [ 0, 11 ] } },
+      { "013@$item_control": { "$item_number": "013", "$item_index": 13, "$item_position": [ 0, 12 ] } },
+      { "014@$item_control": { "$item_number": "014", "$item_index": 14, "$item_position": [ 0, 13 ] } },
+      { "015@$item_control": { "$item_number": "015", "$item_index": 15, "$item_position": [ 0, 14 ] } },
+      { "016@$item_control": { "$item_number": "016", "$item_index": 16, "$item_position": [ 0, 15 ] } },
+      { "017@$item_control": { "$item_number": "017", "$item_index": 17, "$item_position": [ 0, 16 ] } },
+      { "018@$item_control": { "$item_number": "018", "$item_index": 18, "$item_position": [ 0, 17 ] } },
+      { "019@$item_control": { "$item_number": "019", "$item_index": 19, "$item_position": [ 0, 18 ] } },
+      { "020@$item_control": { "$item_number": "020", "$item_index": 20, "$item_position": [ 0, 19 ] } },
+      { "021@$item_control": { "$item_number": "021", "$item_index": 21, "$item_position": [ 0, 20 ] } },
+      { "022@$item_control": { "$item_number": "022", "$item_index": 22, "$item_position": [ 0, 21 ] } },
+      { "023@$item_control": { "$item_number": "023", "$item_index": 23, "$item_position": [ 0, 22 ] } },
+      { "024@$item_control": { "$item_number": "024", "$item_index": 24, "$item_position": [ 0, 23 ] } },
+      { "025@$item_control": { "$item_number": "025", "$item_index": 25, "$item_position": [ 0, 24 ] } },
+      { "026@$item_control": { "$item_number": "026", "$item_index": 26, "$item_position": [ 0, 25 ] } },
+      { "027@$item_control": { "$item_number": "027", "$item_index": 27, "$item_position": [ 0, 26 ] } },
+      { "028@$item_control": { "$item_number": "028", "$item_index": 28, "$item_position": [ 0, 27 ] } },
+      { "029@$item_control": { "$item_number": "029", "$item_index": 29, "$item_position": [ 0, 28 ] } },
+      { "030@$item_control": { "$item_number": "030", "$item_index": 30, "$item_position": [ 0, 29 ] } },
+      { "031@$item_control": { "$item_number": "031", "$item_index": 31, "$item_position": [ 0, 30 ] } },
+      { "032@$item_control": { "$item_number": "032", "$item_index": 32, "$item_position": [ 0, 31 ] } },
+      { "033@$item_control": { "$item_number": "033", "$item_index": 33, "$item_position": [ 0, 32 ] } },
+      { "034@$item_control": { "$item_number": "034", "$item_index": 34, "$item_position": [ 0, 33 ] } },
+      { "035@$item_control": { "$item_number": "035", "$item_index": 35, "$item_position": [ 0, 34 ] } },
+      { "036@$item_control": { "$item_number": "036", "$item_index": 36, "$item_position": [ 0, 35 ] } },
+      { "037@$item_control": { "$item_number": "037", "$item_index": 37, "$item_position": [ 0, 36 ] } },
+      { "038@$item_control": { "$item_number": "038", "$item_index": 38, "$item_position": [ 0, 37 ] } },
+      { "039@$item_control": { "$item_number": "039", "$item_index": 39, "$item_position": [ 0, 38 ] } },
+      { "040@$item_control": { "$item_number": "040", "$item_index": 40, "$item_position": [ 0, 39 ] } },
+      { "041@$item_control": { "$item_number": "041", "$item_index": 41, "$item_position": [ 0, 40 ] } },
+      { "042@$item_control": { "$item_number": "042", "$item_index": 42, "$item_position": [ 0, 41 ] } },
+      { "043@$item_control": { "$item_number": "043", "$item_index": 43, "$item_position": [ 0, 42 ] } },
+      { "044@$item_control": { "$item_number": "044", "$item_index": 44, "$item_position": [ 0, 43 ] } },
+      { "045@$item_control": { "$item_number": "045", "$item_index": 45, "$item_position": [ 0, 44 ] } },
+      { "046@$item_control": { "$item_number": "046", "$item_index": 46, "$item_position": [ 0, 45 ] } },
+      { "047@$item_control": { "$item_number": "047", "$item_index": 47, "$item_position": [ 0, 46 ] } },
+      { "048@$item_control": { "$item_number": "048", "$item_index": 48, "$item_position": [ 0, 47 ] } },
+      { "049@$item_control": { "$item_number": "049", "$item_index": 49, "$item_position": [ 0, 48 ] } },
+      { "050@$item_control": { "$item_number": "050", "$item_index": 50, "$item_position": [ 0, 49 ] } },
+      { "051@$item_control": { "$item_number": "051", "$item_index": 51, "$item_position": [ 0, 50 ] } },
+      { "052@$item_control": { "$item_number": "052", "$item_index": 52, "$item_position": [ 0, 51 ] } },
+      { "053@$item_control": { "$item_number": "053", "$item_index": 53, "$item_position": [ 0, 52 ] } },
+      { "054@$item_control": { "$item_number": "054", "$item_index": 54, "$item_position": [ 0, 53 ] } },
+      { "055@$item_control": { "$item_number": "055", "$item_index": 55, "$item_position": [ 0, 54 ] } },
+      { "056@$item_control": { "$item_number": "056", "$item_index": 56, "$item_position": [ 0, 55 ] } },
+      { "057@$item_control": { "$item_number": "057", "$item_index": 57, "$item_position": [ 0, 56 ] } },
+      { "058@$item_control": { "$item_number": "058", "$item_index": 58, "$item_position": [ 0, 57 ] } },
+      { "059@$item_control": { "$item_number": "059", "$item_index": 59, "$item_position": [ 0, 58 ] } },
+      { "060@$item_control": { "$item_number": "060", "$item_index": 60, "$item_position": [ 0, 59 ] } },
+      { "061@$item_control": { "$item_number": "061", "$item_index": 61, "$item_position": [ 0, 60 ] } },
+      { "062@$item_control": { "$item_number": "062", "$item_index": 62, "$item_position": [ 0, 61 ] } },
+      { "063@$item_control": { "$item_number": "063", "$item_index": 63, "$item_position": [ 0, 62 ] } },
+      { "064@$item_control": { "$item_number": "064", "$item_index": 64, "$item_position": [ 0, 63 ] } },
+      { "065@$item_control": { "$item_number": "065", "$item_index": 65, "$item_position": [ 0, 64 ] } },
+      { "066@$item_control": { "$item_number": "066", "$item_index": 66, "$item_position": [ 0, 65 ] } },
+      { "067@$item_control": { "$item_number": "067", "$item_index": 67, "$item_position": [ 0, 66 ] } },
+      { "068@$item_control": { "$item_number": "068", "$item_index": 68, "$item_position": [ 0, 67 ] } },
+      { "069@$item_control": { "$item_number": "069", "$item_index": 69, "$item_position": [ 0, 68 ] } },
+      { "070@$item_control": { "$item_number": "070", "$item_index": 70, "$item_position": [ 0, 69 ] } },
+      { "071@$item_control": { "$item_number": "071", "$item_index": 71, "$item_position": [ 0, 70 ] } },
+      { "072@$item_control": { "$item_number": "072", "$item_index": 72, "$item_position": [ 0, 71 ] } },
+      { "073@$item_control": { "$item_number": "073", "$item_index": 73, "$item_position": [ 0, 72 ] } },
+      { "074@$item_control": { "$item_number": "074", "$item_index": 74, "$item_position": [ 0, 73 ] } },
+      { "075@$item_control": { "$item_number": "075", "$item_index": 75, "$item_position": [ 0, 74 ] } },
+      { "076@$item_control": { "$item_number": "076", "$item_index": 76, "$item_position": [ 0, 75 ] } },
+      { "077@$item_control": { "$item_number": "077", "$item_index": 77, "$item_position": [ 0, 76 ] } },
+      { "078@$item_control": { "$item_number": "078", "$item_index": 78, "$item_position": [ 0, 77 ] } },
+      { "079@$item_control": { "$item_number": "079", "$item_index": 79, "$item_position": [ 0, 78 ] } },
+      { "080@$item_control": { "$item_number": "080", "$item_index": 80, "$item_position": [ 0, 79 ] } }
+    ]
+  }
+}

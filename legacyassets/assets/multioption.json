@@ -1,0 +1,108 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "multioption_janger",
+
+  "multioption_panel": {
+    "type": "panel",
+    "size": "$panel_size",
+    "$panel_size|default": [ 150, 20 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$experimental_multioption|default": false,
+    "controls": [
+      {
+        "gamepad_multioption_content_panel@gamepad_multioption_content_panel": { //Some problems here :/
+          "ignored": true,
+          "bindings": [
+            {
+              "binding_name": "#is_using_gamepad",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "experimental_gamepad_multioption_content_panel": {
+          "type": "panel",
+          "ignored": "(not $experimental_multioption)",
+          "size": [ "100%", 20 ],
+         "controls": [ { "@multioption_janger.experimental_gamepad_multioption_scrolling_panel": {} } ],
+         "bindings": [
+            {
+              "binding_name": "(not #is_using_gamepad)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      { 
+        "multioption_content_panel": {
+          "type": "panel",
+          "ignored": "$experimental_multioption",
+          "size": [ "100%", 20 ],
+          "$multi_options|default": [],
+          "controls": "$multi_options"
+//          "bindings": [
+//            {
+//              "binding_name": "(not #is_using_gamepad)",
+//              "binding_name_override": "#visible"
+//            }
+//          ]
+        }
+      }
+    ]
+  },
+
+  "gamepad_multioption_content_panel": {
+    "type": "panel",
+    "size": [ "100%", 20 ],
+    "$dropdown_ref|default": "option_dropdown_janger.option_dropdown",
+    "controls": [
+      { "dropdown@$dropdown_ref": {} }
+    ]
+  },
+
+  "experimental_gamepad_multioption_scrolling_panel@common.scrolling_panel": {
+    "size": [ "100%", "100%" ],
+    "$scroll_size": [ 0, "100%" ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$scrolling_content": "multioption_janger.experimental_gamepad_multioption_scrolling_content",
+    "$show_background": false
+  },
+
+  "experimental_gamepad_multioption_scrolling_content": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "$multi_options|default": [],
+    "controls": "$multi_options"
+  },
+
+  "multi_option_toggle@option_toggle_janger.option_toggle": {
+    "size": [ "100%", 20 ],
+    "$chooser_text_last|default": "",
+    "$last_option_name|default": "",
+    "$on_text": "$chooser_text_last",
+    "$off_text": "$chooser_text_last",
+    "$toggle_name": "$next_option_name",
+    "bindings": [
+      {
+        "binding_name": "$last_option_name",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "multi_classic_toggle@toggle_janger.classic_toggle": {
+    "size": [ "100%", 20 ],
+    "$toggle_name": "$option_name",
+    "bindings": [
+      {
+        "binding_name": "$last_option_name",
+        "binding_name_override": "#visible"
+      }
+    ]
+  }
+}

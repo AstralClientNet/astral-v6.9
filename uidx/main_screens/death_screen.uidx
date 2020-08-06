@@ -1,0 +1,206 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "death_dx",
+
+  "a_button_panel": {
+    "type": "panel",
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "size": [ "100%c", 26 ],
+    "offset": [ 0, 0 ],
+    "controls": [
+      {
+        "gamepad_helper_a@common.gamepad_helper_a": {
+          "$icon_text_color": "$gamepad_button_generic_text_color",
+          "$icon_description_bind": "controller.buttonTip.select",
+          "$icon_description_bind_type": "none"
+        }
+      }
+    ]
+  },
+
+  "you_died_label": {
+    "type": "label",
+    "color": "$death_text_color",
+    "offset": [ 0, -51 ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "layer": 2,
+    "text": "deathScreen.message",
+    "shadow": true,
+    "font_size": "large"
+  },
+
+  "death_screen_content": {
+    "type": "panel",
+    "controls": [
+      { "you_died_label@death_dx.you_died_label": {} },
+      {
+        "score_stack_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "offset": [ 0, -16 ],
+          "size": [ "100%c", 10 ],
+          "controls": [
+            /* Uncomment when they add the score option
+            {
+              "score_label": {
+                "type": "label",
+                "shadow": true,
+                "text": "deathScreen.score",
+                "size": [ "default", 10 ]
+              }
+            },
+            {
+              "separator_label": {
+                "type": "label",
+                "shadow": true,
+                "text": ":",
+                "size": [ "default", 10 ]
+              }
+            },
+            {
+              "object_name": {
+                "type": "panel",
+                "size": [ 4, 10 ]
+              }
+            },
+            {
+              "score_number_label": {
+                "type": "label",
+                "shadow": true,
+                "color": "$e_color_format",
+                "text": "&e0",
+                "size": [ "default", 10 ]
+              }
+            }
+            */
+          ]
+        }
+      },
+      {
+        "buttons_panel": {
+          "type": "panel",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "offset": [ 0, 34 ],
+          "size": [ 200, 46 ],
+          "controls": [
+            {
+              "respawn_button@common_buttons_dx.main_button": {
+                "$button_text": "deathScreen.respawn",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "layer": 10,
+                "offset": [ 0, 1 ],
+                "$pressed_button_name": "button.respawn_button",
+                "bindings": [
+                  {
+                    "binding_name": "#respawn_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            },
+            {
+              "main_menu_button@common_buttons_dx.main_button": {
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "layer": 10,
+                "offset": [ 0, -1 ],
+                "$pressed_button_name": "button.main_menu_button",
+                "variables": [
+                  {
+                    "requires": "$is_secondary_client",
+                    "$button_text": "deathScreen.quit.secondaryClient"
+                  },
+                  {
+                    "requires": "(not $is_secondary_client)",
+                    "$button_text": "deathScreen.quit"
+                  }
+                ],
+                "bindings": [
+                  {
+                    "binding_name": "#quit_enabled",
+                    "binding_name_override": "#enabled"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#buttons_and_deathmessage_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      { 
+        "locked_buttons_panel": {
+          "type": "panel",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "offset": [ 0, 34 ],
+          "size": [ 200, 46 ],
+          "controls": [
+            {
+              "respawn_button_locked@common_buttons_dx.locked": {
+                "size": [ 200, 20 ],
+                "$button_text": "deathScreen.respawn",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "offset": [ 0, 1 ]
+              }
+            },
+            {
+              "main_menu_button_locked@common_buttons_dx.locked": {
+                "size": [ 200, 20 ],
+                "anchor_from": "bottom_left",
+                "anchor_to": "bottom_left",
+                "offset": [ 0, -1 ],
+                "variables": [
+                  {
+                    "requires": "$is_secondary_client",
+                    "$button_text": "deathScreen.quit.secondaryClient"
+                  },
+                  {
+                    "requires": "(not $is_secondary_client)",
+                    "$button_text": "deathScreen.quit"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "(not #buttons_and_deathmessage_visible)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      { "select_button@death_dx.a_button_panel": {} }
+    ]
+  },
+
+  /*//// Screen ////*/
+
+  "center_screen": {
+    "type": "panel",
+    "controls": [
+      { "background_gradient@death.background_gradient": { "layer": -10, "ignored": "(not $is_holographic)" } }
+    ]
+  },
+
+  "full_screen": {
+    "type": "panel",
+    "controls": [
+      { "death_screen_content@death_dx.death_screen_content": { } },
+      { "background_gradient@death.background_gradient": { "layer": -10, "ignored": "$is_holographic" } }
+    ]
+  }
+}

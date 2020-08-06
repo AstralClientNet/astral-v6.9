@@ -1,0 +1,276 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "tab_janger",
+
+  "tab": {
+    "type": "panel",
+   "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$tab_view_binding_name|default": "tab",
+    "$is_checked_state|default": false,
+    "$unchecked_offset|default": [ 0, 0 ],
+    "$checked_offset|default": [ 0, 0 ],
+    "controls": [
+      {
+        "$tab_view_binding_name@toggle_janger.toggle": {
+          "$toggle_tts_name": "accessibility.tab.tts.title",
+          "$toggle_tts_enabled_binding_type": "global",
+          "controls": [
+            {
+              "unchecked@$tab_state_panel": {
+                "$navigation_text_color": "$unchecked_text_color",
+                "$section_text_color": "$default_text_color",
+                "$navigation_image_position": "$unchecked_position",
+                "$section_image_position": "$default_position",
+                "$tab_state": "unchecked",
+                "$tab_layer": -3,
+                "$tab_offset": "$unchecked_offset",
+                "layer": 1
+              }
+            },
+            {
+              "unchecked_hover@$tab_state_panel": {
+                "$hover": true,
+                "$show_focus": true,
+                "$navigation_text_color": "$unchecked_hover_text_color",
+                "$section_text_color": "$hover_text_color",
+                "$navigation_image_position": "$unchecked_position",
+                "$section_image_position": "$hover_position",
+                "$tab_state": "unchecked_hover",
+                "$tab_layer": -3,
+                "$tab_offset": "$unchecked_offset",
+                "layer": 1
+              }
+            },
+            {
+              "unchecked_locked@$tab_state_panel": {
+                "$navigation_text_color": "$unchecked_locked_text_color",
+                "$section_text_color": "$locked_text_color",
+                "$navigation_image_position": "$unchecked_position",
+                "$section_image_position": "$locked_position",
+                "$tab_state": "unchecked_locked",
+                "$tab_layer": -3,
+                "$tab_offset": "$unchecked_offset",
+                "layer": 1
+              }
+            },
+            {
+              "unchecked_locked_hover@$tab_state_panel": {
+                "$navigation_text_color": "$unchecked_locked_hover_text_color",
+                "$section_text_color": "$locked_text_color",
+                "$navigation_image_position": "$unchecked_position",
+                "$section_image_position": "$locked_position",
+                "$tab_state": "unchecked_locked_hover",
+                "$tab_layer": -3,
+                "$tab_offset": "$unchecked_offset",
+                "layer": 1
+              }
+            },
+            {
+              "checked@$tab_state_panel": {
+                "$navigation_text_color": "$checked_text_color",
+                "$section_text_color": "$default_text_color",
+                "$navigation_image_position": "$checked_position",
+                "$section_image_position": "$default_position",
+                "$tab_state": "checked",
+                "$is_checked_state": true,
+                "$tab_offset": "$checked_offset",
+                "layer": 2
+              }
+            },
+            {
+              "checked_hover@$tab_state_panel": {
+                "$show_focus": true,
+                "$hover": true,
+                "$navigation_text_color": "$checked_hover_text_color",
+                "$section_text_color": "$hover_text_color",
+                "$navigation_image_position": "$checked_position",
+                "$section_image_position": "$hover_position",
+                "$tab_state": "checked_hover",
+                "$is_checked_state": true,
+                "$tab_offset": "$checked_offset",
+                "layer": 2
+              }
+            },
+            {
+              "checked_locked@$tab_state_panel": {
+                "$navigation_text_color": "$checked_locked_text_color",
+                "$section_text_color": "$locked_text_color",
+                "$navigation_image_position": "$checked_position",
+                "$section_image_position": "$locked_position",
+                "$tab_state": "checked_locked",
+                "$is_checked_state": true,
+                "$tab_offset": "$checked_offset",
+                "layer": 2
+              }
+            },
+            {
+              "checked_locked_hover@$tab_state_panel": {
+                "$navigation_text_color": "$checked_locked_hover_text_color",
+                "$section_text_color": "$locked_text_color",
+                "$navigation_image_position": "$checked_position",
+                "$section_image_position": "$locked_position",
+                "$tab_state": "checked_locked_hover",
+                "$is_checked_state": true,
+                "$tab_offset": "$checked_offset",
+                "layer": 2
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "tab_state_common": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      { "controller_focus@common_janger.controller_focus": {} },
+      { "$image_panel@$image_panel": {} },
+      //{ "@common_janger.custom_hover_text_panel": {} },
+      {
+        "tab_content_panel": {
+          "type": "panel",
+          "size": [ "100% - 4px", "100% - 4px" ],
+          "controls": [
+            {
+              "$tab_type_panel@$tab_type_panel": { 
+                "layer": 3
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "navigation_tab@tab": {
+    "$tab_type_panel|default": "tab_janger.navigation_tab_content",
+    "$tab_state_panel|default": "tab_janger.tab_state_common",
+    "$image_panel|default": "tab_janger.navigation_tab_image"
+  },
+
+  "navigation_tab_image": {
+    "type": "image",
+    "texture": "$image_texture",
+    "uv": "$navigation_image_position",
+    "uv_size": "$image_size",
+    "size": "$image_size",
+    "layer": "$tab_layer"
+  },
+
+  "section_tab@tab": {
+    "size": "$tab_size",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$tab_size|default": [ 150, 20 ],
+    "$radio_toggle_group": true,
+    "$tab_type_panel|default": "tab_janger.section_tab_label",
+    "$tab_state_panel|default": "tab_janger.tab_state_common",
+    "$image_panel|default": "tab_janger.section_tab_image_content_panel",
+    "$image_texture|default": "assets/minecraft/textures/gui/widgets",
+    "$default_text_color|default": "$button_default_text_color",
+    "$hover_text_color|default": "$button_hover_text_color",
+    "$locked_text_color|default": "$button_locked_text_color",
+    "$default_position|default": [ 0, 66 ],
+    "$hover_position|default": [ 0, 86 ],
+    "$locked_position|default": [ 0, 46 ],
+    "$image_size|default": [ 200, 20 ],
+    "$back_tab|default": false,
+    "$toggle_button_mappings|default": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "focused"
+      },
+      {
+        "ignored": "(not $back_tab)",
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "global"
+      },
+      {
+        "ignored": "(not $enable_directional_toggling)",
+        "from_button_id": "button.menu_left",
+        "to_button_id": "$toggle_off_button",
+        "mapping_type": "pressed",
+        "input_mode_condition": "gamepad_and_not_gaze"
+      },
+      {
+        "ignored": "(not $enable_directional_toggling)",
+        "from_button_id": "button.menu_right",
+        "to_button_id": "$toggle_on_button",
+        "mapping_type": "pressed",
+        "input_mode_condition": "gamepad_and_not_gaze"
+      }
+    ]
+  },
+
+  "section_tab_image_content_panel": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "clips_children": true,
+    "controls": [
+      {
+        "left_side_image_panel": {
+          "type": "panel",
+          "size": [ "50%", "100%" ],
+          "clips_children": true,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            {
+              "left_side_image": {
+                "type": "image",
+                "texture": "$image_texture",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "uv": "$section_image_position",
+                "uv_size": "$image_size",
+                "size": "$image_size"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "right_side_image_panel": {
+          "type": "panel",
+          "size": [ "50%", "100%" ],
+          "clips_children": true,
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "controls": [
+            {
+              "right_side_image": {
+                "type": "image",
+                "texture": "$image_texture",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "uv": "$section_image_position",
+                "uv_size": "$image_size",
+                "size": "$image_size"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "section_tab_label": {
+    "type": "label",
+    "text": "$tab_text",
+    "color": "$section_text_color",
+    "shadow": true,
+    "layer": 10
+  }
+}

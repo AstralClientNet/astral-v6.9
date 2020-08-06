@@ -1,0 +1,286 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "common_buttons_dx",
+
+  /*//// Main Button ////*/
+  
+  "main_button@common.button": {
+    "locked_control": "locked",
+    "size": [ 200, 20 ],
+    "consume_hover_events": false,
+    "controls": [
+      { "default@common_buttons_dx.default": { } },
+      { "hover@common_buttons_dx.hover": { } },
+      { "pressed@common_buttons_dx.pressed": { } },
+      { "locked@common_buttons_dx.locked": { } }
+    ]
+  },
+
+  /*//// Main Button Resources ////*/
+
+  "default@common_buttons_dx.button_panel": {
+    "$has_hover_text": false,
+    "$text_color": "$main_menu_button_default_color",
+    "$button_texture": "widgets_java_dx.main_button_default"
+  },
+
+  "hover@common_buttons_dx.button_panel": {
+    "$has_hover_text": true,
+    "$text_color": "$main_menu_button_hover_color",
+    "$button_texture": "widgets_java_dx.main_button_hover"
+  },
+
+  "pressed@common_buttons_dx.button_panel": {
+    "$has_hover_text": false,
+    "$text_color": "$main_menu_button_preesed_color",
+    "$button_texture": "widgets_java_dx.main_button_hover"
+  },
+
+  "locked@common_buttons_dx.button_panel": {
+    "$has_hover_text": false,
+    "$text_color": "$main_menu_button_locked_color",
+    "$button_texture": "widgets_java_dx.main_button_locked"
+  },
+
+  /* In case if you want to  */
+  "locked_hover@common_buttons_dx.button_panel": {
+    "$has_hover_text": true,
+    "$text_color": "$main_menu_button_locked_color",
+    "$button_texture": "widgets_java_dx.main_button_locked"
+  },
+
+  "button_panel": {
+    "type": "panel",
+    "size": [ "100%", 20 ],
+    "$button_content|default": "common_buttons_dx.button_label",
+    "$ignore_hover_text|default": true,
+    "$is_last_button|default": false,
+    "controls": [
+      {
+        "hover_binding": {
+          "type": "panel",
+          "ignored": "(not $has_hover_text)",
+          "controls": [
+            {
+              "hover_text_panel@common_dx.hover_text_panel": {
+                "ignored": "$ignore_hover_text"
+              }
+            }
+          ]
+        }
+      },
+      { "button_content@$button_content": { "layer": 3 } },
+      {
+        "button_stack_panel": {
+          "type": "panel",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ "100%", 22 ],
+          "offset": [ 0, -1 ],
+          "controls": [
+            {
+              "left": {
+                "type": "panel",
+                "size": [ "50%", 22 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "clips_children": true,
+                "controls": [
+                  { "left_texture@$button_texture": { "layer": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 0, 1 ] } }
+                ]
+              }
+            },
+            {
+              "right": {
+                "type": "panel",
+                "size": [ "50%", 22 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "clips_children": true,
+                "controls": [
+                  { "right_texture@$button_texture": { "layer": 1,  "anchor_from": "top_right", "anchor_to": "top_right", "offset": [ 0, 1 ] } }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "down_arrow_icon": {
+    "type": "image",
+    "layer": 2,
+    "size": [ 12, 12 ],
+    "offset": [ 0, 1 ],
+    "color": "$text_color",
+    "texture": "textures/uidx/down_arrow_icon"
+  },
+
+  "left_arrow_icon": {
+    "type": "image",
+    "layer": 2,
+    "size": [ 12, 12 ],
+    "offset": [ 0, 0 ],
+    "color": "$text_color",
+    "texture": "textures/uidx/left_arrow_icon"
+  },
+
+  "right_arrow_icon": {
+    "type": "image",
+    "layer": 2,
+    "size": [ 12, 12 ],
+    "offset": [ 0, 0 ],
+    "color": "$text_color",
+    "texture": "textures/uidx/right_arrow_icon"
+  },
+
+  "reset_icon": {
+    "type": "image",
+    "layer": 2,
+    "size": [ 12, 12 ],
+    "offset": [ 0, 0 ],
+    "color": "$text_color",
+    "texture": "textures/uidx/reset_icon"
+  },
+
+  "button_label": {
+    "type": "label",
+    "shadow": true,
+    "size": [ "default", "default" ],
+    "font_type": "smooth",
+    "color": "$text_color",
+    "text": "$button_text"
+  },
+
+  "button_label_for_options@common_buttons_dx.button_label": {
+    "text": "$option_label",
+    "font_type": "smooth"
+  },
+  
+  "button_label_dropdown_binding@common_buttons_dx.button_label_for_options": {
+    "$option_label_text_color|default": "$text_color",
+    "color": "$option_label_text_color",
+    "text": "$button_text_binding",
+    "font_type": "smooth",
+    "bindings": [
+      {
+        "binding_name": "$button_text_binding",
+        "binding_condition": "none"
+      },
+      {
+        "binding_name": "$option_label_text_color",
+        "binding_type": "$options_dropdown_label_color_binding_type",
+        "binding_name_override": "#color"
+      },
+      {
+        "binding_type": "global",
+        "binding_name": "$options_dropdown_toggle_label_font_type",
+        "binding_name_override": "#font_type"
+      }
+    ]
+  },
+  
+  "button_label_toggle": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [ "100%c", "100% - 9px" ],
+    "$option_label_text_color|default": "$text_color",
+    "$ignore_separator|default": false,
+    "$toggle_off_text|default": "options.off",
+    "$toggle_on_text|default": "options.on",
+    "$is_on|default": false,
+    "$only_bindings|default": false,
+    "layer": 2,
+    "controls": [
+      {
+        "button_label@common_buttons_dx.button_label": {
+          "ignored": "$only_bindings",
+          "visible": "$show_option_label",
+          "text": "$option_label",
+          "color": "$option_label_text_color",
+          "font_type": "smooth"
+        }
+      },
+      {
+        "separator@common_buttons_dx.button_label": {
+          "ignored": "($ignore_separator or $only_bindings)",
+          "visible": "$show_option_label",
+          "font_type": "smooth",
+          "text": ": "
+        }
+      },
+      {
+        "separator_alt@common_buttons_dx.button_label": {
+          "visible": "$show_option_label",
+          "ignored": "(not $ignore_separator or $only_bindings)",
+          "font_type": "smooth",
+          "text": " "
+        }
+      },
+      {
+        "off_labeel@common_buttons_dx.button_label": {
+          "ignored": "$is_on",
+          "text": "$toggle_off_text",
+          "font_type": "smooth",
+          "bindings": [
+            {
+              "binding_name": "$toggle_off_text"
+            }
+          ]
+        }
+      },
+      {
+        "on_label@common_buttons_dx.button_label": {
+          "ignored": "(not $is_on)",
+          "text": "$toggle_on_text",
+          "font_type": "smooth",
+          "bindings": [
+            {
+              "binding_name": "$toggle_on_text"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  "button_label_dropdown": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [ "100%c", "100% - 9px" ],
+    "$only_bindings|default": false,
+    "layer": 2,
+    "controls": [
+      {
+        "button_label@common_buttons_dx.button_label_for_options": {
+          "ignored": "$only_bindings",
+          "font_type": "smooth"
+        }
+      },
+      {
+        "separator@common_buttons_dx.button_label_for_options": {
+          "ignored": "$only_bindings",
+          "font_type": "smooth",
+          "text": ": "
+        }
+      },
+      { "button_label_content_name@common_buttons_dx.button_label_dropdown_binding": {} },
+      {
+        "button_panel": {
+          "type": "panel",
+          "size": [ 12, 8 ],
+          "ignored": "$only_bindings",
+          "controls": [
+            { "down_arrow_icon@common_buttons_dx.down_arrow_icon": { } }
+          ]
+        }
+      }
+    ]
+  }
+}

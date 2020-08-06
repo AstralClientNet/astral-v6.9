@@ -1,0 +1,13 @@
+/*File modified by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "profile_screen": {
+    "$screen_content": "common_dx.null_panel",
+    "$screen_bg_content": "main_profile_dx.profile_screen_content",
+    "$header_safezone_control": "common_dx.null_panel",
+    "$header_bar_control": "common_dx.null_panel",
+    "$is_full_screen_layout": false,
+    "$screen_animations": [ ],
+    "$background_animations": [ ]
+  }
+}

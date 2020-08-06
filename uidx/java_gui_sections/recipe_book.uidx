@@ -1,0 +1,251 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "recipe_book_java_dx",
+
+  "recipe_book_base": {
+    "type": "image",
+    "texture": "assets/minecraft/textures/gui/recipe_book",
+    "$recipe_book_uv|default": [ 0, 0 ],
+    "$recipe_book_uv_size|default": [ 0, 0 ],
+    "uv": "$recipe_book_uv",
+    "uv_size": "$recipe_book_uv_size"
+  },
+
+  /*//// Main Panel ////*/
+
+  "dialog_bg_recipe_book@recipe_book_java_dx.recipe_book_base": {
+    "size": [ 147, 166 ],
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 1, 1 ], "$recipe_book_uv_size": [ 147, 166 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 2, 2 ], "$recipe_book_uv_size": [ 294, 332 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 4, 4 ], "$recipe_book_uv_size": [ 588, 664 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 8, 8 ], "$recipe_book_uv_size": [ 1176, 1328 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 16, 16 ], "$recipe_book_uv_size": [ 2352, 2656 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 32, 32 ], "$recipe_book_uv_size": [ 4704, 5312 ] }
+    ]
+  },
+
+  /*//// Filter Toggle ////*/
+
+  "filter_off_button_default@recipe_book_java_dx.recipe_book_base": {
+    "size": [ 27, 16 ],
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 151, 41 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 302, 82 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 604, 164 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1208, 328 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2416, 656 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 4832, 1312 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  "filter_off_button_hover@recipe_book_java_dx.filter_off_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 151, 59 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 302, 118 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 604, 236 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1208, 472 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2416, 944 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 4832, 1888 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  "filter_on_button_default@recipe_book_java_dx.filter_off_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 179, 41 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 358, 82 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 716, 164 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1432, 328 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2864, 656 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 5728, 1312 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  "filter_on_button_hover@recipe_book_java_dx.filter_off_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 179, 59 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 358, 118 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 716, 236 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1432, 472 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2864, 944 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 5728, 1888 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  /*//// Smelting Filter Toggle ////*/
+
+  "smelting_filter_off_button_default@recipe_book_java_dx.filter_off_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 151, 182 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 302, 364 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 604, 728 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1208, 1456 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2416, 2912 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 4832, 5824 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  "smelting_filter_off_button_hover@recipe_book_java_dx.filter_off_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 151, 200 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 302, 400 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 604, 800 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1208, 1600 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2416, 3200 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 4832, 6400 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  "smelting_filter_on_button_default@recipe_book_java_dx.filter_off_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 179, 182 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 358, 364 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 716, 728 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1432, 1456 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2864, 2912 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 5728, 5824 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  "smelting_filter_on_button_hover@recipe_book_java_dx.filter_off_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 179, 200 ], "$recipe_book_uv_size": [ 27, 16 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 358, 400 ], "$recipe_book_uv_size": [ 54, 32 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 716, 800 ], "$recipe_book_uv_size": [ 108, 64 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1432, 1600 ], "$recipe_book_uv_size": [ 216, 128 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2864, 3200 ], "$recipe_book_uv_size": [ 432, 256 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 5728, 6400 ], "$recipe_book_uv_size": [ 864, 512 ] }
+    ]
+  },
+
+  /*//// Tabs ////*/
+
+  "tab_back@recipe_book_java_dx.recipe_book_base": {
+    "size": [ 37, 26 ],
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 151, 2 ], "$recipe_book_uv_size": [ 37, 26 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 302, 4 ], "$recipe_book_uv_size": [ 74, 52 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 604, 8 ], "$recipe_book_uv_size": [ 148, 104 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1208, 16 ], "$recipe_book_uv_size": [ 296, 208 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 2416, 32 ], "$recipe_book_uv_size": [ 592, 416 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 4832, 64 ], "$recipe_book_uv_size": [ 1184, 832 ] }
+    ]
+  },
+
+  "tab_front@recipe_book_java_dx.tab_back": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 188, 2 ], "$recipe_book_uv_size": [ 37, 26 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 376, 4 ], "$recipe_book_uv_size": [ 74, 52 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 752, 8 ], "$recipe_book_uv_size": [ 148, 104 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 1504, 16 ], "$recipe_book_uv_size": [ 296, 208 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 3008, 32 ], "$recipe_book_uv_size": [ 592, 416 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 6016, 64 ], "$recipe_book_uv_size": [ 1184, 832 ] }
+    ]
+  },
+
+  /*//// Page Buttons ////*/
+
+  "prev_button_default@recipe_book_java_dx.recipe_book_base": {
+    "size": [ 14, 18 ],
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 14, 207 ], "$recipe_book_uv_size": [ 14, 18 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 28, 414 ], "$recipe_book_uv_size": [ 28, 36 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 56, 828 ], "$recipe_book_uv_size": [ 56, 72 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 112, 1656 ], "$recipe_book_uv_size": [ 112, 144 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 224, 3312 ], "$recipe_book_uv_size": [ 224, 288 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 448, 6624 ], "$recipe_book_uv_size": [ 448, 576 ] }
+    ]
+  },
+
+  "prev_button_hover@recipe_book_java_dx.prev_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 14, 225 ], "$recipe_book_uv_size": [ 14, 18 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 28, 450 ], "$recipe_book_uv_size": [ 28, 36 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 56, 900 ], "$recipe_book_uv_size": [ 56, 72 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 112, 1800 ], "$recipe_book_uv_size": [ 112, 144 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 224, 3600 ], "$recipe_book_uv_size": [ 224, 288 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 448, 7200 ], "$recipe_book_uv_size": [ 448, 576 ] }
+    ]
+  },
+
+  "next_button_default@recipe_book_java_dx.prev_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 0, 207 ], "$recipe_book_uv_size": [ 14, 18 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 0, 414 ], "$recipe_book_uv_size": [ 28, 36 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 0, 828 ], "$recipe_book_uv_size": [ 56, 72 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 0, 1656 ], "$recipe_book_uv_size": [ 112, 144 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 0, 3312 ], "$recipe_book_uv_size": [ 224, 288 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 0, 6624 ], "$recipe_book_uv_size": [ 448, 576 ] }
+    ]
+  },
+
+  "next_button_hover@recipe_book_java_dx.prev_button_default": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 0, 225 ], "$recipe_book_uv_size": [ 14, 18 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 0, 450 ], "$recipe_book_uv_size": [ 28, 36 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 0, 900 ], "$recipe_book_uv_size": [ 56, 72 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 0, 1800 ], "$recipe_book_uv_size": [ 112, 144 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 0, 3600 ], "$recipe_book_uv_size": [ 224, 288 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 0, 7200 ], "$recipe_book_uv_size": [ 448, 576 ] }
+    ]
+  },
+  
+  /*//// Grid Buttons ////*/
+
+  "cell_image_recipe@recipe_book_java_dx.recipe_book_base": {
+    "size": [ 25, 25 ],
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 29, 206 ], "$recipe_book_uv_size": [ 25, 25 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 58, 412 ], "$recipe_book_uv_size": [ 50, 50 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 116, 824 ], "$recipe_book_uv_size": [ 100, 100 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 232, 1648 ], "$recipe_book_uv_size": [ 200, 200 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 464, 3296 ], "$recipe_book_uv_size": [ 400, 400 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 928, 6592 ], "$recipe_book_uv_size": [ 800, 800 ] }
+    ]
+  },
+
+  "cell_image_recipe_plus@recipe_book_java_dx.cell_image_recipe": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 29, 231 ], "$recipe_book_uv_size": [ 25, 25 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 58, 462 ], "$recipe_book_uv_size": [ 50, 50 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 116, 924 ], "$recipe_book_uv_size": [ 100, 100 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 232, 1848 ], "$recipe_book_uv_size": [ 200, 200 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 464, 3696 ], "$recipe_book_uv_size": [ 400, 400 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 928, 7392 ], "$recipe_book_uv_size": [ 800, 800 ] }
+    ]
+  },
+
+  "cell_image_recipe_red@recipe_book_java_dx.cell_image_recipe": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 54, 206 ], "$recipe_book_uv_size": [ 25, 25 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 108, 412 ], "$recipe_book_uv_size": [ 50, 50 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 216, 824 ], "$recipe_book_uv_size": [ 100, 100 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 432, 1648 ], "$recipe_book_uv_size": [ 200, 200 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 864, 3296 ], "$recipe_book_uv_size": [ 400, 400 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 1728, 6592 ], "$recipe_book_uv_size": [ 800, 800 ] }
+    ]
+  },
+
+  "cell_image_recipe_plus_red@recipe_book_java_dx.cell_image_recipe": {
+    "variables": [
+      { "requires": "($recipe_book_resolution = 256x)", "$recipe_book_uv": [ 54, 231 ], "$recipe_book_uv_size": [ 25, 25 ] },
+      { "requires": "($recipe_book_resolution = 512x)", "$recipe_book_uv": [ 108, 462 ], "$recipe_book_uv_size": [ 50, 50 ] },
+      { "requires": "($recipe_book_resolution = 1024x)", "$recipe_book_uv": [ 216, 924 ], "$recipe_book_uv_size": [ 100, 100 ] },
+      { "requires": "($recipe_book_resolution = 2048x)", "$recipe_book_uv": [ 432, 1848 ], "$recipe_book_uv_size": [ 200, 200 ] },
+      { "requires": "($recipe_book_resolution = 4096x)", "$recipe_book_uv": [ 864, 3696 ], "$recipe_book_uv_size": [ 400, 400 ] },
+      { "requires": "($recipe_book_resolution = 8192x)", "$recipe_book_uv": [ 1728, 7392 ], "$recipe_book_uv_size": [ 800, 800 ] }
+    ]
+  },
+
+  /*//// Main Panel ////*/
+
+  "recipe_button_default@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/minecraft/textures/gui/recipe_button",
+    "$uv_size": [ 20, 18 ]
+  },
+
+  "recipe_button_hover@recipe_book_java_dx.recipe_button_default": {
+    "$uv": [ 0, -19 ]
+  }
+}

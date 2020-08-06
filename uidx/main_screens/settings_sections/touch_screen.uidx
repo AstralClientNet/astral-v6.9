@@ -1,0 +1,218 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "touch_dx",
+
+  /*//// Stack panels ////*/
+  
+  "touch_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_midddle",
+    "anchor_to": "top_midddle",
+    "size": [ 310, "100%c" ],
+    "controls": [
+      {
+        "fill_panel_0": {
+          "type": "panel",
+          "size": [ 1, 4 ]
+        }
+      },
+      {
+        "panel_0": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "option_toggle_0@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "options.invertYAxis",
+                "$option_binding_name": "#touch_invert_y_axis",
+                "$option_enabled_binding_name": "#touch_invert_y_axis_enabled",
+                "$toggle_name": "touch_invert_y_axis"
+              }
+            },
+            {
+              "option_slider_0@settings_common_dx.option_slider": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "#touch_sensitivity_slider_label",
+                "$slider_name": "touch_sensitivity",
+                "$slider_value_binding_name": "#touch_sensitivity",
+                "$option_enabled_binding_name": "#touch_sensitivity_enabled",
+                "$label_bindings": [ { "binding_name": "#touch_sensitivity_slider_label" } ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_1": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "option_toggle_2@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "options.destroyvibration",
+                "$option_binding_name": "#touch_vibration",
+                "$option_enabled_binding_name": "#touch_vibration_enabled",
+                "$toggle_name": "touch_vibration"
+              }
+            },
+            {
+              "option_toggle_1@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "options.autojump",
+                "$option_binding_name": "#touch_autojump",
+                "$option_enabled_binding_name": "#touch_autojump_enabled",
+                "$toggle_name": "touch_autojump"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_2": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "option_toggle_4@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "options.usetouchpad",
+                "$option_binding_name": "#split_controls",
+                "$option_enabled_binding_name": "#split_controls_enabled",
+                "$toggle_name": "split_controls"
+              }
+            },
+            {
+              "option_toggle_5@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "options.lefthanded",
+                "$option_binding_name": "#left_handed",
+                "$option_enabled_binding_name": "#left_handed_enabled",
+                "$toggle_name": "left_handed"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_3": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "option_toggle_6@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "options.swapJumpAndSneak",
+                "$option_binding_name": "#swap_jump_and_sneak",
+                "$option_enabled_binding_name": "#swap_jump_and_sneak_enabled",
+                "$toggle_name": "swap_jump_and_sneak"
+              }
+            },
+            {
+              "hotbar_only_touch_toggle@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "options.hotbarOnlyTouch",
+                "$option_binding_name": "#hotbar_only_touch",
+                "$option_enabled_binding_name": "#hotbar_only_touch_enabled",
+                "$toggle_name": "hotbar_only_touch"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_4": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "option_slider_1@settings_common_dx.option_slider": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "#button_size_slider_label",
+                "$slider_name": "button_size",
+                "$slider_value_binding_name": "#button_size",
+                "$slider_tts_text_value": "#button_size_text_value",
+                "$option_enabled_binding_name": "#button_size_enabled",
+                "$label_bindings": [ { "binding_name": "$option_label" } ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  
+  /*//// Scrolling Panel ////*/
+  
+  "touch_scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 324, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "touch_dx.touch_stack_panel"
+  }, 
+  
+  /*//// Screen ////*/
+  
+  "touch_label@settings_dx.base_label": {
+    "text": "options.touchSettings",
+    "offset": [ 0, 4 ]
+  },
+
+  "touch_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "touch_dx.touch_label",
+    "$top_content_size": [ "100%", 32 ],
+    "$middle_content": "touch_dx.touch_scrolling_panel",
+    "$bottom_content": "touch_dx.touch_bottom_content"
+  },
+
+  "touch_bottom_content": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -9 ],
+    "size": [ 310, 20 ],
+    "controls": [
+      {
+        "reset_button@settings_common_dx.action_button": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "enabled": "$is_pregame",
+          "$pressed_button_name": "button.reset_touch_bindings",
+          "$button_text": "controllerLayoutScreen.resetAllBindings",
+          "property_bag": {
+            "reset_group": "video"
+          }
+        }
+      },
+      {
+        "null_navigation_tab@settings_dx.null_navigation_tab": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "layer": 4
+        }
+      }
+    ]
+  }
+}

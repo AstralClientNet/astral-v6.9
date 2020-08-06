@@ -1,0 +1,282 @@
+{
+  "namespace": "base_screen",
+  "white_background": {
+    "type": "image",
+    "color": "$background_color",
+    "texture": "textures/ui/White",
+    "alpha": 0.1,
+    "fill": true
+  },
+  "background@base_screen.white_background": {
+    "alpha": 0.1,
+    "$background_color": [
+      0,
+      0,
+      0
+    ]
+  },
+  "stone_background": {
+    "type": "image",
+    "texture": "textures/background/astral_bg",
+    "tiled": true,
+    "tiled_scale": [
+      8,
+      8
+    ]
+  },
+
+  "gamepad_helpers": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ -66, "-4px" ],
+    "size": [ "100%c", 10 ],
+    "layer": 10,
+    "visible": "($win10_edition and $is_holographic)",
+    "controls": [
+      { "gamepad_helper_y@common.gamepad_helper_y": {} }
+    ]
+  },
+
+  "keyboard_helpers": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ -66, "-4px" ],
+    "size": [ "100%c", 10 ],
+    "layer": 10,
+    "visible": "($win10_edition and $is_holographic)",
+    "$keyboard_helper_visible_binding": "#edu_keyboard_helper_visible",
+    "$ignore_image": true,
+    "controls": [
+      { "keyboard_helper_keys@common.keyboard_helper_keys": {} }
+    ]
+  },
+
+  "root_screen": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "$top_content_size|default": [
+      "100%",
+      30
+    ],
+    "$top_layer_size|default": [
+      "100%",
+      0
+    ],
+    "$middle_content_size|default": [
+      "100%",
+      "fill"
+    ],
+    "$bottom_content_size|default": [
+      "100%",
+      31
+    ],
+    "$has_borders|default": true,
+    "controls": [
+      {
+        "safezone_top_background": {
+          "type": "panel",
+          "size": [
+            "200%",
+            "25%"
+          ],
+		  "alpha": 0.7,
+          "visible": "$has_borders",
+          "offset": [
+            0,
+            "-25%-0.5px"
+          ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "controls": [
+            {
+              "stone_background@base_screen.stone_background": {
+                "layer": -1
+              }
+            },
+            {
+              "background@base_screen.background": {}
+            }
+          ]
+        }
+      },
+      {
+        "stack_panel": {
+          "type": "stack_panel",
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "controls": [
+            {
+              "top_panel": {
+                "type": "panel",
+                "size": "$top_content_size",
+                "anims": "$top_panel_animations",
+                "controls": [
+                  {
+                    "clips_children_panel": {
+                      "type": "panel",
+                      "anims": "$top_content_animations",
+                      "controls": [
+                        {
+                          "top_content@$top_content": {
+                            "anchor_from": "top_middle",
+                            "anchor_to": "top_middle"
+                          }
+                        }
+                       
+                      ]
+                    }
+                  }   
+                ]
+              }
+            },
+            {
+              "top_layer": {
+                "type": "panel",
+                "size": "$top_layer_size",
+                "animation_reset_name": "screen_animation_reset",
+                "propagate_alpha": true,
+                "disable_anim_fast_forward": true,
+                "anims": "$top_layer_animations",
+                "controls": [
+                  
+                  {
+                    "clips_children_panel": {
+                      "type": "panel",
+                      "clips_children": true,
+                      "controls": [
+                        {
+                          "top_layer_content@$top_layer_content": {}
+                        }
+                      ]
+                    }
+                  }
+                  
+                ]
+              }
+            },
+            {
+              "middle_panel": {
+                "type": "panel",
+                "size": "$middle_content_size",
+                "controls": [
+                
+                  {
+                    "clips_children_panel": {
+                      "type": "panel",
+                      "clips_children": true,
+                      "controls": [
+                        {
+                          "middle_content@$middle_content": {
+                            "animation_reset_name": "screen_animation_reset",
+                            "propagate_alpha": true,
+                            "disable_anim_fast_forward": true,
+                            "anims": "$middle_panel_animation",
+                            "$middle_panel_animation|default": [
+                             "@screen_animations.middle_panel_fade_animation_push",
+                              "@screen_animations.middle_panel_fade_animation_pop",
+                              "@screen_animations.middle_panel_fade_animation_exit_push",
+                              "@screen_animations.middle_panel_fade_animation_exit_pop"
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "animated_background": {
+                      "type": "panel",
+                      "size": [
+                        "200%",
+                        "200%"
+                      ],
+                      "layer": -10,
+                      "$animation_background_reset_name|default": "screen_animation_reset",
+                      "animation_reset_name": "$animation_background_reset_name",
+                      "propagate_alpha": true,
+                      "anims": "$middle_background_animation",
+                      "alpha": "$background_alpha",
+                      "controls": [
+                        {
+                          "@base_screen.white_background": {
+                            "size": [
+                              "100%",
+                              "100%"
+                            ],
+                            "layer": -1
+                          }
+                        },
+                        {
+                          "@base_screen.background": {
+                            "alpha": 0.5,
+                            "size": [
+                              "100%",
+                              "100%"
+                            ],
+                            "layer": -2
+                          }
+                        },
+                        {
+                          "@base_screen.stone_background": {
+                            "size": [
+                              "100%",
+                              "100%"
+                            ],
+                            "layer": -3
+                          }
+                        }
+                      ]
+                    }
+                  }
+                  
+                ]
+              }
+            },
+            {
+              "bottom_panel": {
+                "type": "panel",
+                "size": "$bottom_content_size",
+                "animation_reset_name": "screen_animation_reset",
+                "alpha": 0.7,
+                "disable_anim_fast_forward": true,
+                "anims": "$bottom_panel_animations",
+                "controls": [
+                  {
+                    "clips_children_panel": {
+                      "type": "panel",
+                      "clips_children": true,
+                      "controls": [
+                        {
+                          "bottom_content@$bottom_content": {
+                            "anchor_from": "bottom_middle",
+                            "anchor_to": "bottom_middle"
+                          }
+                        }
+                      ]
+                    }
+                  }
+				  
+                  
+                ]
+              }
+            }
+          ]
+        }
+      },
+      { "gamepad_helpers@gamepad_helpers": {} },
+      { "keyboard_helpers@keyboard_helpers": {} },    
+      {
+        "popup_dialog_factory": {
+          "type": "factory",
+          "control_ids": "$factory_ids"
+        }
+      }
+    ]
+  }
+}

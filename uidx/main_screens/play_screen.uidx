@@ -1,0 +1,192 @@
+/*File made by @CrisXolt. 
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "play_dx",
+
+  /*////// PLAY AND EDIT MODE TOGGLES //////*/
+
+  "mode_button@common_toggles_dx.main_menu_button_toggle": {
+    "size": [ 20, 20 ],
+    "offset": [ -24, 0 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$toggle_name": "mode_toggle_button",
+    "$toggle_focus_enabled": false,
+    "$is_custom_button": true,
+    "$custom_from_button_id": "button.controller_back",
+    "$custom_to_button_id": "button.menu_ok",
+    "$custom_mapping_type": "global",
+    "$custom_scope": "controller"
+  },
+
+  "play_mode_button@play_dx.mode_button": {
+    "$button_text": "",
+    "$tab_view_binding_name": "play_mode_toggle",
+    "$toggle_default_state": true,
+    "$toggle_group_forced_index": 0,
+    "$unchecked_control": "java_gui_common.edit_default",
+    "$checked_control": "java_gui_common.edit_default",
+    "$unchecked_hover_control": "java_gui_common.edit_hover",
+    "$checked_hover_control": "java_gui_common.edit_hover",
+    "$unchecked_locked_control": "common_buttons_dx.locked",
+    "$checked_locked_control": "common_buttons_dx.locked",
+    "$unchecked_locked_hover_control": "common_buttons_dx.locked",
+    "$checked_locked_hover_control": "common_buttons_dx.locked",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "edit_mode_toggle",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "edit_mode_button@play_dx.mode_button": {
+    "$button_text": "",
+    "$tab_view_binding_name": "edit_mode_toggle",
+    "$toggle_group_forced_index": 1,
+    "$unchecked_control": "java_gui_common.play_default",
+    "$checked_control": "java_gui_common.play_default",
+    "$unchecked_hover_control": "java_gui_common.play_hover",
+    "$checked_hover_control": "java_gui_common.play_hover",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "edit_mode_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  /*////// BUTTONS AND OBJECTS //////*/
+  
+  "scroll_stack_panel_base": {
+    "type": "stack_panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "orientation": "vertical",
+    "size": [ 270, "100%c" ]
+  },
+
+  "base_label": {
+    "size": [ "default", 10 ],
+    "type": "label",
+    "layer": 2,
+    "shadow": true,
+    "color": "$main_menu_button_default_color"
+  },
+
+  "cancel_button@common_buttons_dx.main_button": {
+    "size": [ 150, 20 ],
+    "$pressed_button_name": "button.menu_exit",
+    "$button_text": "gui.cancel",
+    "layer": 1
+  },
+
+  /*////// SCREEN //////*/
+  
+  "play_screen_content": {
+    "type": "panel",
+    "$middle_clips_children": false,
+    "controls": [
+      {
+        "select_world_screen_panel@select_wolrd_dx.select_world_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "multiplayer_panel_view_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "multiplayer_panel": {
+          "type": "panel",
+          "controls": [
+            {
+              "play_multiplayer_screen_panel@play_multiplayer_dx.play_multiplayer_screen_panel": {
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "realms_panel_view_toggle",
+                    "source_property_name": "(not #toggle_state)",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            },
+            {
+              "play_realms_screen_panel@play_realms_dx.play_realms_screen_panel": {
+                "ignored": "$pre_release",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "realms_panel_view_toggle",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "multiplayer_panel_view_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "what_is_realms_popup_panel@play_realms_dx.what_is_realms_popup_panel": {
+          "ignored": "$pre_release",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "what_is_realms_popup_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "popup_dialog_factory": {
+          "type": "factory",
+          "control_ids": {
+            "join_by_code": "@play.popup_dialog_join_by_code",
+            "high_ping_warning": "@play.popup_dialog_high_ping"
+          }
+        }
+      },
+      {
+        "mode_buttons": {
+          "type": "panel",
+          "layer": 100,
+          "size": [ 308, 44 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -8 ],
+          "controls": [
+            { "play_mode_button@play_dx.play_mode_button": {} },
+            { "edit_mode_button@play_dx.edit_mode_button": {} }
+          ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "realms_panel_view_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

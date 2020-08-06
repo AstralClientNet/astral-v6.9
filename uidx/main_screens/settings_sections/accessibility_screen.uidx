@@ -1,0 +1,133 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "accessibility_dx",
+
+  "accessibility_label@settings_dx.base_label": {
+    "text": "options.accessibility.title",
+    "offset": [ 0, 14 ]
+  },
+
+  "panel_cotent": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, 28 ],
+    "size": [ 310, 20 ],
+    "controls": [
+      {
+        "option_toggle0@settings_common_dx.option_toggle": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "enabled": "$text_to_speech_supported",
+          "$option_label": "options.enableAutoPlatformTextToSpeech",
+          "$option_binding_name": "#enable_auto_text_to_speech",
+          "$option_enabled_binding_name": "#enable_auto_text_to_speech_enabled",
+          "$toggle_name": "enable_auto_text_to_speech"
+        }
+      },
+      {
+        "option_toggle1@settings_common_dx.option_toggle": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "enabled": "$text_to_speech_supported",
+          "$option_label": "options.enableUITextToSpeech",
+          "$option_binding_name": "#enable_ui_text_to_speech",
+          "$option_enabled_binding_name": "#enable_ui_text_to_speech_enabled",
+          "$toggle_name": "enable_ui_text_to_speech"
+        }
+      },
+      {
+        "option_toggle2@settings_common_dx.option_toggle": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 0, 24 ],
+          "enabled": "$text_to_speech_supported",
+          "$option_label": "options.enableChatTextToSpeech",
+          "$option_binding_name": "#enable_chat_text_to_speech",
+          "$option_enabled_binding_name": "#enable_chat_text_to_speech_enabled",
+          "$toggle_name": "enable_chat_text_to_speech"
+        }
+      },
+      {
+        "option_toggle3@settings_common_dx.option_toggle": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 24 ],
+          "enabled": "$text_to_speech_supported",
+          "$option_label": "options.enableOpenChatMessage",
+          "$option_binding_name": "#enable_open_chat_message",
+          "$option_enabled_binding_name": "#enable_open_chat_message_enabled",
+          "$toggle_name": "enable_open_chat_message"
+        }
+      },
+      {
+        "text_background_opacity_slider@settings_common_dx.option_slider": {
+          "size": [ 310, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 48 ],
+          "$option_label": "#text_background_opacity_slider_label",
+          "$slider_name": "text_background_opacity",
+          "$slider_value_binding_name": "#text_background_opacity",
+          "$slider_tts_text_value": "#text_background_opacity_text_value",
+          "$option_enabled_binding_name": "#text_background_opacity_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "$option_label"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*///// Screen ////*/
+  
+  "accessibility_screen_panel": {
+    "type": "panel",
+    "controls": [
+      { "main_bg_panel@settings_dx.bg_panel": { } },
+      { "options_label@accessibility_dx.accessibility_label": { } },
+      { "panel_cotent@accessibility_dx.panel_cotent": { } },
+      { "accessibility_bottom_content@accessibility_dx.accessibility_bottom_content": { } }
+    ]
+  },
+
+  "accessibility_bottom_content": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -12 ],
+    "layer": 4,
+    "size": [ 310, 20 ],
+    "controls": [
+      {
+        "reset_button@settings_common_dx.action_button": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "ignored": "(not $is_pregame)",
+          "$pressed_button_name": "button.reset_settings",
+          "$button_text": "options.resetSettings",
+          "$focus_override_down": "FOCUS_OVERRIDE_STOP",
+          "property_bag": {
+            "reset_group": "accessibility"
+          }
+        }
+      },
+      {
+        "null_navigation_tab@settings_dx.null_navigation_tab": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "layer": 4
+        }
+      }
+    ]
+  }
+}

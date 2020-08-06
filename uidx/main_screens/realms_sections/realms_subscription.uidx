@@ -1,0 +1,127 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "realms_subscription_dx",
+
+  /*////// PANELS //////*/
+
+  "panel_cotent": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 200, 216 ],
+    "controls": [
+      {
+        "title_label@settings_dx.options_label": {
+          "layer": 2,
+          "offset": [ 0, 16 ],
+          "text": "realmsSettingsScreen.subscriptionSectionTitle"
+        }
+      },
+      {
+        "size_label@settings_dx.options_label": {
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [ 0.625, 0.625, 0.625 ],
+          "shadow": false,
+          "offset": [ 0, 39 ],
+          "text": "realmsSettingsScreen.playerCountLabel"
+        }
+      },
+      {
+        "size_value_label@settings_dx.options_label": {
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "shadow": false,
+          "offset": [ 0, 52 ],
+          "text": "#item_name",
+          "bindings": [
+            {
+              "binding_type": "global",
+              "binding_name": "#realm_player_count",
+              "binding_name_override": "#item_name"
+            }
+          ]
+        }
+      },
+      {
+        "duration_label@settings_dx.options_label": {
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "color": [ 0.625, 0.625, 0.625 ],
+          "shadow": false,
+          "offset": [ 0, 78 ],
+          "text": "realmsSettingsScreen.realmDurationLabel"
+        }
+      },
+      {
+        "duration_value_label@settings_dx.options_label": {
+          "layer": 2,
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "shadow": false,
+          "offset": [ 0, 91 ],
+          "text": "#item_name",
+          "bindings": [
+            {
+              "binding_type": "global",
+              "binding_name": "#realm_duration_label",
+              "binding_name_override": "#item_name"
+            }
+          ]
+        }
+      },
+      {
+        "renew_subscription_button@common_buttons_dx.main_button": {
+          "size": [ 200, 20 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -78 ],
+          "$button_text": "realmsSettingsScreen.renewRealmButton",
+          "$pressed_button_name": "menu_realms_renew_subscription",
+          "bindings": [
+            {
+              "binding_name": "#is_realm_expired",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "delete_realm_button@common_buttons_dx.main_button": {
+          "size": [ 200, 20 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -26 ],
+          "$button_text": "realmsSettingsScreen.deleteRealmButton",
+          "$pressed_button_name": "menu_realms_delete_realm",
+          "bindings": [
+            {
+              "binding_name": "#delete_realm_button_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "back_button_tab@realms_main_dx.back_button_tab": {
+          "size": [ 200, 20 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+
+  "subscription_panel": {
+    "type": "panel",
+    "controls": [
+      { "panel_content@realms_subscription_dx.panel_cotent": { "layer": 2 } },
+      { "bg@java_gui_common.options_background": { "layer": -1, "ignored": "(not $is_pregame)" } },
+      { "bg_world@java_gui_common.screen_background": { "layer": -1, "ignored": "$is_pregame" } }
+    ]
+  }
+}

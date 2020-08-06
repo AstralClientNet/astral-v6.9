@@ -1,0 +1,164 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "switch_toggle_janger",
+
+  "switch_toggle": { //switch == toggle :/
+    "type": "panel",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$base_text": "none",
+    "$toggle_view_binding_name|default": "this_toggle",
+    "controls": [
+      {
+        "$toggle_view_binding_name@switch_toggle_janger.toggle_switch": {
+        }
+      }
+    ]
+  },
+
+  "switch_toggle_common@toggle_janger.toggle": {
+    "$toggle_binding_type|default": "none",
+    "$toggle_enabled_binding_type|default": "none",
+    "$toggle_tab_focus_binding_type|default": "none",
+    "$toggle_tab_focus_id_binding_type|default": "none",
+    "$toggle_tab_focus_override_left_binding_type|default": "none",
+    "$toggle_tab_focus_override_right_binding_type|default": "none",
+    "$toggle_tab_focus_override_down_binding_type|default": "none",
+    "$toggle_tab_focus_override_up_binding_type|default": "none",
+    "$toggle_on_hover_binding_type|default": "none",
+    "$toggle_tab_focus_binding_name|default": "",
+    "$toggle_tab_focus_id_binding_name|default": "",
+    "$toggle_tab_focus_override_right|default": "#focus_override_right",
+    "$toggle_tab_focus_override_down|default": "#focus_override_down",
+    "$toggle_tab_focus_override_up|default": "#focus_override_up",
+    "$toggle_tab_focus_override_left|default": "#focus_override_left",
+    "$toggle_on_hover_binding_name|default": "",
+    "$toggle_focus_wrap_enabled|default": true,
+    "$toggle_focus_magnet_enabled|default": true,
+    "$button_mappings|default": [
+      {
+        "from_button_id": "button.menu_select",
+        "to_button_id": "button.menu_select",
+        "mapping_type": "pressed"
+      },
+      {
+        "from_button_id": "button.menu_ok",
+        "to_button_id": "button.menu_ok",
+        "mapping_type": "focused"
+      },
+      {
+        "ignored": "(not $enable_directional_toggling)",
+        "from_button_id": "button.menu_left",
+        "to_button_id": "$toggle_off_button",
+        "mapping_type": "pressed",
+        "input_mode_condition": "gamepad_and_not_gaze"
+      },
+      {
+        "ignored": "(not $enable_directional_toggling)",
+        "from_button_id": "button.menu_right",
+        "to_button_id": "$toggle_on_button",
+        "mapping_type": "pressed",
+        "input_mode_condition": "gamepad_and_not_gaze"
+      }
+    ],
+    "focus_wrap_enabled": "$toggle_focus_wrap_enabled",
+    "focus_magnet_enabled": "$toggle_focus_magnet_enabled",
+    "$custom_toggle_binding_type|default": "none",
+    "$custom_toggle_binding_condition|default": "visible",
+    "$custom_toggle_state_binding_name|default": "",
+    "$custom_toggle_state_binding_name_override|default": "",
+    "$toggle_tts_header_binding_type|default": "none",
+    "$toggle_tts_header_binding_condition|default": "visible",
+    "$toggle_tts_header_binding_collection_name|default": "",
+    "$toggle_tts_header|default": "",
+    "button_mappings": "$button_mappings",
+    "bindings": [
+      {
+        "binding_type": "$toggle_binding_type",
+        "binding_condition": "$toggle_binding_condition",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_state_binding_name",
+        "binding_name_override": "#toggle_state"
+      },
+      {
+        "binding_type": "$toggle_enabled_binding_type",
+        "binding_condition": "$toggle_enabled_binding_condition",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_enabled_binding_name",
+        "binding_name_override": "#enabled"
+      },
+      {
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_type": "collection_details"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_binding_type",
+        "binding_name": "$toggle_tab_focus_binding_name",
+        "binding_name_override": "#default_focus_precedence"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_id_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_id_binding_name",
+        "binding_name_override": "#focus_identifier"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_right_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_right",
+        "binding_name_override": "#focus_change_right"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_left_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_left",
+        "binding_name_override": "#focus_change_left"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_down_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_down",
+        "binding_name_override": "#focus_change_down"
+      },
+      {
+        "binding_type": "$toggle_tab_focus_override_up_binding_type",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$toggle_tab_focus_override_up",
+        "binding_name_override": "#focus_change_up"
+      },
+      {
+        "binding_type": "$toggle_on_hover_binding_type",
+        "binding_name": "$toggle_on_hover_binding_name",
+        "binding_name_override": "#toggle_on_hover"
+      },
+      {
+        "binding_type": "$custom_toggle_binding_type",
+        "binding_condition": "$custom_toggle_binding_condition",
+        "binding_collection_name": "$toggle_grid_collection_name",
+        "binding_name": "$custom_toggle_state_binding_name",
+        "binding_name_override": "$custom_toggle_state_binding_name_override"
+      },
+      {
+        "binding_type": "$toggle_tts_header_binding_type",
+        "binding_condition": "$toggle_tts_header_binding_condition",
+        "binding_collection_name": "$toggle_tts_header_binding_collection_name",
+        "binding_name": "$toggle_tts_header"
+      }
+    ]
+  },
+
+  "toggle_switch@switch_toggle_janger.switch_toggle_common": {
+    "controls": [
+      { "unchecked@$state_unchecked": { } },
+      { "checked@$state_checked": { "$show_background": true } },
+      { "unchecked_hover@$state_unchecked_hover": { "$needs_border": true } },
+      { "checked_hover@$state_checked_hover": {} },
+      { "unchecked_locked@$state_unchecked_locked": {} },
+      { "checked_locked@$state_checked_locked": {} },
+      { "unchecked_locked_hover@$state_unchecked_locked_hover": {} },
+      { "checked_locked_hover@$state_checked_locked_hover": {} }
+    ]
+  }
+}

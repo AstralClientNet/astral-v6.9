@@ -1,0 +1,261 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "world_behavior_packs_dx",
+
+  /*//// Grid ////*/
+  
+  "selected_pack_grid@resource_packs_dx.resource_packs_item_grid_base": {
+    "factory": {
+      "name": "selected_pack_factory",
+      "control_name": "resource_packs_dx.pack_panel"
+    },
+    "$pack_items_type": "#selected_pack_items_addon",
+    "$button.deselected_pack": "button.deselected_pack_addon",
+    "$pressed_button_name_type": "button.selected_pack_addon",
+    "$is_selected": true,
+    "$button.move_left": "button.move_left_addon",
+    "$button.sort_up": "button.sort_up_addon",
+    "$button.sort_down": "button.sort_down_addon",
+    "$button.pack_settings": "button.pack_settings_addon",
+    "$button.report_errors": "button.report_errors_addon",
+    "collection_name": "$pack_items_type",
+    "bindings": [
+      {
+        "binding_name": "#selected_grid_dimensions_addon",
+        "binding_name_override": "#collection_length"
+      }
+    ]
+  },
+
+  "available_pack_grid@resource_packs_dx.resource_packs_item_grid_base": {
+    "factory": {
+      "name": "available_pack_factory",
+      "control_name": "resource_packs_dx.pack_panel"
+    },
+    "$pack_items_type": "#available_pack_items_addon",
+    "$button.deselected_pack": "button.deselected_pack_addon",
+    "$pressed_button_name_type": "button.available_pack_addon",
+    "$button.move_left": "button.move_left_addon",
+    "$button.sort_up": "button.sort_up_addon",
+    "$button.sort_down": "button.sort_down_addon",
+    "collection_name": "$pack_items_type",
+    "$available_grid_visible_binding_name|default": "",
+    "$available_grid_visible_binding_type|default": "none",
+    "bindings": [
+      {
+        "binding_name": "#available_grid_dimensions_addon",
+        "binding_name_override": "#collection_length"
+      },
+      {
+        "binding_name": "$available_grid_visible_binding_name",
+        "binding_name_override": "#visible",
+        "binding_type": "$available_grid_visible_binding_type"
+      }
+    ]
+  },
+
+  /*//// Stack panels ////*/
+  
+  "avaliable_behavior_pack_stack_panel@resource_packs_dx.scroll_stack_panel_base": {
+    "controls": [
+      {
+        "text_title_panel": {
+          "type": "panel",
+          "size": [ "100%", 15 ],
+          "controls": [
+            {
+              "avaliable_behavior_pack_label@settings_dx.base_label": {
+                "size": [ "default", 13 ],
+                "offset": [ 0, 2 ],
+                "color": [ 1.0, 1.0, 1.0 ],
+                "shadow": false,
+                "text_alignment": "center",
+                "text": "pack.available.title",
+                "layer": 10,
+                "controls": [
+                  {
+                    "text_s": {
+                      "type": "image",
+                      "size": [ "100% + 2px", 1 ],
+                      "offset": [ 0, 3 ],
+                      "texture": "textures/uidx/white",
+                      "layer": 9
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "available_pack_grid@world_behavior_packs_dx.available_pack_grid": {
+          "$available_grid_visible_binding_name": "(not $no_available_packs_visibility_binding)",
+          "$available_grid_visible_binding_type": "level",
+          "layer": 10
+        }
+      },
+      {
+        "padding_end": {
+          "type": "panel",
+          "size": [ "100%", 2 ]
+        }
+      }
+    ]
+  },
+
+  "selected_behavior_pack_stack_panel@resource_packs_dx.scroll_stack_panel_base": {
+    "controls": [
+      {
+        "text_title_panel": {
+          "type": "panel",
+          "size": [ "100%", 15 ],
+          "controls": [
+            {
+              "selected_behavior_pack_label@settings_dx.base_label": {
+                "size": [ "default", 13 ],
+                "offset": [ 0, 2 ],
+                "color": [ 1.0, 1.0, 1.0 ],
+                "shadow": false,
+                "text_alignment": "center",
+                "text": "pack.selected.title",
+                "layer": 10,
+                "controls": [
+                  {
+                    "text_s": {
+                      "type": "image",
+                      "size": [ "100% + 2px", 1 ],
+                      "offset": [ 0, 3 ],
+                      "texture": "textures/uidx/white",
+                      "layer": 9
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "selected_pack_grid@world_behavior_packs_dx.selected_pack_grid": {
+          "size": [ "100%", "default" ],
+          "layer": 10
+        }
+      },
+      {
+        "default_pack_button@resource_packs.common_pack_button": {
+          "size": [ "100%", 36 ],
+          "$button_content": "resource_packs_dx.default_pack_button_content",
+          "$default_item_zip": "#default_item_zip_addon",
+          "$default_item_file_system": "#default_item_file_system_addon",
+          "$default_item_texture": "#default_item_texture_addon",
+          "controls": [
+            {
+              "default@common_dx.null_panel": {
+                "controls": [
+                  { "button_content@$button_content": { "layer": 2 } }
+                ]
+              }
+            },
+            {
+              "hover": {
+                "type": "image",
+                "texture": "textures/ui/square_image_border_white",
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  { "button_content@$button_content": { "layer": 2 } }
+                ]
+              }
+            },
+            {
+              "pressed@common_dx.null_panel": {
+                "controls": [
+                  { "button_content@$button_content": { "layer": 2 } }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "padding_end": {
+          "type": "panel",
+          "size": [ "100%", 2 ]
+        }
+      }
+    ]
+  },
+
+  /*//// Screen ////*/
+  
+  "avaliable_behavior_pack_scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ "100%", "100%" ],
+    "$scroll_view_port_size_touch": [ "100%", "100%" ],
+    "layer": 2,
+    "$scrolling_content": "world_behavior_packs_dx.avaliable_behavior_pack_stack_panel",
+    "$scroll_bar_contained": false
+  },
+
+  "selected_behavior_pack_scrolling_panel@world_behavior_packs_dx.avaliable_behavior_pack_scrolling_panel": {
+    "$scrolling_content": "world_behavior_packs_dx.selected_behavior_pack_stack_panel"
+  },
+
+  "world_behavior_pack_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$title_label": "dataPack.title",
+    "$info_label": "pack.data.dropInfo",
+    "$top_content": "resource_packs_dx.resource_pack_top_content",
+    "$middle_content": "world_behavior_packs_dx.avaliable_behavior_pack_scrolling_panel",
+    "$middle_content_right": "world_behavior_packs_dx.selected_behavior_pack_scrolling_panel",
+    "$bottom_content": "world_behavior_packs_dx.behavior_pack_bottom_content",
+    "$bottom_content_size": [ "100%", 51 ],
+    "$twin_middle_content": true
+  },
+
+  "behavior_pack_bottom_content": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -28 ],
+    "size": [ 308, 20 ],
+    "controls": [
+      {
+        "force_user_agreement_level_info": {
+          "type": "panel",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "size": [ 150, 20 ],
+          "controls": [
+            {
+              "info_label@settings_dx.base_label": {
+                "text_alignment": "center",
+                "text": "resourcePack.header.behavior",
+                "color": [ 0.6, 0.6, 0.6 ],
+                "offset": [ 0, 21 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "force_user_agreement_level_toggle@common_buttons_dx.locked": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$is_on": true,
+          "$button_content": "common_buttons_dx.button_label_toggle",
+          "$option_label": "controllerLayoutScreen.save",
+          "$option_enabled_binding_name": "#force_user_agreement_level_enabled",
+          "$toggle_name": "force_user_agreement_level"
+        }
+      },
+      {
+        "behavior_packs_done_button@create_world_dx.more_world_options_done_button": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right"
+        }
+      }
+    ]
+  }
+}

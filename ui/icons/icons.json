@@ -1,0 +1,59 @@
+{ 
+    "namespace": "Icons",
+    "options": {
+        "type": "image",
+    
+        "texture": "textures/icons/settings",
+        "size": [ "30%", "30%" ]
+      },
+      "cosmetics": {
+        "type": "image",
+    
+        "texture": "textures/icons/cosmetics",
+        "size": [ "30%", "30%" ]
+      },
+      "profile": {
+        "type": "image",
+    
+        "texture": "textures/icons/profile",
+        "size": [ "30%", "30%" ]
+      },
+      "skins": {
+        "type": "image",
+    
+        "texture": "textures/icons/skins",
+        "size": [ "30%", "30%" ]
+      },
+      "language": {
+        "type": "image",
+    
+        "texture": "textures/icons/lang",
+        "size": [ "30%", "30%" ]
+      },
+      "x": {
+        "type": "image",
+    
+        "texture": "textures/icons/x",
+        "size": [ "30%", "30%" ]
+      },
+      "discord": {
+        "type": "image",
+
+        "texture": "textures/icons/discord",
+        "size": [ 24, 24 ]
+      },
+      "title": {
+        "type": "image",
+
+        "texture": "textures/icons/title",
+        "size": [ "150%", "150%" ]
+      },
+
+      "pause_menu": {
+        "type": "image",
+
+        "texture": "textures/ui/pause_screen",
+        "size": [ "100%", "100%" ]
+      }
+
+}

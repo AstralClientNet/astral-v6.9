@@ -1,0 +1,480 @@
+//This JSON is owned by light#8311. DO NOT Reproduce any of this code without the permission of the original owner.//
+
+{
+  "namespace": "start_astral_screen",
+  
+
+  "title_image": {
+    "type": "image",
+    "anchor_from": "center",
+    "anchor_to": "center", 
+    "size": [ 
+      "50%",
+      "20%"
+    ],
+    "offset": [ -8, -50 ],
+    "texture": "textures/ui/title"
+  },
+      
+   "version": {
+    "type": "label",
+    "layer": 2,
+	  "font_type": "smooth",
+    "alpha": 0.4,
+    "text": "#version",
+    "size": [
+      "default",
+      20
+    ],
+    "offset": [
+      0,
+      10
+    ],
+    "max_size": [
+      "100%",
+      "100%"
+    ],
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "bindings": [
+      {
+        "binding_name": "#version"
+      }
+    ]
+  },
+  
+   "client_version": {
+    "type": "label",
+    "layer": 2,
+  	"font_type": "smooth",
+    "text": "§fCopyright Mojang AB. Do not distribute!",
+    "alpha": 0.4,
+    "size": [
+      "default",
+      20
+    ],
+    "offset": [
+      0,
+      10
+    ],
+    "max_size": [
+      "100%",
+      "100%"
+    ],
+    "anchor_from": "bottom_right",
+    "anchor_to": "bottom_right",
+    "bindings": [
+      {
+        "binding_name": "#client_version"
+      }
+    ]
+  },
+  
+   
+  "ign": {
+    "type": "label",
+    "layer": 10,
+    "font_type": "smooth",
+    "font_scale_factor": 0.9,
+    "text": "#playername",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 20, 5 ],
+    "bindings": [
+      {
+        "binding_name": "#playername"
+      }
+    ]
+  },
+
+  "player_ic": {
+    "type": "image",
+    "size": [ "50%", "50%" ],
+    "offset": [ -31, 0 ],
+    "bindings": [
+    {
+       "binding_name": "#gamerpic_texture_path",
+       "binding_name_override": "#texture"
+     },
+     {
+       "binding_name": "#gamerpic_texture_location_type",
+       "binding_name_override": "#texture_file_system"
+     }
+   ]     
+ },
+   
+  "black_button@black_button.black_button": {},
+  "main_button@main_button.main_button": {},
+  "clear_button@clear_button.clear_button": {},
+  
+  "play_button@clear_button": {
+    "$pressed_button_name": "button.menu_play",
+    "$button_text": "§fPlay",
+    "font_scale_factor": 0.8,
+    "size": [ 162, 16 ]
+  },
+  
+  "exit_button@clear_button": {
+    "$pressed_button_name": "button.menu_exit",
+    "$custom_content": "Icons.x",
+    "$button_text": "",
+    "size": [ 17, 17 ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [ 0 , "5%" ]
+  },
+  
+  "achievements_button@clear_button": {
+    "$pressed_button_name": "button.menu_achievements",
+    "$button_text": "§fAdvancements",
+    "font_scale_factor": 0.8,
+    "size": [ 162, 16 ]
+  },
+  
+  "profile_button@clear_button": {
+    "$pressed_button_name": "button.to_profile_screen",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "$button_text": "§fWardrobe",
+    "$custom_content": "Icons.profile",
+    "$focus_id": "profile_button",
+    "$button_tts_header": "accessibility.start.profile",
+    "offset": [ "-11%", 1]
+  },
+  
+    "store_button@clear_button": {
+    "$pressed_button_name": "button.menu_store",
+    "$button_text": "§fCosmetics",
+    "$custom_content": "Icons.cosmetics",
+	  "anchor_from": "center",
+    "anchor_to": "center",
+    "offset": [ "10%", 1]
+	  
+  },
+    
+  "options_button@clear_button": {
+    "$pressed_button_name": "button.menu_settings",
+    "$button_text": "§fOptions",
+    "$custom_content": "Icons.options",
+	"anchor_from": "center",
+  "anchor_to": "center",
+  "offset": [ "-0.5%" , 1]
+  },
+  
+  "feedback@clear_button": {
+    "$custom_content": "start_astral_screen.player_ic",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "size": [ 80, 17 ],
+    "offset": [ "1%c" , 1.5 ],
+    "$pressed_button_name": "button.menu_open_uri",
+    "property_bag": {
+      "#hyperlink": "https://aka.ms/minecraftfb"
+    },
+    "$button_text": "#player_name",
+    "bindings": [
+      {
+        "binding_name": "#playername"
+      }
+    ]
+  },
+
+  "feedback_button": {
+    "type": "panel",
+    "controls": [
+         {
+           "feedback@feedback": {}
+         }
+    ]
+  },
+
+  "titleimage": {
+    "type": "image",
+    "texture": "textures/icons/title",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [ 110, 110 ]
+  },
+
+  "title": {
+    "type": "panel",
+    "offset": [ -10, -52],
+    "controls": [
+         {
+           "titleimage@titleimage": {}
+         } 
+    ]
+  },
+
+  "bottom_menu_content": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "controls": [
+      {
+	    "options_button@options_button": {}
+	  },
+	  {
+	    "store_button@store_button": {
+		"enabled": "($not_store_disabled)"
+		}
+	  },
+    {
+      "profile_button@profile_button": {}
+    },
+    {
+	    "version@version": {}
+	  },
+    {
+	    "client_version@client_version": {}
+    } 
+	  
+    ]
+  },
+
+  "bottom_menu_panel": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+     {
+        "bottom_menu_panel_content": {
+          "type": "stack_panel",
+		      "anchor_from": "center",
+		      "anchor_to": "center",
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "bottom_buttons_panel_center": {
+                "type": "panel",
+                "size": [
+                  "100%",
+                  "100%"
+                ],
+                "controls": [
+                  {
+                    "bottom_menu_content@bottom_menu_content": {}
+                  }
+                ]
+              }
+            }
+           
+          ]
+        }
+      }
+    ]
+  },
+
+  
+  "text_panel": {
+    "type": "panel",
+    "size": [
+      "100%",
+      "100%"
+    ],
+    "offset": [
+      0,
+      0
+    ],
+    "controls": [
+	  {
+	    "version@version": {}
+	  },
+      {
+	    "client_version@client_version": {}
+	  },
+	  {
+	    "xbl_signin_button@xbl_signin_button": {}
+	  }
+	 
+    ]
+  },
+
+
+  "top_menu_panel": {
+    "type": "panel",
+    "controls": [
+     {
+        "top_menu_panel_content": {
+          "type": "stack_panel",
+          "size": [
+            "100%",
+            "100%"
+          ],
+          "controls": [
+            {
+              "top_panel": {
+                "type": "panel",
+                "size": [
+                  "100%",
+                  "100%"
+                ],
+                "controls": [
+                  {
+                    "exit_button@exit_button": {}
+                  },
+                  {
+                    "feedback_button@feedback_button": {}
+                  },
+                  {
+                    "ign@ign": {}
+                  }     
+                ]
+              }
+            }
+           
+          ]
+        }
+      }
+    ]
+  },   
+
+  "horizon_spacer": {
+    "type": "panel",
+    "size": [
+      3,
+      "100%"
+    ]
+  },
+
+  "spacer_panel": {
+    "type": "panel",
+    "size": [
+      "100%",
+      5
+    ]
+  },
+
+  "main_menu_panel": {
+    "type": "panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+     {
+        "main_menu_panel_content": {
+          "type": "stack_panel",
+		      "anchor_from": "center",
+		      "anchor_to": "center",
+          "size": [
+            "100%",
+            "100%"
+          ],
+		     "offset": [
+		        8,
+		        15
+		       ],
+          "orientation": "horizontal",
+          "controls": [
+            {
+              "main_buttons_panel_center": {
+                "type": "panel",
+                "size": [
+                  "100%",
+                  "100%"
+                ],
+                "controls": [
+                  {
+                    "transparent_background@transparent_background": {}
+                  },
+                  {
+                    "title@title": {}
+                  },
+                   {
+                    "spacer_2@spacer_panel": {}
+                  },
+                  {
+                    "main_buttons_panel@main_buttons_panel": {}
+                  }
+                ]
+              }
+            }
+           
+          ]
+        }
+      }
+    ]
+  },
+ 
+  "main_buttons_panel": {
+    "type": "stack_panel",
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "size": [
+      125,
+      "default"
+    ],
+	"offset": [
+	  -28,
+	  5
+	],
+    "controls": [
+      {
+        "play_button@play_button": {}
+      },
+      {
+        "spacer_1@spacer_panel": {}
+      },
+      {
+        "achievements_button@achievements_button": {
+          "bindings": [
+            {
+              "binding_name": "",
+              "binding_name_override": ""
+            }
+          ]
+        }
+      } 
+    ]
+  },
+
+  "gamepad_helpers": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ -66, "-4px" ],
+    "size": [ "100%c", 10 ],
+    "layer": 10,
+    "visible": "($win10_edition and $is_holographic)",
+    "controls": [
+      { "gamepad_helper_y@common.gamepad_helper_y": {} }
+    ]
+  },
+
+  "keyboard_helpers": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ -66, "-4px" ],
+    "size": [ "100%c", 10 ],
+    "layer": 10,
+    "visible": "($win10_edition and $is_holographic)",
+    "$keyboard_helper_visible_binding": "#edu_keyboard_helper_visible",
+    "$ignore_image": true,
+    "controls": [
+      { "keyboard_helper_keys@common.keyboard_helper_keys": {} }
+    ]
+  },
+
+  "content@base_screen.root_screen": {
+    "$top_content": "start_astral_screen.top_menu_panel",
+    "$middle_content": "start_astral_screen.main_menu_panel",
+    "$middle_background_animation": [
+      "@screen_animations.middle_background_fade_out_animation_once",
+      "@screen_animations.middle_background_fade_out_animation_push",
+      "@screen_animations.middle_background_fade_out_animation_pop",
+      "@screen_animations.middle_background_fade_back_animation_push",
+      "@screen_animations.middle_background_fade_back_animation_pop"
+    ],
+    "$bottom_content": "start_astral_screen.bottom_menu_panel"
+  }
+}

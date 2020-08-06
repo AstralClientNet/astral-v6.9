@@ -1,0 +1,48 @@
+{
+  "namespace": "progress",
+
+  "modal_progress_screen@progress_screen": {
+    "$screen_content": "progress.modal_screen_content"
+  },
+
+  "realms_loading_progress_screen@progress_screen": {
+    "$screen_content": "progress.progress_screen_content",
+    "$screen_bg_content": "common.portal_background"
+  },
+
+  "world_loading_progress_screen@progress_screen": {
+    "$screen_content": "progress_screen_concept.world_convert_modal_progress_screen_content"
+  },
+
+  "overworld_loading_progress_screen@world_loading_progress_screen": {
+    "$screen_bg_content": "progress.overworld_loading_background"
+  },
+
+  "nether_loading_progress_screen@world_loading_progress_screen": {
+    "$screen_bg_content": "progress.nether_loading_background"
+  },
+
+  "theend_loading_progress_screen@world_loading_progress_screen": {
+    "$screen_bg_content": "progress.theend_loading_background"
+  },
+
+  "world_saving_progress_screen@progress_screen": {
+    "$screen_content": "progress.world_loading_progress_screen"
+  },
+
+  "world_convert_modal_progress_screen@progress.progress_screen": {
+    "$screen_content": "progress.world_convert_modal_progress_screen_content"
+  },
+
+  "progress_screen@common.base_screen": {
+    "load_screen_immediately": false,
+    "force_render_below": false,
+	  "button_mappings": [
+      {
+        "from_button_id": "button.menu_cancel",
+        "to_button_id": "button.menu_exit",
+        "mapping_type": "global"
+      }
+    ]
+  }
+}

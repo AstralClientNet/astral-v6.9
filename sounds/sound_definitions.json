@@ -1,0 +1,10 @@
+{
+    "format_version": "1.14.0",
+    "sound_definitions": {
+       "ambient.cave": {
+          "__use_legacy_max_distance": "true",
+          "category": "ambient",
+          "sounds": []
+       }
+    }
+ }

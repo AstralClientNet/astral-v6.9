@@ -1,0 +1,49 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "world_selection_java_dx",
+
+  "world_selection_base@java_gui_common.crisxolt_image_panel": {
+    "$texture": "assets/minecraft/textures/gui/world_selection"
+  },
+
+  /*////// Base //////*/
+
+  /* Play Button */
+
+  "select_world_button@world_selection_java_dx.world_selection_base": {
+    "$uv_size": [ 32, 32 ]
+  },
+  
+  "select_world_button_hover@world_selection_java_dx.select_world_button": {
+    "$uv": [ 0, -32 ]
+  },
+
+  /* Play Button Warning */
+
+  "select_world_button_warning@world_selection_java_dx.select_world_button": {
+    "$uv": [ -32, 0 ]
+  },
+
+  "select_world_button_warning_hover@world_selection_java_dx.select_world_button": {
+    "$uv": [ -32, -32 ]
+  },
+
+  /* Warning icons */
+
+  "warning_button_yellow@world_selection_java_dx.select_world_button": {
+    "$uv": [ -64, 0 ]
+  },
+
+  "warning_button_yellow_hover@world_selection_java_dx.select_world_button": {
+    "$uv": [ -64, -32 ]
+  },
+
+  "warning_button_red@world_selection_java_dx.select_world_button": {
+    "$uv": [ -96, 0 ]
+  },
+
+  "warning_button_red_hover@world_selection_java_dx.select_world_button": {
+    "$uv": [ -96, -32 ]
+  }
+}

@@ -1,0 +1,87 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "crisxolt_pages_part_7",
+  
+  /*//// Panels base ////*/
+  
+  "page_31_35": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "($tab_page + '_page_31_button_toggle')",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      { "page_31@crisxolt_tab_pages.page_31": {} },
+      {
+        "page_32": {
+          "type": "panel",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "($tab_page + '_page_32_button_toggle')",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            { "page_32@crisxolt_tab_pages.page_32": {} },
+            {
+              "page_33": {
+                "type": "panel",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "($tab_page + '_page_33_button_toggle')",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ],
+                "controls": [
+                  { "page_33@crisxolt_tab_pages.page_33": { "$ignore_next_button": true } },
+                  {
+                    "page_34": {
+                      "type": "panel",
+                      "ignored": true,
+                      "bindings": [
+                        {
+                          "binding_type": "view",
+                          "source_control_name": "($tab_page + '_page_34_button_toggle')",
+                          "source_property_name": "#toggle_state",
+                          "target_property_name": "#visible"
+                        }
+                      ],
+                      "controls": [
+                        { "page_34@crisxolt_tab_pages.page_34": {} },
+                        {
+                          "page_35": {
+                            "type": "panel",
+                            "bindings": [
+                              {
+                                "binding_type": "view",
+                                "source_control_name": "($tab_page + '_page_35_button_toggle')",
+                                "source_property_name": "#toggle_state",
+                                "target_property_name": "#visible"
+                              }
+                            ],
+                            "controls": [
+                              { "page_35@crisxolt_tab_pages.page_35": { "$ignore_next_button": true } }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

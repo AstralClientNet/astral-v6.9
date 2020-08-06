@@ -1,0 +1,89 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "crisxolt_pages_part_3",
+  
+  /*//// Panels base ////*/
+  
+  "page_11_15": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "($tab_page + '_page_11_button_toggle')",
+        "source_property_name": "#toggle_state",
+        "target_property_name": "#visible"
+      }
+    ],
+    "controls": [
+      { "page_11@crisxolt_tab_pages.page_11": { "$ignore_next_button": "$is_items_pages"} },
+      {
+        "page_12": {
+          "type": "panel",
+          "ignored": "$is_items_pages",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "($tab_page + '_page_12_button_toggle')",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ],
+          "controls": [
+            { "page_12@crisxolt_tab_pages.page_12": { } },
+            {
+              "page_13": {
+                "type": "panel",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "($tab_page + '_page_13_button_toggle')",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ],
+                "controls": [
+                  { "page_13@crisxolt_tab_pages.page_13": { } },
+                  {
+                    "page_14": {
+                      "type": "panel",
+                      "bindings": [
+                        {
+                          "binding_type": "view",
+                          "source_control_name": "($tab_page + '_page_14_button_toggle')",
+                          "source_property_name": "#toggle_state",
+                          "target_property_name": "#visible"
+                        }
+                      ],
+                      "controls": [
+                        { "page_14@crisxolt_tab_pages.page_14": { "$ignore_next_button": "$is_construct_pages" } },
+                        {
+                          "page_15": {
+                            "type": "panel",
+                            "ignored": "$is_construct_pages",
+                            "bindings": [
+                              {
+                                "binding_type": "view",
+                                "source_control_name": "($tab_page + '_page_15_button_toggle')",
+                                "source_property_name": "#toggle_state",
+                                "target_property_name": "#visible"
+                              }
+                            ],
+                            "controls": [
+                              { "page_15@crisxolt_tab_pages.page_15": {} },
+                              { "page_16@crisxolt_pages_part_4.page_16_20": {} }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

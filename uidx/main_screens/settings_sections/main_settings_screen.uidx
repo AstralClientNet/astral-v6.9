@@ -1,0 +1,920 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "settings_dx",
+
+  /*//// Button Tabs ////*/
+
+  "button_tab@common_toggles_dx.main_menu_button_toggle": {
+    "size": [ 150, 20 ],
+    "$toggle_name": "navigation_tab"
+  },
+
+  "keyboard_and_mouse_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.keyboardAndMouse",
+    "$tab_view_binding_name": "keyboard_and_mouse_tab_toggle",
+    "$toggle_group_forced_index": 101
+  },
+
+  "controller_navigation_tab@settings_dx.button_tab": {
+    "size": [ 72, 20 ],
+    "$button_text": "options.controller",
+    "$tab_view_binding_name": "controller_tab_toggle",
+    "$toggle_group_forced_index": 102
+  },
+
+  "touch_navigation_tab@settings_dx.button_tab": {
+    "size": [ 72, 20 ],
+    "$button_text": "options.touch",
+    "$tab_view_binding_name": "touch_tab_toggle",
+    "$toggle_group_forced_index": 103
+  },
+
+  "profile_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.profile",
+    "$tab_view_binding_name": "profile_button_toggle",
+    "$toggle_group_forced_index": "$profile_forced_index"
+  },
+
+  "video_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.video",
+    "$tab_view_binding_name": "video_tab_toggle",
+    "$toggle_group_forced_index": 105
+  },
+
+  "sound_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.sounds",
+    "$tab_view_binding_name": "sound_tab_toggle",
+    "$toggle_group_forced_index": 106
+  },
+
+  "language_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.language",
+    "$tab_view_binding_name": "language_tab_toggle",
+    "$toggle_group_forced_index": 107
+  },
+
+  "resource_pack_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "gui.resourcepacks",
+    "$tab_view_binding_name": "resource_pack_tab_toggle",
+    "$toggle_group_forced_index": 108
+  },
+
+  "server_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.category.server",
+    "$tab_view_binding_name": "server_tab_toggle",
+    "$toggle_group_forced_index": 109
+  },
+
+  "storage_management_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "menu.storageManagement",
+    "$tab_view_binding_name": "storage_management_button_toggle",
+    "$toggle_group_forced_index": "$storage_management_forced_index",
+    "$toggle_property_bag": {
+      "#panel_title": "menu.storageManagement"
+    }
+  },
+
+  "game_navigation_tab@settings_dx.button_tab": {
+    "size": [ 20, 20 ],
+    "$button_content": "common_buttons_dx.right_arrow_icon",
+    "$button_text": "createWorldScreen.game.settings",
+    "$tab_view_binding_name": "game_tab_toggle",
+    "$toggle_group_forced_index": 111
+  },
+
+  "realms_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "playscreen.header.realms",
+    "$tab_view_binding_name": "realms_tab_toggle",
+    "$toggle_group_forced_index": 112
+  },
+
+  "accessibility_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.accessibility",
+    "$tab_view_binding_name": "accessibility_tab_toggle",
+    "$toggle_group_forced_index": 113
+  },
+
+  "subscription_navigation_tab@settings_dx.button_tab": {
+    "size": [ 20, 20 ],
+    "$unchecked_control": "java_gui_common.subscription_default",
+    "$unchecked_hover_control": "java_gui_common.subscription_hover",
+    "$tab_view_binding_name": "view_subscriptions_button_toggle",
+    "$toggle_group_forced_index": "$view_subscriptions_forced_index"
+  },
+
+  "more_options_navigation_tab@settings_dx.button_tab": {
+    "size": [ 20, 20 ],
+    "$unchecked_control": "java_gui_common.more_options_default",
+    "$unchecked_hover_control": "java_gui_common.more_options_hover",
+    "$tab_view_binding_name": "more_options_button_toggle",
+    "$toggle_group_forced_index": 120
+  },
+
+  "broadcast_navigation_tab@settings_dx.button_tab": {
+    "size": [ 20, 20 ],
+    "$unchecked_control": "java_gui_common.broadcast_default",
+    "$unchecked_hover_control": "java_gui_common.broadcast_hover",
+    "$checked_control": "java_gui_common.broadcast_default",
+    "$checked_hover_control": "java_gui_common.broadcast_hover",
+    "$tab_view_binding_name": "broadcast_button_toggle",
+    "$toggle_group_forced_index": "$broadcast_forced_index",
+    "$toggle_property_bag": {
+      "#panel_title": "options.broadcast"
+    }
+  },
+
+  "how_to_play_navigation_tab@settings_dx.button_tab": {
+    "size": [ 20, 20 ],
+    "$unchecked_control": "java_gui_common.help_default",
+    "$unchecked_hover_control": "java_gui_common.help_hover",
+    "$checked_control": "java_gui_common.help_default",
+    "$checked_hover_control": "java_gui_common.help_hover",
+    "$tab_view_binding_name": "how_to_play_button_toggle",
+    "$toggle_group_forced_index": "$how_to_play_index",
+    "$toggle_property_bag": {
+      "#panel_title": "menu.howToPlay"
+    }
+  },
+
+  "null_navigation_tab@settings_dx.button_tab": {
+    "size": [ 200, 20 ],
+    "$is_back_button": true,
+    "$button_text": "gui.done",
+    "$tab_view_binding_name": "null_tab_toggle",
+    "$toggle_group_forced_index": 100
+  },
+
+  /*//// Music + tab (Add-on by @agentms_) ////*/
+
+  "music_player_navigation_tab@settings_dx.button_tab": {
+    "size": [ 20, 20 ],
+    "$button_content": "settings_dx.music_player_icon",
+    "$tab_view_binding_name": "music_player_tab_toggle",
+    "$toggle_group_forced_index": 116
+  },
+
+  "music_player_icon": {
+    "type": "image",
+    "texture": "textures/ui/music_plus_pack_icon",
+    "size": [ 16, 16 ]
+  },
+
+  /*//// Label ////*/
+
+  "base_label": {
+    "size": [ "default", 10 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "layer": 5,
+    "type": "label",
+    "shadow": true,
+    "color": "$main_menu_button_default_color"
+  },
+  
+  "options_label@settings_dx.base_label": {
+    "text": "options.title",
+    "offset": [ 0, 14 ]
+  },
+
+  /*//// Panels ////*/
+
+  "panel_cotent": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "offset": [ 0, "12%" ],
+    "size": [ 310, 146 ],
+    "controls": [
+      { "done_button@settings_dx.done_button": { } },
+      {
+        "fov_slider@settings_common_dx.option_slider": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$option_label": "#field_of_view_slider_label",
+          "$slider_name": "field_of_view",
+          "$slider_value_binding_name": "#field_of_view",
+          "$option_enabled_binding_name": "#field_of_view_enabled",
+          "$label_bindings": [
+            {
+              "binding_name": "#field_of_view_slider_label"
+            }
+          ]
+        }
+      },
+      {
+        "profile_navigation_tab@settings_dx.profile_navigation_tab": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 0, 54 ]
+        }
+      },
+      {
+        "video_navigation_tab@settings_dx.video_navigation_tab": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 0, 78 ]
+        }
+      },
+      {
+        "language_navigation_tab@settings_dx.language_navigation_tab": {
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "offset": [ 0, -24 ]
+        }
+      },
+      {
+        "resource_pack_navigation_tab@settings_dx.resource_pack_navigation_tab": {
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left"
+        }
+      },
+      {
+        "game_panel": {
+          "type": "panel",
+          "ignored": "($is_pregame or $is_realms)",
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "size": [ 150, 20 ],
+          "controls": [
+            {
+              "option_dropdown_2@settings_common_dx.option_dropdown": {
+                "size": [ 130, 20 ],
+                "ignored": "($is_pregame or $is_realms)",
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "options.difficulty",
+                "$dropdown_content": "world_section.world_difficulty_dropdown_content",
+                "$dropdown_area": "content_area",
+                "$dropdown_name": "world_difficulty_dropdown",
+                "$options_dropdown_toggle_label_binding": "#world_difficulty_dropdown_toggle_label",
+                "$option_enabled_binding_name": "#world_difficulty_dropdown_enabled",
+                "$dropdown_scroll_content_size": [ "100%", "260%" ]
+              }
+            },
+            {
+              "game_navigation_tab@settings_dx.game_navigation_tab": {
+                "ignored": "(not $include_world_section and (not $include_realm_section))",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right"
+              }
+            },
+            {
+              "locked_game_navigation_tab@common_buttons_dx.locked": {
+                "size": [ 20, 20 ],
+                "$text_color": "$main_menu_button_locked_color",
+                "$button_content": "common_buttons_dx.right_arrow_icon",
+                "ignored": "$include_world_section and $include_realm_section",
+                "anchor_from": "top_right",
+                "anchor_to": "top_right"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "(not #server_settings_visible)",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "server_panel": {
+          "type": "panel",
+          "ignored": "($is_pregame or $is_realms)",
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "size": [ 200, 20 ],
+          "controls": [
+            {
+              "server_navigation_tab@settings_dx.server_navigation_tab": {
+                "anchor_from": "top_right",
+                "anchor_to": "top_right"
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#server_settings_visible",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "storage_management_navigation_tab@settings_dx.storage_management_navigation_tab": {
+          "size": [ 150, 20 ],
+          "ignored": "(not $is_pregame)",
+          "anchor_from": "top_right",
+          "anchor_to": "top_right"
+        }
+      },
+      {
+        "realms_navigation_tab@settings_dx.realms_navigation_tab": {
+          "size": [ 150, 20 ],
+          "ignored": "(not $include_realm_section or not $is_realms)",
+          "anchor_from": "top_right",
+          "anchor_to": "top_right"
+        }
+      },
+      {
+        "sound_navigation_tab@settings_dx.sound_navigation_tab": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 54 ]
+        }
+      },
+      {
+        "keyboard_and_mouse_navigation_tab@settings_dx.keyboard_and_mouse_navigation_tab": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 78 ]
+        }
+      },
+      {
+        "controller_navigation_tab@settings_dx.controller_navigation_tab": {
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ -78, -24 ]
+        }
+      },
+      {
+        "touch_navigation_tab@settings_dx.touch_navigation_tab": {
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right",
+          "offset": [ 0, -24 ]
+        }
+      },
+      {
+        "accessibility_navigation_tab@settings_dx.accessibility_navigation_tab": {
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right"
+        }
+      }
+    ]
+  },
+
+  "main_screen_panel@settings_dx.main_binding_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "left_safezone": {
+          "type": "panel",
+          "size": "$left_horizontal_safezone_size"
+        }
+      },
+      {
+        "main_panel": {
+          "type": "panel",
+          "size": [ "fill", "100%" ],
+          "controls":[
+            { "extra_buttons_panel@settings_dx.extra_buttons": {} },
+            { "text_panel@settings_dx.text_panel": { } },
+            { "main_bg_panel@settings_dx.bg_panel": { } },
+            { "options_label@settings_dx.options_label": { } },
+            { "panel_cotent@settings_dx.panel_cotent": { } }
+          ]
+        }
+      },
+      {
+        "right_safezone": {
+          "type": "panel",
+          "size": "$right_horizontal_safezone_size"
+        }
+      }
+    ]
+  },
+
+  "done_button@common_buttons_dx.main_button": {
+    "offset": [ 0, 180 ],
+    "size": [ 200, 20 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$pressed_button_name": "button.menu_exit",
+    "$button_text": "gui.done"
+  },
+
+  "text_panel@settings_dx.main_binding_panel": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "size": [ "100%-4px", 11 ],
+    "controls": [
+      { "pack_label@start_dx.minecraft_text": { "color": [ 0.5, 0.5, 0.5 ], "font_type": "smooth", "text": "Vanilla DX: Java UI v1.10 for AstralClient" } },
+      { "fill": { "type": "panel", "size": [ "fill", 24 ] } },
+      { "author_label@start_dx.minecraft_text": { "color": [ 0.5, 0.5, 0.5 ], "font_type": "smooth", "text": "By @CrisXolt, Modified by @xFlqshlight" } }
+    ]
+  },
+
+  "extra_buttons": {
+    "type": "stack_panel",
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [ 20, "100%-4px" ],
+    "layer": 5,
+    "offset": [ -2, 2 ],
+    "controls": [
+      { "more_options_navigation_tab@settings_dx.more_options_navigation_tab": { } },
+      {
+        "padding_0": {
+          "type": "panel",
+          "size": [ 0, 4 ]
+        }
+      },
+      { "perspective_button_panel@settings_dx.perspective_button_panel": { } },
+      {
+        "padding_1": {
+          "type": "panel",
+          "size": [ 0, 4 ]
+        }
+      },
+      { "how_to_play_navigation_tab@settings_dx.how_to_play_navigation_tab": { } },
+      {
+        "padding_2": {
+          "type": "panel",
+          "size": [ 0, 4 ]
+        }
+      },
+      {
+        "subscription_navigation_tab@settings_dx.subscription_navigation_tab": {
+          "bindings": [
+            {
+              "binding_name": "#should_show_subscription_tab",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "padding_3": {
+          "type": "panel",
+          "size": [ 0, 4 ],
+          "bindings": [
+            {
+              "binding_name": "#should_show_subscription_tab",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "broadcast_navigation_tab@settings_dx.broadcast_navigation_tab": {
+          "ignored": "(not $can_support_broadcast)"
+        }
+      },
+      {
+        "padding_4": {
+          "type": "panel",
+          "size": [ 0, 4 ],
+          "ignored": "(not $can_support_broadcast)"
+        }
+      },
+      {
+        "music_player_panel": {
+          "type": "panel",
+          "size": [ 20, 20 ],
+          "controls": [
+            {
+              "music_player_screen_panel@music_player_section.music_player_button_panel_base": {
+                "size": [ "100%", "100%" ],
+                "controls": [
+                  {
+                    "music_player_navigation_tab@settings_dx.music_player_navigation_tab": {
+                      "anchor_from": "top_right",
+                      "anchor_to": "top_right"
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "perspective_button_panel": {
+    "type": "dropdown",
+    "size": [ 20, 20 ],
+    "$dropdown_area": "content_area",
+    "$dropdown_name": "third_person_dropdown",
+    "controls": [
+      {
+        "1st_person@common_toggles_dx.toggle_panel": {
+          "size": [ 20, 20 ],
+          "$radio_toggle_group": false,
+          "$toggle_name": "#thirdperson_radio_first",
+
+          "$unchecked_control": "java_gui_common.3rd_person_front_default",
+          "$checked_control": "java_gui_common.3rd_person_front_default",
+          "$unchecked_hover_control": "java_gui_common.3rd_person_front_hover",
+          "$checked_hover_control": "java_gui_common.3rd_person_front_hover",
+          "bindings": [
+            {
+              "binding_name": "#thirdperson_radio_third_front",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "3rd_person_back@common_toggles_dx.toggle_panel": {
+          "size": [ 20, 20 ],
+          "$radio_toggle_group": false,
+          "$toggle_name": "#thirdperson_radio_third_back",
+
+          "$unchecked_control": "java_gui_common.1st_person_default",
+          "$checked_control": "java_gui_common.1st_person_default",
+          "$unchecked_hover_control": "java_gui_common.1st_person_hover",
+          "$checked_hover_control": "java_gui_common.1st_person_hover",
+          "bindings": [
+            {
+              "binding_name": "#thirdperson_radio_first",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "3rd_person_front@common_toggles_dx.toggle_panel": {
+          "size": [ 20, 20 ],
+          "$radio_toggle_group": false,
+          "$toggle_name": "#thirdperson_radio_third_front",
+
+          "$unchecked_control": "java_gui_common.3rd_person_back_default",
+          "$checked_control": "java_gui_common.3rd_person_back_default",
+          "$unchecked_hover_control": "java_gui_common.3rd_person_back_hover",
+          "$checked_hover_control": "java_gui_common.3rd_person_back_hover",
+          "bindings": [
+            {
+              "binding_name": "#thirdperson_radio_third_back",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Screen ////*/
+
+  "main_binding_panel": {
+    "type": "panel",
+    "bindings": [
+      {
+        "binding_type": "view",
+        "source_control_name": "video_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "language_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "profile_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "resource_pack_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      { 
+        "binding_type": "view",
+        "source_control_name": "storage_management_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "sound_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "music_player_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "keyboard_and_mouse_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "controller_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "touch_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "game_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "accessibility_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "realms_tab_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "view_subscriptions_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "broadcast_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
+        "source_control_name": "more_options_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      }
+    ]
+  },
+
+  "main_panel": {
+    "type": "panel",
+    "layer": 5,
+    "controls": [
+      { "main_control@settings_dx.main_screen_panel": { } },
+      {
+        "accessibility_screen@accessibility_dx.accessibility_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "accessibility_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "video_screen@video_dx.video_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "video_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "keyboard_and_mouse@controls_dx.keyboard_and_mouse_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "keyboard_and_mouse_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "controller@gamepad_dx.controller_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "controller_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "touch@touch_dx.touch_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "touch_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "language_screen@language_dx.language_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "language_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "sounds_screen@sounds_dx.sounds_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "sound_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "resource_pack_screen@resource_packs_dx.resource_pack_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "resource_pack_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "profile@profile_dx.profile_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "profile_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "storage@storage_management_dx.storage_management_screen_panel": {
+          "ignored": "(not $is_pregame)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "storage_management_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "game_screen@game_world_dx.game_world_screen_content": {
+          "ignored": "(not $include_world_section or $is_realms)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "game_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "music_player_screen@music_player_dx.music_player_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "music_player_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "subscription_panel": {
+          "type": "panel",
+          "controls": [
+            {
+              "subscription_screen@subscription_dx.subscription_screen_panel": {
+                "ignored": "$pre_release",
+                "bindings": [
+                  {
+                    "binding_type": "view",
+                    "source_control_name": "view_subscriptions_button_toggle",
+                    "source_property_name": "#toggle_state",
+                    "target_property_name": "#visible"
+                  }
+                ]
+              }
+            }
+          ],
+          "bindings": [
+            {
+              "binding_name": "#should_show_subscription_tab",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "broadcast_screen@broadcast_dx.broadcast_screen_panel": {
+          "ignored": "(not $can_support_broadcast)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "broadcast_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "more_options_screen@more_options_dx.more_options_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "more_options_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "realms@realms_main_dx.realms_settings_screen_content": {
+          "ignored": "(not $include_realm_section or not $is_realms)",
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "realms_tab_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "bg_panel": {
+    "type": "panel",
+    "layer": -10,
+    "controls": [
+      { 
+        "options_background@java_gui_common.options_background": {
+          "size": [ "100%+128px", "100%+64px" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ -64, -32 ]
+        }
+      },
+      { 
+        "bg_world@java_gui_common.screen_background": {
+          "size": [ "100%+128px", "100%+64px" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ -64, -32 ]
+        }
+      }
+    ]
+  },
+
+  "center_screen": {
+    "type": "panel",
+    "controls": [
+    ]
+  },
+
+  "full_screen": {
+    "type": "panel",
+    "controls": [
+      { "main_panel@settings_dx.main_panel": { } }
+    ]
+  }
+}

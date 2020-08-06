@@ -1,0 +1,97 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "common_slider_dx",
+
+  /*//// Modified Slider option!! ////*/
+  
+  "slider@common.slider": {
+    "controls": [
+      { "slider_box@common_slider_dx.slider_box": {} },
+      { "slider_bar_default@common_slider_dx.slider_bar_default": {} },
+      { "slider_bar_hover@common_slider_dx.slider_bar_hover": {} }
+    ]
+  },
+
+  "slider_box@common.slider_box": {
+    "size": [ 8, 20 ],
+    "$button_content": "",
+    "layer": 6,
+    "controls": [
+      { "default@common_buttons_dx.default": { "size": [ 8, 20 ], "layer": 2 } },
+      { "hover@common_buttons_dx.hover": { "size": [ 8, 20 ], "layer": 3 } },
+      { "indent@common_buttons_dx.hover": { "size": [ 8, 20 ], "layer": 4 } },
+      { "locked@common_buttons_dx.locked": { "size": [ 8, 20 ], "layer": 1 } }
+    ]
+  },
+
+  "button_label_slider": {
+    "type": "edit_box",
+    "layer": -1,
+    "size": [ "100%-4px", "100%-4px" ],
+    "default_control": "default",
+    "hover_control": "hover",
+    "locked_control": "locked",
+    "controls": [
+      {
+        "default@common_buttons_dx.button_label": {
+          "layer": 15,
+          "text": "$option_label",
+          "visible": "$show_option_label",
+          "bindings": "$label_bindings"
+        }
+      },
+      {
+        "hover@common_buttons_dx.button_label": {
+          "layer": 15,
+          "text": "$option_label",
+          "visible": "$show_option_label",
+          "bindings": "$label_bindings"
+        }
+      },
+      {
+        "locked@common_buttons_dx.button_label": {
+          "layer": 15,
+          "text": "$option_label",
+          "visible": "$show_option_label",
+          "bindings": "$label_bindings",
+          "color": "$main_menu_button_locked_color"
+        }
+      }
+    ]
+  },
+
+  /* Slider */
+
+  "slider_bar_default": {
+    "type": "panel",
+    "size": [ "100%+8px", 20 ],
+    "$button_content": "",
+    "$text_color": "$main_menu_button_default_color",
+    "$has_hover_text|default": false,
+    "$ignore_hover_text|default": true,
+    "controls": [
+      { "button_label_slider@common_slider_dx.button_label_slider": {} },
+      {
+        "main_menu_button_locked@common_buttons_dx.locked": {
+          "layer": 1,
+          "size": [ "100%", 20 ]
+        }
+      },
+      {
+        "hover_text_panel@common_dx.hover_text_panel": {
+          "$hover_anchor_from": "top_right",
+          "$hover_anchor_to": "top_right",
+          "$hover_text_offset": [ -5.5, 10.5 ],
+          "ignored": "(not $has_hover_text or $ignore_hover_text)",
+          "anchor_from": "top_right",
+          "anchor_to": "top_right"
+        }
+      }
+    ]
+  },
+
+  "slider_bar_hover@common_slider_dx.slider_bar_default": { "$text_color": "$main_menu_button_hover_color", "$has_hover_text": true },
+  
+  "slider_bar_locked@common_slider_dx.slider_bar_default": { "$text_color": "$main_menu_button_locked_color" }
+}

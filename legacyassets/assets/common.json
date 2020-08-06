@@ -1,0 +1,506 @@
+/********************************************************
++*   @FMarquesPTO. All rights reserved. *
++*********************************************************/
+{
+  "namespace": "common_janger",
+
+  "empty_panel": {
+    "type": "panel"
+  },
+
+  "controller_focus": {
+    "type": "image",
+    "texture": "ui_janger/assets/.images/white_border",
+    "$show_focus|default": false,
+    "ignored": "(not $show_focus)",
+    "size": "$focus_border_size",
+    "$focus_border_size|default": [ "100% + 2px", "100% + 2px" ],
+    "layer": 10,
+    "bindings": "$focus_border_bindings",
+    "$focus_border_bindings|default": [
+      {
+        "binding_name": "#is_using_gamepad",
+        "binding_name_override": "#visible"
+      }
+    ]
+  },
+
+  "dirt_background@common.dirt_background": {
+    "texture": "assets/minecraft/textures/gui/options_background",
+    "layer": -1,
+    "tiled": true,
+    "tiled_scale": [ 2, 2 ]
+  },
+
+  "dark_gray_background@common.dirt_background": { //It's not gray :/
+    "texture": "assets/minecraft/textures/gui/options_background",
+    "color": [ 0.0, 0.0, 0.0 ],
+    "layer": -10,
+    "size": [ "300%", "300%" ]
+  },
+
+  "top_title_panel": {
+    "type": "panel",
+    "size": [ "100%", 32 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      { "title_text@title_text": {} }
+    ]
+  },
+
+  "title_text": {
+    "type": "label",
+    "text": "$title_text",
+    "shadow": true,
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$title_offset|default": [ 0, 11 ],
+    "offset": "$title_offset",
+    "bindings": "$title_bindings",
+    "layer": 20
+  },
+
+  "side_buttons_panel": { //Useless after I deleted Controls section.
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$empty_left|default": false,
+    "$empty_right|default": false,
+    "$page_control_size|default": [ 20, 20 ],
+    //Empties Controls
+    "$button_type_panel|default": "button_janger.classic_button_label",
+    "$image_size": [ 200, 20 ],
+    "controls": [
+      {
+        "left_side_panel": {
+          "type": "panel",
+          "size": "$page_control_size",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": [ 10, 0 ],
+          "controls": [
+            {
+              "left_emty@button_janger.button_state_common": {
+                "ignored": "(not $empty_left)",
+                "$image_position": [ 0, 46 ],
+                "$text_color": [ 0.62, 0.62, 0.62 ],
+                "$button_text": "<",
+                "layer": 20
+              }
+            },
+            {
+              "left_control@button_toggle_janger.button_toggle_back": {
+                "ignored": "$empty_left",
+                "$back_name": "$left_back_name",
+                "$toggle_tts_header": "$left_tts_header",
+                "$toggle_text": "<",
+                "$toggle_size": [ "100%", "100%" ],
+                "$toggle_group_forced_index": "$left_forced_index"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "right_side_panel": {
+          "type": "panel",
+          "size": "$page_control_size",
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [ -10, 0 ],
+          "controls": [
+            {
+              "right_emty@button_janger.button_state_common": {
+                "ignored": "(not $empty_right)",
+                "$image_position": [ 0, 46 ],
+                "$text_color": [ 0.62, 0.62, 0.62 ],
+                "$button_text": ">",
+                "layer": 20
+              }
+            },
+            {
+              "right_control@button_toggle_janger.button_toggle": {
+                "ignored": "$empty_right",
+                "$enter_name": "$right_enter_name",
+                "$toggle_text": ">",
+                "$toggle_tts_header": "$right_tts_header",
+                "$toggle_size": [ "100%", "100%" ],
+                "$toggle_group_forced_index": "$right_forced_index"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "bottom_back_panel": { //I'm deleting this. It's weird.
+    "type": "panel",
+    "size": [ 310, 32 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "$back_anchor|default": "top_middle",
+    "$additional_anchor|default": "top_left",
+    "controls": [
+      {
+        "additional_button@$additional_button": {
+          "anchor_from": "$additional_anchor",
+          "anchor_to": "$additional_anchor",
+
+          "$addiction_offset|default": [ 0, 5 ],
+          "offset": "$additional_offset"
+        } 
+      },
+      {
+        "back_button@$back_button": {
+          "anchor_from": "$back_anchor",
+          "anchor_to": "$back_anchor",
+          "$button_offset|default": [ 0, 5 ],
+          "offset": "$button_offset"
+        }
+      }
+    ]
+  },
+
+  "scrolling_screen_content_panel": { //:?
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "$title_panel|default": "common_janger.top_title_panel",
+    "$top_content|default": "common_janger.empty_panel",
+    "$scrolling_content|default": "common_janger.empty_panel",
+    "$bottom_content|default": "common_janger.bottom_back_panel",
+    "$force_dirt_bg|default": false,
+    "layer": 5,
+    "controls": [
+      { "dirt_background@common.dirt_background": { "visible": "$force_dirt_bg", "layer": -10 } },
+      {
+        "stacked_content_panel": {
+          "type": "stack_panel",
+          "size": [ "100%", "100%" ],
+          "controls": [
+            {
+              "top_zone_content_panel": {
+                "type": "panel",
+                "$top_zone_size|default": [ "100%", 32 ],
+                "size": "$top_zone_size",
+                "controls": [
+                  { "title_panel@$title_panel": {} },
+                  { "pages_system_content@$pages_system_content": {} },
+                  { "$top_content@$top_content": {} }
+                ]
+              }
+            },
+            {
+              "middle_zone_content_panel": {
+                "type": "panel",
+                "$middle_zone_size|default": [ "100%", "fill" ],
+                "size": "$middle_zone_size",
+                "controls": [
+                  { "scrolling_shadow_by_scanning@scrolling_janger.scrolling_shadow_by_scanning": {} },
+                  { "scrolling_panel@scrolling_janger.scrolling_panel": {} }
+                  //{ " Soon
+                ]
+              }
+            },
+            {
+              "bottom_zone_content_panel": {
+                "type": "panel",
+                "$bottom_zone_size|default": [ "100%", 32 ],
+                "size": "$bottom_zone_size",
+                "controls": [
+                  { "$bottom_content@$bottom_content": {} }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "item_selection_common": {
+    "type": "panel",
+    "$item_size|default": [ "100%", 36 ],
+    "$item_content_size|default": [ "100% - 4px", "100% - 4px" ],
+    "$item_sb_size|default": [ 32, "100%" ],
+    "$item_sbb_size|default": [ 2, "100%" ],
+    "$item_lb_size|default": [ "fill", "100%" ],
+    "$pressed_button_name|default": "$pressed_button_name",
+    "$pressed_button_name|default": "$pressed_button_name",
+    "$item_buttons_bindings|default": [],
+    "$larger_content|default": "common_janger.larger_content_panel",
+    "size": "$item_size",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "layer": 5,
+    "controls": [
+      {
+        "content_area": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": "$item_content_size",
+          "anchor_from": "center",
+          "anchor_to": "center",
+          "controls": [
+            { "item_smaller_button@common_janger.item_smaller_button": {} },
+            { "spacer_horizontal": { "type": "panel", "size": "$item_sbb_size" } },
+            { "item_larger_button@common_janger.item_larger_button": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "item_smaller_button@common.button": {
+    "size": "$item_sb_size",
+    "bindings": "$item_buttons_bindings",
+    "controls": [
+      { "default@common_janger.item_smaller_default": {} },
+      { "hover@common_janger.item_smaller_hover": {} },
+      { "pressed@common_janger.item_smaller_hover": { "$pressed": true } }
+    ]
+  },
+
+  "item_larger_button@common.button": {
+    "size": "$item_lb_size",
+    "bindings": "$item_buttons_bindings",
+    "$item_picture_lb_ajust|default": [ -34, 0 ],
+    "controls": [
+      { "default@common_janger.item_larger_default": {} },
+      { "hover@common_janger.item_larger_hover": {} },
+      { "pressed@common_janger.item_larger_hover": { "$pressed": true } }
+    ]
+  },
+
+  "item_smaller_default": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "picture": {
+          "type": "panel",
+          "size": [ 32, 32 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "layer": 1,
+          "controls": [
+            { "$item_picture": {} }
+          ]
+        }
+      }
+    ]
+  },
+
+  "item_smaller_hover@item_smaller_default": {
+    "$uv": [ 0, 32 ],
+    "controls": [
+      {
+        "pressed_focus@text_edit_box_janger.box_background": {
+          "size": [ 272, 36 ],
+          "offset": [ -2, -2 ],
+          "$pressed|default": false,
+          "visible": "$pressed",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "controller_focus@text_edit_box_janger.box_background": {
+          "size": [ 272, 36 ],
+          "offset": [ -2, -2 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "bindings": [
+            {
+              "binding_name": "#is_using_gamepad",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "picture": {
+          "type": "panel",
+          "size": [ 32, 32 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "layer": 1,
+          "controls": [
+            { "$item_picture": {} }
+          ]
+        }
+      },
+      { "tools_panel@common_janger.tools_panel": {} }
+    ]
+  },
+
+  "item_larger_default": {
+    "type": "panel",
+    "size": [ "100%", "100%" ],
+    "controls": [
+      {
+        "picture": {
+          "type": "panel",
+          "size": [ 32, 32 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$item_picture_lb_ajust",
+          "layer": 1,
+          "controls": [
+            { "$item_picture": {} }
+          ]
+        }
+      },
+      { "larger_content@$larger_content": {} }
+    ]
+  },
+
+  "item_larger_hover@item_smaller_default": {
+    "$uv": [ 0, 0 ],
+    "controls": [
+      {
+        "pressed_focus@text_edit_box_janger.box_background": {
+          "size": [ 272, 36 ],
+          "offset": [ -36, -2 ],
+          "$pressed|default": false,
+          "visible": "$pressed",
+          "anchor_from": "top_left",
+          "anchor_to": "top_left"
+        }
+      },
+      {
+        "controller_focus@text_edit_box_janger.box_background": {
+          "size": [ 272, 36 ],
+          "offset": [ -36, -2 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "bindings": [
+            {
+              "binding_name": "#is_using_gamepad",
+              "binding_name_override": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "picture": {
+          "type": "panel",
+          "size": [ 32, 32 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": "$item_picture_lb_ajust",
+          "layer": 3,
+          "controls": [
+            { "$item_picture": {} }
+          ]
+        }
+      },
+      { "tools_panel@common_janger.tools_panel": { "offset": "$item_picture_lb_ajust" } },
+      { "larger_content@$larger_content": { "layer": 10 } }
+    ]
+  },
+
+  "base_icon": {
+    "type": "image",
+
+
+
+
+
+
+
+
+    "texture": "('assets/minecraft/textures/gui/' + $texture_directory)",
+    "uv": "$uv",
+    "uv_size": [ 32, 32 ],
+    "layer": 10
+  },
+
+  "overlay_image": {
+    "type": "image",
+    "texture": "ui_janger/assets/.images/white",
+    "alpha": 0.4, 
+    "color": [ 0.3, 0.3, 0.3 ],
+    "size": [ 32, 32 ],
+    "layer": 8
+  },
+
+  "tools_panel": {
+    "type": "panel",
+    "size": [ 32, 32 ],
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "controls": [
+      { "overlay_image@overlay_image": {} },
+      { "base_icon@base_icon": {} }
+    ]
+  },
+
+  "item_name_base": {
+    "type": "label",
+    "color": "$title_text_color",
+    "shadow": false,
+    "size": [ "100%", "default" ],
+    "layer": 5
+  },
+
+  "item_description_base": {
+    "type": "label",
+    "color": "$description_text_color",
+    "shadow": false,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "layer": 5
+  },
+
+  "larger_content_panel": {
+    "type": "panel",
+    "size": [ "100%", "100% - 2px" ],
+    "anchor_from": "center",
+    "anchor_to": "center",
+    "controls": [
+      {
+        "name_area_panel": {
+          "type": "panel",
+          "size": [ "100%", 10 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "controls": [
+            {
+              "name@$item_name": {
+                "type": "label",
+                "color": "$title_text_color",
+                "shadow": true,
+                "size": [ "100%", "default" ],
+                "layer": 5
+              }
+            }  
+          ]
+        }
+      },
+      {
+        "description_area_panel": {
+          "type": "panel",
+          "size": [ "100%", "100% - 10px" ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 0, 10 ],
+          "controls": [
+            {
+              "description@$item_description": {
+                "type": "label",
+                "color": "$description_text_color",
+                "shadow": true,
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "layer": 5
+              }
+            }  
+          ]
+        }
+      }
+    ]
+  }
+}

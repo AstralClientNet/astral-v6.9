@@ -1,0 +1,145 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "language_dx",
+
+  /*//// Stack panels ////*/
+  
+  "language_grid_item@settings_common_dx.lang_button": {
+    "$toggle_state_binding_name": "#language_initial_selected",
+    "$radio_label_text": "#language_description",
+    "$radio_label_bindings": [
+      {
+        "binding_name": "#language_description",
+        "binding_type": "collection",
+        "binding_condition": "once",
+        "binding_collection_name": "languages"
+      }
+    ],
+    "$radio_toggle_group": true,
+    "$toggle_binding_type": "collection",
+    "$toggle_name": "languages",
+    "$toggle_grid_collection_name": "languages",
+    "$option_enabled_binding_name": "",
+    "bindings": [
+      {
+        "binding_name": "#default_focus_precedence",
+        "binding_type": "collection",
+        "binding_condition": "visible",
+        "binding_collection_name": "languages"
+      }
+    ]
+  },
+
+  "language_section": {
+    "type": "stack_panel",
+    "size": [ "100%", "100%c" ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "controls": [
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ "100%", 2 ]
+        }
+      },
+      {
+        "language_list_grid": {
+          "type": "grid",
+          "size": [ "100%", "100%c" ],
+          "grid_item_template": "language_dx.language_grid_item",
+          "grid_dimension_binding": "#language_grid_dimension",
+          "collection_name": "languages",
+          "bindings": [
+            {
+              "binding_name": "#language_grid_dimension",
+              "binding_condition": "visible"
+            }
+          ]
+        }
+      },
+      {
+        "padding": {
+          "type": "panel",
+          "size": [ "100%", 2 ]
+        }
+      }
+    ]
+  },
+
+  /*//// Scrolling Panel ////*/
+  
+  "language_scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 260, "100%" ],
+    "$scroll_view_port_size_touch": [ 260, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "language_dx.language_section"
+  },
+
+  /*//// Screen ////*/
+  
+  "language_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "language_dx.language_label",
+    "$middle_content": "language_dx.language_scrolling_panel",
+    "$bottom_content": "language_dx.language_bottom_content",
+    "$bottom_content_size": [ "100%", 61 ]
+  },
+
+  "language_label@settings_dx.base_label": {
+    "text": "options.language",
+    "offset": [ 0, 15 ]
+  },
+
+  "language_bottom_content": {
+    "type": "panel",
+    "controls": [
+      {
+        "warning_label_panel": {
+          "type": "stack_panel",
+          "orientation": "horizontal",
+          "size": [ "100%c", 9 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "offset": [ 0, 4 ],
+          "controls": [
+            {
+              "label_0": {
+                "type": "label",
+                "color": [ 0.75, 0.75, 0.75 ],
+                "layer": 2,
+                "text": " (",
+                "size": [ "default", 9 ]
+              }
+            },
+            {
+              "language_warning_label@settings_dx.base_label": {
+                "text": "options.languageWarning",
+                "size": [ "default", 9 ],
+                "layer": 2,
+                "color": "$main_menu_button_locked_color"
+              }
+            },
+            {
+              "label_1": {
+                "type": "label",
+                "color": [ 0.75, 0.75, 0.75 ],
+                "layer": 2,
+                "text": ") ",
+                "size": [ "default", 9 ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "null_navigation_tab@settings_dx.null_navigation_tab": {
+          "size": [ 150, 20 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -18 ],
+          "layer": 4
+        }
+      }
+    ]
+  }
+}

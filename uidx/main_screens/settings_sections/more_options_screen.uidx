@@ -1,0 +1,269 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "more_options_dx",
+
+  /*//// Stack panels ////*/
+  
+  "panel_cotent": {
+    "type": "stack_panel",
+    "size": [ 310, "100%c" ],
+    "controls": [
+      {
+        "top_padding": {
+          "type": "panel",
+          "size": [ 0, 4 ]
+        }
+      },
+      {
+        "panel_0@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "ignored": "(not $supports_user_configured_safezone or (not $is_pregame))",
+          "controls": [
+            {
+              "setup_safe_zone_button@settings_common_dx.action_button": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$pressed_button_name": "setup_safe_zone_button",
+                "$button_text": "options.safeZone.title"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_1@start_dx.stacked_row": {
+          "size": [ "100%", 25 ],
+          "controls": [
+            {
+              "option_toggle_hidehud@settings_common_dx.option_toggle_alt": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.hidehud",
+                "$option_binding_name": "#hide_hud",
+                "$option_enabled_binding_name": "#hide_hud_enabled",
+                "$toggle_name": "hide_hud"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_2@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "controls": [
+            {
+              "hud_opacity_slider@settings_common_dx.option_slider": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "#interface_opacity_slider_label",
+                "$slider_name": "interface_opacity",
+                "$slider_value_binding_name": "#interface_opacity",
+                "$option_enabled_binding_name": "#interface_opacity_enabled",
+                "$label_bindings": [
+                  {
+                    "binding_name": "#interface_opacity_slider_label"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_2_alt@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "ignored": "(not $can_splitscreen)",
+          "controls": [
+            {
+              "splitscreen_hud_opacity_slider@settings_common_dx.option_slider": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "#splitscreen_interface_opacity_slider_label",
+                "$slider_name": "splitscreen_interface_opacity",
+                "$slider_value_binding_name": "#splitscreen_interface_opacity",
+                "$slider_tts_text_value": "#splitscreen_interface_opacity_text_value",
+                "$option_enabled_binding_name": "#splitscreen_interface_opacity_enabled",
+                "$label_bindings": [
+                  {
+                    "binding_name": "#splitscreen_interface_opacity_slider_label"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_3@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "enabled": "(not $console_edition)",
+          "controls": [
+            {
+              "ui_profile_dropdown@settings_common_dx.option_dropdown": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.uiprofile",
+                "$dropdown_content": "general_section.ui_profile_dropdown_content",
+                "$dropdown_area": "content_area",
+                "$dropdown_name": "ui_profile_dropdown",
+                "$option_enabled_binding_name": "#ui_profile_dropdown_enabled",
+                "$options_dropdown_toggle_label_binding": "#ui_profile_dropdown_toggle_label",
+                "$dropdown_scroll_content_size": [ "100%", "200%" ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_4@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "controls": [
+            {
+              "outline_selection_toggle@settings_common_dx.option_toggle_alt": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.classic_box_selection",
+                "$option_binding_name": "#classic_box_selection",
+                "$option_enabled_binding_name": "#classic_box_selection_enabled",
+                "$toggle_name": "classic_box_selection"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_5@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "controls": [
+            {
+              "player_names_toggle@settings_common_dx.option_toggle_alt": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.ingamePlayerNames",
+                "$option_binding_name": "#ingame_player_names",
+                "$option_enabled_binding_name": "#ingame_player_names_enabled",
+                "$toggle_name": "ingame_player_names"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_5_alt@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "ignored": "(not $can_splitscreen)",
+          "controls": [
+            {
+              "splitscreen_player_names_toggle@settings_common_dx.option_toggle_alt": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.splitscreenIngamePlayerNames",
+                "$option_binding_name": "#splitscreen_ingame_player_names",
+                "$option_enabled_binding_name": "#splitscreen_ingame_player_names_enabled",
+                "$toggle_name": "splitscreen_ingame_player_names"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_6@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "controls": [
+            {
+              "hide_paperdoll_toggle@settings_common_dx.option_toggle_alt": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.hidepaperdoll",
+                "$option_binding_name": "#hide_paperdoll",
+                "$option_enabled_binding_name": "#hide_paperdoll_enabled",
+                "$toggle_name": "hide_paperdoll"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_7@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "controls": [
+            {
+              "option_toggle_hidehand@settings_common_dx.option_toggle_alt": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.hidehand",
+                "$option_binding_name": "#hide_hand",
+                "$option_enabled_binding_name": "#hide_hand_enabled",
+                "$toggle_name": "hide_hand"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_8@start_dx.stacked_row": {
+          "size": ["100%", 25 ],
+          "controls": [
+            {
+              "auto_save_icon_toggle@settings_common_dx.option_toggle_alt": {
+                "size": [ "100%", 20 ],
+                "anchor_from": "top_middle",
+                "anchor_to": "top_middle",
+                "$option_label": "options.showautosaveicon",
+                "$option_binding_name": "#show_auto_save_icon",
+                "$option_enabled_binding_name": "#show_auto_save_icon_enabled",
+                "$toggle_name": "show_auto_save_icon"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Scrolling Panel ////*/
+  
+  "scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 324, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "more_options_dx.panel_cotent"
+  },
+
+  /*//// Screen ////*/
+  
+  "more_options_label@settings_dx.base_label": {
+    "text": "joincode.ip_entry.button_tts",
+    "offset": [ 0, 4 ]
+  },
+
+  "more_options_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "more_options_dx.more_options_label",
+    "$middle_content": "more_options_dx.scrolling_panel",
+    "$bottom_content": "more_options_dx.done_panel"
+  },
+
+  "done_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "more_options_done_button@settings_dx.null_navigation_tab": {
+          "size": [ 200, 20 ],
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle",
+          "offset": [ 0, -9 ]
+        }
+      }
+    ]
+  }
+}

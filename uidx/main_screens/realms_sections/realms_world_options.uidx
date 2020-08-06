@@ -1,0 +1,99 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "realms_world_options_dx",
+  
+  /*////// PANELS //////*/
+
+  "panel_cotent": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 271, 244 ],
+    "controls": [
+      {
+        "title_label@settings_dx.options_label": {
+          "layer": 2,
+          "offset": [ 0, 16 ],
+          "text": "createWorldScreen.worldSettings"
+        }
+      },
+      {
+        "game_mode_dropdown@settings_common_dx.option_dropdown": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 0, 70 ],
+          "size": [ 130, 20 ],
+          "$option_label": "createWorldScreen.gameMode",
+          "$dropdown_content": "world_section.world_game_mode_dropdown_content",
+          "$dropdown_area": "realms_world_section.panel_content",
+          "$dropdown_name": "realms_gamemode",
+          "$options_dropdown_toggle_label_binding": "#gameMode_option_label",
+          "$option_enabled_binding_name": "#realms_game_mode_dropdown_enabled",
+          "$dropdown_scroll_content_size": [ "100%", 48 ],
+          "$enabled": "$is_pregame"
+        }
+      },
+      {
+        "difficulty_dropdown@settings_common_dx.option_dropdown": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 0, 98 ],
+          "size": [ 130, 20 ],
+          "$option_label": "options.difficulty",
+          "$dropdown_content": "world_section.world_difficulty_dropdown_content",
+          "$dropdown_area": "realms_world_section.panel_content",
+          "$dropdown_name": "realms_difficulty",
+          "$options_dropdown_toggle_label_binding": "#difficulty_option_label",
+          "$option_enabled_binding_name": "#realms_difficulty_dropdown_enabled",
+          "$dropdown_scroll_content_size": [ "100%", 48 ]
+        }
+      },
+      {
+        "allow_cheats_toggle@settings_common_dx.option_toggle": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 70 ],
+          "size": [ 130, 20 ],
+          "$option_label": "selectWorld.cheats",
+          "$option_binding_name": "#allow_cheats",
+          "$option_enabled_binding_name": "#allow_cheats_enabled",
+          "$toggle_name": "allow_cheats"
+        }
+      },
+      {
+        "upload_world_button@settings_common_dx.action_button": {
+          "anchor_from": "top_right",
+          "anchor_to": "top_right",
+          "offset": [ 0, 98 ],
+          "size": [ 130, 20 ],
+          "$button_text": "realmsSettingsScreen.uploadWorldButton",
+          "$pressed_button_name": "menu_upload_world",
+          "ignored": "(not $is_pregame)",
+          "bindings": [
+            {
+              "binding_name": "#upload_button_enabled",
+              "binding_name_override": "#enabled"
+            }
+          ]
+        }
+      },
+      {
+        "back_button_tab@realms_main_dx.back_button_tab": {
+          "size": [ 200, 20 ],
+          "$button_text": "gui.done",
+          "anchor_from": "bottom_middle",
+          "anchor_to": "bottom_middle"
+        }
+      }
+    ]
+  },
+
+  "world_options_panel": {
+    "type": "panel",
+    "controls": [
+      { "panel_content@realms_world_options_dx.panel_cotent": { "layer": 2 } },
+      { "main_bg_panel@settings_dx.bg_panel": { } }
+    ]
+  }
+}

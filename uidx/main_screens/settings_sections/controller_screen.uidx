@@ -1,0 +1,409 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+  "namespace": "gamepad_dx",
+
+  /*//// Button tab ////*/
+  
+  "more_options_button@settings_dx.button_tab": {
+    "size": [ 150, 20 ],
+    "$button_text": "options.controllerSettings",
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "$toggle_name": "gamepad_options",
+    "$tab_view_binding_name": "gamepad_more_toggle",
+    "$toggle_group_forced_index": 1
+  },
+
+  "main_options_button@settings_dx.button_tab": {
+    "size": [ 200, 20 ],
+    "$button_text": "gui.done",
+    "$is_back_button": true,
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -7 ],
+    "$toggle_name": "gamepad_options",
+    "$tab_view_binding_name": "gamepad_main_toggle",
+    "$toggle_group_forced_index": 0
+  }, 
+  
+  /*//// Grid ////*/
+  
+  "image_binding_button_content": {
+    "type": "panel",
+    "max_size": [ "100% - 4px", "100% - 4px" ],
+    "layer": 2,
+    "controls": [
+      {
+        "base_icon_image": {
+          "type": "image",
+          "size": [ 26, 26 ],
+          "layer": 1,
+          "$gameplay_key_icon|default": "#binding_icon_sprite",
+          "bindings": [
+            {
+              "binding_name": "$gameplay_key_icon",
+              "binding_name_override": "#texture",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      },
+      {
+        "default_label@common_buttons_dx.button_label": {
+          "text": "#binding_button_text",
+          "bindings": [
+            {
+              "binding_name": "#binding_button_text",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "gamepad_mapping_item": {
+    "type": "panel",
+    "layer": 1,
+    "size": [ 336, 20 ],
+    "controls": [
+      {
+        "keymapping_label_control": {
+          "type": "label",
+          "anchor_from": "left_middle",
+          "anchor_to": "left_middle",
+          "offset": [ 5, -2 ],
+          "size": [ "100% - 140px", "default" ],
+          "layer": 5,
+          "color": [ 1.0, 1.0, 1.0 ],
+          "shadow": false,
+          "locked_alpha": 0.5,
+          "text": "#keymapping_name",
+          "bindings": [
+            {
+              "binding_name": "#keymapping_name",
+              "binding_type": "collection",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      },
+      {
+        "keymapping_button_0@common_buttons_dx.main_button": {
+          "size": [ 74, 20 ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [ -90, 0 ],
+          "$pressed_button_name": "button.binding_button",
+          "$button_content": "gamepad_dx.image_binding_button_content",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      },
+      {
+        "keymapping_button_1@common_buttons_dx.main_button": {
+          "size": [ 50, 20 ],
+          "anchor_from": "right_middle",
+          "anchor_to": "right_middle",
+          "offset": [ -30, 0 ],
+          "$button_text": "controls.reset",
+          "$pressed_button_name": "button.reset_binding",
+          "bindings": [
+            {
+              "binding_type": "collection_details",
+              "binding_collection_name": "$keymapping_collection"
+            }
+          ]
+        }
+      }
+    ]
+  }, 
+  
+  /*//// Stack panels ////*/
+  
+  "controller_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_midddle",
+    "anchor_to": "top_midddle",
+    "size": [ 336, "100%c" ],
+    "$keymapping_grid_dimension": "#gamepad_grid_dimension",
+    "$keymapping_collection": "gamepad_collection",
+    "$grid_item_template": "gamepad_dx.gamepad_mapping_item",
+    "$grid_dimensions": [ 1, 21 ],
+    "$grid_size": [ 336, 420 ],
+    "controls": [
+      { "panel_0@controls_dx.categories_text_panel": { "$categorie_text": "key.categories.movement", "$categorie_text_offset": [ 0, 9 ], "size": [ 336, 24 ] } },
+      { "jump_button@controls_dx.key_mapping_grid_panel": {} },
+      { "sneak_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 9 ] } },
+      { "sprint_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 10 ] } },
+      { "strafe_left_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 16 ] } },
+      { "strafe_right_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 17 ] } },
+      { "walk_backwards_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 18 ] } },
+      { "walk_forwards_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 19 ] } },
+      { "panel_1@controls_dx.categories_text_panel": { "$categorie_text": "key.categories.gameplay" } },
+      { "attack_destroy_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 2 ] } },
+      { "pick_block_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 20 ] } },
+      { "use_place_block_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 3 ] } },
+      { "panel_2@controls_dx.categories_text_panel": { "$categorie_text": "key.categories.inventory" } },
+      { "drop_item_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 1 ] } },
+      { "cycle_item_left_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 6 ] } },
+      { "cycle_item_right_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 7 ] } },
+      { "inventory_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 5 ] } },
+      { "crafting_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 4 ] } },
+      { "panel_3@controls_dx.categories_text_panel": { "$categorie_text": "gameMode.creative" } },
+      { "fly_up_slow_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 12 ] } },
+      { "fly_down_slow_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 11 ] } },
+      { "panel_4@controls_dx.categories_text_panel": { "$categorie_text": "key.categories.multiplayer" } },
+      { "chat_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 15 ] } },
+      { "panel_5@controls_dx.categories_text_panel": { "$categorie_text": "key.categories.misc" } },
+      { "toggle_perspective_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 8 ] } },
+      { "mob_effect_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 14 ] } },
+      { "emote_button@controls_dx.key_mapping_grid_panel": { "$grid_position": [ 0, 13 ] } }
+    ]
+  },
+
+  "more_stack_panel": {
+    "type": "stack_panel",
+    "orientation": "vertical",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 310, "100%c" ],
+    "controls": [
+      {
+        "fill_panel_0": {
+          "type": "panel",
+          "size": [ 1, 4 ]
+        }
+      },
+      {
+        "panel_0": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "option_slider_0@settings_common_dx.option_slider": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "#controller_sensitivity_slider_label",
+                "$slider_name": "controller_sensitivity",
+                "$slider_value_binding_name": "#controller_sensitivity",
+                "$slider_tts_text_value": "#controller_sensitivity_text_value",
+                "$option_enabled_binding_name": "#controller_sensitivity_enabled",
+                "$label_bindings": [ { "binding_name": "$option_label" } ]
+              }
+            },
+            {
+              "option_toggle_0@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "options.invertYAxis",
+                "$option_binding_name": "#controller_invert_y_axis",
+                "$option_enabled_binding_name": "#controller_invert_y_axis_enabled",
+                "$toggle_name": "controller_invert_y_axis"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_1": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "option_toggle9@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "options.hidetooltips",
+                "$option_binding_name": "#hide_tooltips",
+                "$option_enabled_binding_name": "#hide_tooltips_enabled",
+                "$toggle_name": "hide_tooltips"
+              }
+            },
+            {
+              "option_toggle10@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "options.hidegamepadcursor",
+                "$option_binding_name": "#hide_gamepad_cursor",
+                "$option_enabled_binding_name": "#hide_gamepad_cursor_enabled",
+                "$toggle_name": "hide_gamepad_cursor"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "panel_2": {
+          "type": "panel",
+          "size": [ 310, 25 ],
+          "controls": [
+            {
+              "gamepad_swap_ab@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_left",
+                "anchor_to": "top_left",
+                "$option_label": "options.swapGamepadAB",
+                "$option_binding_name": "#swap_gamepad_ab_buttons",
+                "$option_enabled_binding_name": "#swap_gamepad_ab_buttons_enabled",
+                "$toggle_name": "swap_gamepad_ab_buttons"
+              }
+            },
+            {
+              "gamepad_swap_xy@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "options.swapGamepadXY",
+                "$option_binding_name": "#swap_gamepad_xy_buttons",
+                "$option_enabled_binding_name": "#swap_gamepad_xy_buttons_enabled",
+                "$toggle_name": "swap_gamepad_xy_buttons"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  /*//// Scrolling Panel ////*/
+  
+  "controller_scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 336, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "gamepad_dx.controller_stack_panel"
+  },
+
+  "more_scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+    "$scroll_view_port_size": [ 324, "100%" ],
+    "layer": 2,
+    "$scrolling_content": "gamepad_dx.more_stack_panel"
+  },
+
+  /*//// Screen ////*/
+  
+  "controller_screen_panel": {
+    "type": "panel",
+    "controls": [
+      {
+        "main_screen_panel@gamepad_dx.main_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "gamepad_more_toggle",
+              "source_property_name": "(not #toggle_state)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "more_screen_panel@gamepad_dx.more_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "gamepad_more_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "main_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "gamepad_dx.controller_top_content",
+    "$top_content_size": [ "100%", 43 ],
+    "$middle_content": "gamepad_dx.controller_scrolling_panel",
+    "$bottom_content": "gamepad_dx.controller_bottom_content"
+  },
+
+  "more_screen_panel@common_menus_dx.java_menu_panel_template": {
+    "$top_content": "gamepad_dx.more_label",
+    "$top_content_size": [ "100%", 32 ],
+    "$middle_content": "gamepad_dx.more_scrolling_panel",
+    "$bottom_content": "gamepad_dx.main_options_button"
+  },
+
+  "more_label@settings_dx.base_label": {
+    "text": "options.controllerSettings",
+    "offset": [ 0, 4 ]
+  },
+
+  "controller_top_content": {
+    "type": "panel",
+    "anchor_from": "top_middle",
+    "anchor_to": "top_middle",
+    "size": [ 310, 62 ],
+    "controls": [
+      {
+        "controller_label@settings_dx.base_label": {
+          "text": "options.controller",
+          "offset": [ 0, 7 ]
+        }
+      },
+      {
+        "panel": {
+          "type": "panel",
+          "size": [ 310, 20 ],
+          "offset": [ 0, 18 ],
+          "anchor_from": "top_middle",
+          "anchor_to": "top_middle",
+          "controls": [
+            { "more_options_button@gamepad_dx.more_options_button": {} },
+            {
+              "option_toggle_1@settings_common_dx.option_toggle": {
+                "size": [ 150, 20 ],
+                "anchor_from": "top_right",
+                "anchor_to": "top_right",
+                "$option_label": "options.autojump",
+                "$option_binding_name": "#controller_autojump",
+                "$option_enabled_binding_name": "#controller_autojump_enabled",
+                "$toggle_name": "controller_autojump"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+
+  "controller_bottom_content": {
+    "type": "panel",
+    "anchor_from": "bottom_middle",
+    "anchor_to": "bottom_middle",
+    "offset": [ 0, -9 ],
+    "size": [ 310, 20 ],
+    "controls": [
+      {
+        "reset_button@settings_common_dx.action_button": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "$pressed_button_name": "button.reset_gamepad_bindings",
+          "$button_text": "controls.resetAll"
+        }
+      },
+      {
+        "null_navigation_tab@settings_dx.null_navigation_tab": {
+          "size": [ 150, 20 ],
+          "anchor_from": "top_right",
+          "anchor_to": "top_right"
+        }
+      }
+    ]
+  }
+}
