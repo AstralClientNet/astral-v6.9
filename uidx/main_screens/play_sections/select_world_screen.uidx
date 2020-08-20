@@ -125,6 +125,7 @@
               "local_world_date@play.local_world_date": {
                 "size": [ "default", 9 ],
                 "color": [ 0.75, 0.75, 0.75 ],
+                "font_size": 0.7,
                 "layer": 1
               }
             },
@@ -155,6 +156,7 @@
                 "color": [ 0.75, 0.75, 0.75 ],
                 "layer": 2,
                 "text": "selectWorld.gameMode",
+                "font_size": 0.7,
                 "size": [ "default", 9 ]
               }
             },
@@ -171,6 +173,7 @@
               "local_world_game_mode@play.local_world_game_mode": {
                 "size": [ "default", 9 ],
                 "color": [ 0.75, 0.75, 0.75 ],
+                "font_size": 0.7,
                 "layer": 1
               }
             },
@@ -188,7 +191,8 @@
                 "type": "label",
                 "color": [ 0.75, 0.75, 0.75 ],
                 "layer": 2,
-                "text": "structure_block.size",
+                "text": "Struct",
+                "font_size": 0.7,
                 "size": [ "default", 9 ]
               }
             },
@@ -205,6 +209,7 @@
               "local_world_filesize@play.local_world_filesize": {
                 "size": [ "default", 9 ],
                 "color": [ 0.75, 0.75, 0.75 ],
+                "font_size": 0.7,
                 "layer": 1
               }
             }

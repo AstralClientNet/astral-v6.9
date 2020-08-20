@@ -425,8 +425,7 @@
     "anchor_from": "bottom_middle",
     "anchor_to": "bottom_middle",
     "size": [ "100%", "37.5%-2px" ],
-    "texture": "textures/uidx/white",
-    "color": [ 0.25, 0.25, 0.25 ],
+    "texture": "textures/ui/bg_invis",
     "layer": 10,
     "controls": [
       {
@@ -1410,11 +1409,10 @@
                   {
                     "panel_bg": {
                       "type": "image",
-                      "texture": "textures/uidx/white",
+                      "texture": "textures/ui/bg_invis",
                       "anchor_from": "bottom_left",
                       "anchor_to": "bottom_left",
                       "size": [ "150%", "100%" ],
-                      "color": [ 0.15686, 0.15686, 0.15686 ],
                       "layer": 10
                     }
                   },
