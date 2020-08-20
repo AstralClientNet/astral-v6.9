@@ -21,7 +21,7 @@
     "layer": 2,
 	  "font_type": "smooth",
     "alpha": 0.4,
-    "text": "#version",
+    "text": "1.16.20",
     "size": [
       "default",
       20
@@ -47,7 +47,7 @@
     "type": "label",
     "layer": 2,
   	"font_type": "smooth",
-    "text": "§fCopyright Mojang AB. Do not distribute!",
+    "text": "§fCopyright Mojang AB. Do not distribute!\n                                 §fAstral Client 6.9 (nice)",
     "alpha": 0.4,
     "size": [
       "default",
@@ -55,7 +55,7 @@
     ],
     "offset": [
       0,
-      10
+      0
     ],
     "max_size": [
       "100%",

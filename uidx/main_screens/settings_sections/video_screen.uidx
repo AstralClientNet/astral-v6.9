@@ -371,6 +371,24 @@
     "text": "options.graphics.fancy.tooltip"
   },
 
+    "vsync_hover_text@common_dx.hover_text_label": {
+    "line_padding": 1.0,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 4, 2 ],
+    "size": [ 165, "default" ],
+    "text": "options.vsync.tooltip"
+  },
+
+   "dynamic_fov_text@common_dx.hover_text_label": {
+    "line_padding": 1.0,
+    "anchor_from": "top_left",
+    "anchor_to": "top_left",
+    "offset": [ 4, 2 ],
+    "size": [ 165, "default" ],
+    "text": "options.dynamic.fov.tooltip"
+  },
+
   "graphics_fast_hover_text@common_dx.hover_text_label": {
     "line_padding": 1.0,
     "anchor_from": "top_left",
@@ -483,6 +501,9 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left",
                 "$option_label": "options.vsync",
+                "$ignore_hover_text": false,
+                "$hover_text_checked_label_control":"video_dx.vsync_hover_text",
+                "$hover_text_label_control": "video_dx.vsync_hover_text",
                 "$dropdown_content": "general_section.vysnc_dropdown_content",
                 "$dropdown_area": "content_area",
                 "$dropdown_name": "vsync_dropdown",
@@ -540,6 +561,9 @@
                 "size": [ 150, 20 ],
                 "anchor_from": "top_right",
                 "anchor_to": "top_right",
+                "$ignore_hover_text": false,
+                "$hover_text_checked_label_control":"video_dx.dynamic_fov_text",
+                "$hover_text_label_control": "video_dx.dynamic_fov_text",
                 "$option_label": "options.fov.toggle",
                 "$option_binding_name": "#field_of_view_toggle",
                 "$option_enabled_binding_name": "#field_of_view_toggle_enabled",

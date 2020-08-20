@@ -363,6 +363,11 @@ options.enableOpenChatMessage=Open Chat Message
 ##  Video Settings
 options.graphics.fancy.tooltip=Fancy graphics balances performance and quality for the majority of machines. Weather, clouds and particles may not appear behind translucent blocks or water.
 options.graphics.fast.tooltip=Fast graphics reduces the amount of visible rain and snow. Transparency effects are disabled for various blocks such as tree-leaves.
+options.vsync.tooltip=VSync is a graphics technology that synchronizes the frame rate of a game and the refresh rate of a monitor. §eFor Win10, leave it off. §6For Mobile, you can leave it on for smoother FPS.
+options.dynamic.fov.tooltip=This option enables/disables FOV change when drinking §espeed potions, slowness, taking damage §fetc.
+options.msaa.tooltip=Anti-Aliasing smoothens the edges of images and blocks. §cALWAYS PUT THIS ON THE LOWEST SETTING (1)§f This can greatly lag your game.
+
+
 
 options.vsync=Use VSync
 options.vsync.off=OFF
