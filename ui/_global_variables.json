@@ -28,7 +28,7 @@
   "$sign_edit_text_color": [ 1, 1, 1 ],
 
   //////// More Java UI ////////
-  "$chat_size": [ "40%", 180 ],
+  "$chat_size": [ "35%", 180 ],
   "$ignore_scoreboard_scores": false,
   "$scoreboard_text_shadow": false,
   /*
