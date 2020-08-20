@@ -119,7 +119,6 @@
     "$pressed_button_name": "button.menu_feed",
     "size": [ 177, 20 ]
   },
-
   "quit_button@black_button.black_button": {
     "size": [ 84, 20 ],
     "$pressed_button_name": "button.menu_quit",
