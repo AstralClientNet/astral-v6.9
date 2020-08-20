@@ -23,6 +23,11 @@
          "memory_tier": 1
       },
       {
+         "folder_name": "bottomchatclear",
+         "name": "Clear Bottom Chat UI",
+         "memory_tier": 1
+      },
+      {
          "folder_name": "bottomchat",
          "name": "Bottom Chat UI",
          "memory_tier": 1
