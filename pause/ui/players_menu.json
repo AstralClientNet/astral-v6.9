@@ -4,7 +4,7 @@
 {
   "namespace": "players_menu_janger",
 
-  "players_menu_button@button_toggle_janger.button_toggle": {
+  "players_menu_button@new_button_toggle_janger.button_toggle": {
     "$toggle_name": "pause_menu",
     "$control_name": "players_menu_view",
     "$toggle_index": 5,

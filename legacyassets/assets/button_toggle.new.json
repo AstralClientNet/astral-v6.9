@@ -24,7 +24,7 @@
     "focus_magnet_enabled": true,
     "$button_focus_precedence|default": 0,
     "default_focus_precedence": "$button_focus_precedence",
-    "$toggle_focus_enabled": false,
+    "$toggle_focus_enabled": true,
     "$radio_toggle_group": true,
     "$default_selector_toggle_index|default": 0,
     "$font_type|default": "smooth",
