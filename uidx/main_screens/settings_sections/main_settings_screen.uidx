@@ -36,6 +36,12 @@
     "$toggle_group_forced_index": "$profile_forced_index"
   },
 
+   "about_navigation_tab@settings_dx.button_tab": {
+    "$button_text": "options.about",
+    "$tab_view_binding_name": "about_button_toggle",
+    "$toggle_group_forced_index": 110
+  },
+
   "video_navigation_tab@settings_dx.button_tab": {
     "$button_text": "options.video",
     "$tab_view_binding_name": "video_tab_toggle",
@@ -208,6 +214,14 @@
           "anchor_from": "top_left",
           "anchor_to": "top_left",
           "offset": [ 0, 54 ]
+        }
+      },
+      {
+        "about_navigation_tab@settings_dx.about_navigation_tab": {
+           "offset": [ 0 , 154 ],
+           "size": [ 200, 20 ],
+           "anchor_from": "top_middle",
+           "anchor_to": "top_middle"
         }
       },
       {
@@ -585,6 +599,12 @@
       },
       {
         "binding_type": "view",
+        "source_control_name": "about_button_toggle",
+        "source_property_name": "(not #toggle_state)",
+        "target_property_name": "#visible"
+      },
+      {
+        "binding_type": "view",
         "source_control_name": "resource_pack_tab_toggle",
         "source_property_name": "(not #toggle_state)",
         "target_property_name": "#visible"
@@ -771,6 +791,18 @@
             {
               "binding_type": "view",
               "source_control_name": "profile_button_toggle",
+              "source_property_name": "#toggle_state",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "about@about_dx.about_screen_panel": {
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "about_button_toggle",
               "source_property_name": "#toggle_state",
               "target_property_name": "#visible"
             }
