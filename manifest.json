@@ -18,6 +18,11 @@
    
    "subpacks": [
       {
+         "folder_name": "astralbcc",
+         "name": "Clear Bottom Chat UI + Astral GUI Textures",
+         "memory_tier": 1
+      },
+      {
          "folder_name": "astralbc",
          "name": "Bottom Chat UI + Astral GUI Textures",
          "memory_tier": 1

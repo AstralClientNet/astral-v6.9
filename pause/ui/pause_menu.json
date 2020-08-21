@@ -13,7 +13,8 @@
       { "pause_menu_content_panel@pause_menu_content_panel": {} },
       { "invite_players_content_panel@players_menu_janger.players_menu_content_panel": {} },
       { "gamepad_helpers@players_menu_janger.gamepad_helpers": {} },
-      { "keyboard_helpers@players_menu_janger.keyboard_helpers": {} }
+      { "keyboard_helpers@players_menu_janger.keyboard_helpers": {} },
+      { "extra_buttons@pause_menu_janger.extra_buttons": {} }
     ]
   },
 
@@ -160,5 +161,51 @@
     "controls": [
       { "keyboard_helper_keys@common.keyboard_helper_keys": {} }
     ]
+  },
+
+  "server_store_button@start_dx.main_button": {
+    "$pressed_button_name": "button.menu_server_store",
+    "$button_text": "",
+    "controls": [
+      { "default@java_gui_common.store_default": { } },
+      { "hover@java_gui_common.store_hover": { } },
+      { "pressed@java_gui_common.store_hover": { } }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#server_store_button_visible",
+        "binding_name_override": "#visible",
+        "binding_type": "global"
+      }
+    ]
+  },
+
+  "extra_buttons": {
+    "type": "stack_panel",
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "size": [ 20, "100%-4px" ],
+    "offset": [ -2, 2 ],
+    "controls": [
+      {
+        "server_store_button@pause_menu_janger.server_store_button": {
+          "size": [ 20, 20 ]
+        }
+      },
+      {
+        "padding_0": {
+          "type": "panel",
+          "size": [ 0, 4 ],
+          "bindings": [
+            {
+              "binding_name": "#server_store_button_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+            }
+          ]
+        }
+      }
+    ]
   }
 }
+

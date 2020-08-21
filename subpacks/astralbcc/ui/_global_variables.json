@@ -1,0 +1,182 @@
+{
+  //////// Vanilla Deluxe: New Java UI Tweaks ////////
+
+  //(c) CrisXolt. Don't use any code without authorization!
+
+  //////// HUD ////////
+  "$experience_outline_text_color": [ 0.0, 0.0, 0.0 ],
+
+  //////// Main menu button ////////
+  "$main_menu_button_default_color": [ 0.87, 0.87, 0.87 ],
+  "$main_menu_button_hover_color": [ 0.87, 0.87, 0.87 ], //Before [ 1.0, 1.0, 0.62 ]
+  "$main_menu_button_preesed_color": [ 0.87, 0.87, 0.87 ], //Before [ 1.0, 1.0, 0.62 ]
+  "$main_menu_button_locked_color": [ 0.62, 0.62, 0.62 ],
+
+  //////// Anvil ////////
+  //For java text colors.
+  "$anvil_cost_fail_text_color": [ 1.0, 0.375, 0.375 ],
+
+  //////// Enchanting Table ////////
+  //For java text colors, default, hover and locked.
+  "$enchanting_runes_default_color": [ 0.4, 0.36, 0.3 ],
+  "$enchanting_runes_hover_color": [ 1.0, 1.0, 0.5 ],
+  "$enchanting_runes_locked_color": [ 0.2, 0.18, 0.14 ],
+
+  "$enchanting_cost_locked_color": [ 0.25, 0.5, 0.06 ],
+
+  //////// Sign ////////
+  "$sign_edit_text_color": [ 1, 1, 1 ],
+
+  //////// More Java UI ////////
+  "$chat_size": [ "40%", 180 ],
+  "$ignore_scoreboard_scores": false,
+  "$scoreboard_text_shadow": false,
+  /*
+  Recommended if you use "Screen Animations" enabled in settings.
+  But it is not recommended when the texture of the chat message
+  you are going to use is transparent.
+  */
+  "$show_hud_while_inventory": false,
+
+  //////// Scoreboard colors ////////
+  "$player_score_color": [ 1.0, 0.333, 0.333, 1.0 ],
+  
+  //////// Java Gui sections ////////
+  //Modify Java UI Resolutions for your texture!
+
+  //For menu BG.
+  //Valid values is: 16x, 32x, 64x, 128x, 256x and 512x.
+
+  //options_background
+  "$options_background_resolution": "16x",
+  //credits_background
+  "$credits_background_resolution": "16x",
+  //blocks_background
+  "$block_background_resolution": "16x",
+
+  //For Creative inventory UI.
+  //Scroll Viewport BG.
+  "$creative_scroll_viewport_bg": true,
+  "$creative_scroll_viewport_bg_color": [ 0.5, 0.5, 0.5 ],
+
+  //For inventory containers.
+  //Valid values is: 256x, 512x, 1024x, 2048x, 4096x and 8192x.
+
+  //advancements
+  "$advancements_window_resolution": "256x",
+  "$advancements_widgets_resolution": "256x",
+  "$advancements_tabs_resolution": "256x",
+
+  //For advancements tile BG: Valid values is: 16x, 32x, 64x, 128x, 256x and 512x.
+  "$adventure_background_resolution": "16x",
+  "$end_background_resolution": "16x",
+  "$husbandry_background_resolution": "16x",
+  "$nether_background_resolution": "16x",
+  "$stone_background_resolution": "16x", //Only used for now!!!
+  //bars
+  "$bars_resolution": "256x",
+  //blast_furnace
+  "$blast_furnace_resolution": "256x",
+  //brewing_stand
+  "$brewing_stand_resolution": "256x",
+  //creative_inventory
+  "$creative_tab_items_resolution": "256x",
+  "$creative_tab_search_resolution": "256x",
+  "$creative_tab_inv_resolution": "256x",
+  "$creative_tabs_resolution": "256x",
+  //furnace
+  "$furnace_resolution": "256x",
+  //icons
+  "$icons_resolution": "512x",
+  //loom
+  "$loom_resolution": "256x",
+  //recipe_book
+  "$recipe_book_resolution": "256x",
+  //smoker
+  "$smoker_resolution": "256x",
+  //title_minecraft
+  "$title_minecraft_resolution": "256x",
+  //villager2
+  "$villager2_resolution": "256x",
+  //widgets
+  "$widgets_resolution": "256x",
+  //uidx_all_buttons
+  "$uidx_buttons_resolution": "256x",
+     //Widgets
+     "$widgets_texture": "assets/minecraft/textures/gui/widgets",
+    
+     //Button(Also Toggle, Button Toggle)
+       "$button_200px_left_default_uv": [ 0, 66 ],
+       "$button_150px_left_default_uv": [ 0, 66 ],
+       "$button_98px_left_default_uv": [ 0, 66 ],
+       "$button_73px_left_default_uv": [ 0, 66 ],
+       "$button_50px_left_default_uv": [ 0, 66 ],
+       "$button_20px_left_default_uv": [ 0, 66 ],
+       "$button_200px_left_hover_uv": [ 0, 86 ],
+       "$button_150px_left_hover_uv": [ 0, 86 ],
+       "$button_98px_left_hover_uv": [ 0, 86 ],
+       "$button_73px_left_hover_uv": [ 0, 86 ],
+       "$button_50px_left_hover_uv": [ 0, 86 ],
+       "$button_20px_left_hover_uv": [ 0, 86 ],
+       "$button_200px_left_pressed_uv": [ 0, 86 ],
+       "$button_150px_left_pressed_uv": [ 0, 86 ],
+       "$button_98px_left_pressed_uv": [ 0, 86 ],
+       "$button_50px_left_pressed_uv": [ 0, 86 ],
+       "$button_73px_left_pressed_uv": [ 0, 86 ],
+       "$button_20px_left_pressed_uv": [ 0, 86 ],
+       "$button_200px_left_locked_uv": [ 0, 46 ],
+       "$button_150px_left_locked_uv": [ 0, 46 ],
+       "$button_98px_left_locked_uv": [ 0, 46 ],
+       "$button_73px_left_locked_uv": [ 0, 46 ],
+       "$button_50px_left_locked_uv": [ 0, 46 ],
+       "$button_20px_left_locked_uv": [ 0, 46 ],
+       "$button_200px_right_default_uv": [ 100, 66 ],
+       "$button_150px_right_default_uv": [ 125, 66 ],
+       "$button_98px_right_default_uv": [ 151, 66 ],
+       "$button_73px_right_default_uv": [ 163, 66 ],
+       "$button_50px_right_default_uv": [ 175, 66 ],
+       "$button_20px_right_default_uv": [ 190, 66 ],
+       "$button_200px_right_hover_uv": [ 100, 86 ],
+       "$button_150px_right_hover_uv": [ 125, 86 ],
+       "$button_98px_right_hover_uv": [ 151, 86 ],
+       "$button_73px_right_hover_uv": [ 163, 86 ],
+       "$button_50px_right_hover_uv": [ 175, 86 ],
+       "$button_20px_right_hover_uv": [ 190, 86 ],
+       "$button_200px_right_pressed_uv": [ 100, 86 ],
+       "$button_150px_right_pressed_uv": [ 125, 86 ],
+       "$button_98px_right_pressed_uv": [ 151, 86 ],
+       "$button_73px_right_pressed_uv": [ 163, 86 ],
+       "$button_50px_right_pressed_uv": [ 175, 86 ],
+       "$button_20px_right_pressed_uv": [ 190, 86 ],
+       "$button_200px_right_locked_uv": [ 100, 46 ],
+       "$button_150px_right_locked_uv": [ 125, 46 ],
+       "$button_98px_right_locked_uv": [ 151, 46 ],
+       "$button_73px_right_locked_uv": [ 163, 46 ],
+       "$button_50px_right_locked_uv": [ 175, 46 ],
+       "$button_20px_right_locked_uv": [ 190, 46 ],
+       "$button_200px_uv_size": [ 100, 20 ],
+       "$button_150px_uv_size": [ 75, 20 ],
+       "$button_98px_uv_size": [ 49, 20 ],
+       "$button_73px_uv_size": [ 36, 20 ],
+       "$button_73px_right_uv_size": [ 37, 20 ],
+       "$button_50px_uv_size": [ 25, 20 ],
+       "$button_20px_uv_size": [ 10, 20 ],
+       "$feedback_button_left_default_uv": [ 0, 106 ],
+       "$feedback_button_right_default_uv": [ 10, 106 ],
+       "$feedback_button_left_hover_uv": [ 0, 126 ],
+       "$feedback_button_right_hover_uv": [ 10, 126 ],
+       "$feedback_button_left_pressed_uv": [ 0, 126 ],
+       "$feedback_button_right_pressed_uv": [ 10, 126 ],
+       "$feedback_button_uv_size": [ 10, 20 ],
+     
+     //Slider
+       "$slider_310px_left_uv": [ 0, 46 ],
+       "$slider_150px_left_uv": [ 0, 46 ],
+       "$slider_310px_right_uv": [ 45, 46 ],
+       "$slider_150px_right_uv": [ 125, 46 ],
+       "$slider_310px_uv_size": [ 155, 20 ],
+       "$slider_150px_uv_size": [ 75, 20 ],
+       "$slider_button_left_uv": [ 0, 66 ],
+       "$slider_button_right_uv": [ 196, 66 ],
+       "$slider_button_uv_size": [ 4, 20 ]
+}

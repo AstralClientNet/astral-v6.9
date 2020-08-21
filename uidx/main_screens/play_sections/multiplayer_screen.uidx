@@ -491,7 +491,6 @@
             {
               "picture": {
                 "type": "image",
-                "texture": "assets/minecraft/textures/misc/unknown_server",
                 "ignored": "$more_servers",
                 "layer": 1,
                 "size": [ 32, 32 ],
@@ -596,7 +595,7 @@
                 "anchor_from": "top_left",
                 "anchor_to": "top_left"
               }
-            }/* ,
+            },
             {
               "ping_button@common.button": {
                 "size": [ 10, 8 ],
@@ -616,7 +615,7 @@
                   { "pressed": { } }
                 ]
               }
-            } */
+            } 
           ],
           "bindings": [
             {
@@ -648,7 +647,7 @@
       }
     ]
   },
-  /* 
+  
   "ping_rate_text@common_dx.hover_text_label": {
     "anchor_from": "top_left",
     "anchor_to": "top_left",
@@ -660,7 +659,6 @@
       }
     ]
   },
- */
   "more_servers_text_panel": {
     "type": "panel",
     "size": [ "100%", "100%" ],

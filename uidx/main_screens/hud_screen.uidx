@@ -170,34 +170,6 @@
   },
 
   /*//// Panels ////*/
-  
-  "experience_bar_full@icons_java_dx.experience_bar_full": {
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "clip_direction": "left",
-    "clip_pixelperfect": true,
-    "layer": 3,
-    "bindings": [
-      {
-        "binding_name": "#exp_progress",
-        "binding_name_override": "#clip_ratio",
-        "binding_type": "global"
-      }
-    ]
-  },
-  
-  "experience_bar_empty@icons_java_dx.experience_bar_empty": {
-    "anchor_from": "top_left",
-    "anchor_to": "top_left",
-    "layer": 2
-  },
-  
-  "experience_bar_nub@icons_java_dx.experience_bar_nub": {
-    "anchor_from": "top_middle",
-    "anchor_to": "top_middle",
-    "tiled": true,
-    "layer": 4
-  },
 
   "exp_progress_bar_and_hotbar": {
     "type": "panel",
@@ -213,9 +185,9 @@
           "anchor_to": "bottom_left",
           "offset": [ 0, -24 ],
           "controls": [
-            { "experience_bar_full@hud_dx.experience_bar_full": { } },
-            { "experience_bar_empty@hud_dx.experience_bar_empty": { } },
-            { "experience_bar_nub@hud_dx.experience_bar_nub": { } },
+            { "experience_bar_full@hud.full_progress_bar": { "layer": 10 } },
+            { "experience_bar_empty@hud.empty_progress_bar": {} },
+            { "experience_bar_nub@hud.progress_bar_nub": {} },
             { "progress_text_label@hud_dx.xp_number_panel": { "layer": 8 } }
           ],
           "bindings": [
