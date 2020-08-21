@@ -368,7 +368,7 @@ options.dynamic.fov.tooltip=This option enables/disables FOV change when drinkin
 options.msaa.tooltip=Anti-Aliasing smoothens the edges of images and blocks. §cALWAYS PUT THIS ON THE LOWEST SETTING (1)§f This can greatly lag your game.
 
 
-
+options.about=About Astral
 options.vsync=Use VSync
 options.vsync.off=OFF
 options.vsync.on=ON

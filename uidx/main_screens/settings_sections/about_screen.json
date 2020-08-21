@@ -1,0 +1,177 @@
+/*File made by @CrisXolt.
+//(c) Don't use any code design without permission!*/
+{
+    "namespace": "about_dx",
+  
+    /*//// Stack panels ////*/
+    
+    "panel_cotent": {
+      "type": "stack_panel",
+      "size": [ 310, "100%c" ],
+      "controls": [
+        {
+          "top_padding": {
+            "type": "panel",
+            "size": [ 0, 4 ]
+          }
+        },
+        {
+          "panel@start_dx.stacked_row": {
+            "controls": [
+              {
+                "astral_title": { "type": "label", "font_scale_factor": 2.8, "text": "§dAstral §fClient" }
+              }   
+            ]
+          }
+        },
+        {
+          "panel_0@start_dx.stacked_row": {
+            "controls": [
+             {
+                   "astral_title": { "type": "label", "font_type":"smooth", "font_scale_factor": 1.3, "text": "Astral Client is a optimization client-resource pack for MC:BE." }
+             }
+            ]
+          }    
+        },
+        {
+          "categorie_panel_1": {
+            "type": "panel",
+            "size": [ "100%", 10 ],
+            "controls": [
+              {
+                "object_name": {
+                  "type": "image",
+                  "texture": "textures/uidx/line",
+                  "layer": 5,
+                  "size": [ "100%-20px", 2 ],
+                  "anchor_from": "center",
+                  "anchor_to": "center"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "panel_1@start_dx.stacked_row": {
+            "size": [ "100%", 52],
+            "controls": [
+             {
+                   "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1.1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 0 ], "text": "Features:" }
+             },
+             {
+                   "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 14 ], "text": "- Java Style UI and Features." }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 28 ], "text": "- Clean, Modern and Minimalist Look. (Lunar and Badlion inspired)" }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 42 ], "text": "- Unlocked hidden settings, texture optimizations and tweaks." }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 56 ], "text": "- PvP-specific mods (Particle Multiplier, Clear Scoreboard, Bottom Chat etc.)" }
+             }     
+            ]
+          }    
+        },
+        {
+          "categorie_panel_1": {
+            "type": "panel",
+            "size": [ "100%", 32 ],
+            "controls": [
+              {
+                "object_name": {
+                  "type": "image",
+                  "texture": "textures/uidx/line",
+                  "layer": 5,
+                  "size": [ "100%-20px", 2 ],
+                  "offset": [ 0, 10 ],
+                  "anchor_from": "center",
+                  "anchor_to": "center"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "panel_2@start_dx.stacked_row": {
+            "size": [ "100%", 64],
+            "controls": [
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1.1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 0 ], "text": "§eCredits:" }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 14 ], "text": "- §eCrisXolt §ffor the Java UI code (Free-to-use, see license.txt)" }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 28 ], "text": "- §eOffroaders 123 §ffor some of the Dark Mode UI." }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 42 ], "text": "- §eFhizzle, DerpPlayz18, Dodonut, and Chicadoge §ffor tweaks and optimizations." }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 56 ], "text": "- §eSermah §ffor the No Help Button on the inventory." }
+             },
+             {
+              "astral": { "type": "label", "font_type":"smooth", "font_scale_factor": 1, "anchor_from": "top_left", "anchor_to": "top_left", "offset": [ 20, 70 ], "text": "- §eTh3Emelis §ffor the Advancechat." }
+             }        
+            ]
+          }    
+        },
+        {
+          "categorie_panel_1": {
+            "type": "panel",
+            "size": [ "100%", 32 ],
+            "controls": [
+              {
+                "object_name": {
+                  "type": "image",
+                  "texture": "textures/uidx/line",
+                  "layer": 5,
+                  "size": [ "100%-20px", 2 ],
+                  "offset": [ 0, 10 ],
+                  "anchor_from": "center",
+                  "anchor_to": "center"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+  
+    /*//// Scrolling Panel ////*/
+    
+    "scrolling_panel@common_menus_dx.java_menu_scroll_panel": {
+      "$scroll_view_port_size": [ 324, "100%" ],
+      "layer": 2,
+      "$scrolling_content": "about_dx.panel_cotent"
+    },
+  
+    /*//// Screen ////*/
+    
+    "about_label@settings_dx.base_label": {
+      "text": "",
+      "offset": [ 0, 4 ]
+    },
+  
+    "about_screen_panel@common_menus_dx.java_menu_panel_template": {
+      "$bg": "java_gui_common.screen_background",
+      "$top_content": "about_dx.about_label",
+      "$middle_content": "about_dx.scrolling_panel",
+      "$bottom_content": "about_dx.done_panel"
+    },
+  
+    "done_panel": {
+      "type": "panel",
+      "controls": [
+        {
+          "about_done_button@settings_dx.null_navigation_tab": {
+            "size": [ 200, 20 ],
+            "anchor_from": "bottom_middle",
+            "anchor_to": "bottom_middle",
+            "offset": [ 0, -9 ]
+          }
+        }
+      ]
+    }
+  }

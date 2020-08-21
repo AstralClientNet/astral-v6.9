@@ -58,6 +58,7 @@
       "uidx/main_screens/settings_sections/subscription_screen.uidx",
       "uidx/main_screens/settings_sections/touch_screen.uidx",
       "uidx/main_screens/settings_sections/video_screen.uidx",
+      "uidx/main_screens/settings_sections/about_screen.json",
       "uidx/main_screens/world_sections/edit_world_screen.uidx",
       "uidx/main_screens/world_sections/gamerule_screen.uidx",
       "uidx/main_screens/world_sections/main_world_screen.uidx",
