@@ -21,7 +21,7 @@
     "layer": 2,
 	  "font_type": "smooth",
     "alpha": 0.4,
-    "text": "1.16.20",
+    "text": "#version",
     "size": [
       "default",
       20
