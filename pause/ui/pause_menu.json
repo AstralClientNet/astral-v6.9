@@ -14,6 +14,13 @@
       { "invite_players_content_panel@players_menu_janger.players_menu_content_panel": {} },
       { "gamepad_helpers@players_menu_janger.gamepad_helpers": {} },
       { "keyboard_helpers@players_menu_janger.keyboard_helpers": {} },
+      {
+        "label_type@label_type": {
+          "offset": [ 14, 51 ],
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right"
+        }
+      },
       { "extra_buttons@pause_menu_janger.extra_buttons": {} }
     ]
   },
@@ -179,6 +186,25 @@
       }
     ]
   },
+
+  "label_type": {
+    "type": "panel",
+    "alpha": 0.2,
+    "layer": 2,
+    "size": [
+      145,
+      145
+    ],
+    "controls": [
+      {
+        "title_image": {
+          "type": "image",
+          "offset": [ -9 , 10 ],
+          "texture": "textures/ui/astralchest"
+        }
+      }   
+  ]
+},
 
   "extra_buttons": {
     "type": "stack_panel",

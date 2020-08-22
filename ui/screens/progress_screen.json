@@ -1,5 +1,25 @@
 {
   "namespace": "progress_screen_concept",
+
+  "label_type": {
+    "type": "panel",
+    "alpha": 0.2,
+    "layer": 2,
+    "size": [
+      145,
+      145
+    ],
+    "controls": [
+      {
+        "title_image": {
+          "type": "image",
+          "offset": [ -9 , 10 ],
+          "texture": "textures/ui/astralchest"
+        }
+      }   
+  ]
+},
+
   "main_world_convert_modal_progress_panel": {
     "type": "panel",
     "layer": 3,
@@ -23,6 +43,20 @@
       },
       {
         "popup_dialog_factory@progress.popup_dialog_factory": {}
+      }
+    ]
+  },
+
+  "bottom_content": {
+    "type":"panel",
+    "layer": 5,
+    "controls": [
+      {
+        "label_type@label_type": {
+          "offset": [ 14, 51 ],
+          "anchor_from": "bottom_right",
+          "anchor_to": "bottom_right"
+        }
       }
     ]
   },
@@ -93,9 +127,9 @@
             {
               "progress_title_text@progress.progress_title_text": {
                 "color": [
-                  0.23,
-                  0.23,
-                  0.23
+                  255,
+                  255,
+                  255
                 ],
                 "anchor_from": "top_middle",
                 "anchor_to": "top_middle",
@@ -201,6 +235,6 @@
     "$middle_content": "progress_screen_concept.main_world_convert_modal_progress_panel",
     "$middle_panel_animation": [],
     "$background_alpha": 0.3,
-    "$bottom_content": ""
+    "$bottom_content": "progress_screen_concept.bottom_content"
   }
 }
