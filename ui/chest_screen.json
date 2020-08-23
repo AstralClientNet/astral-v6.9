@@ -143,9 +143,9 @@
       },
       {
         "hud_player_rend_desktop@hud_player_renderer": {
-          "offset": [ "-20%", -5 ],
-          "anchor_from": "center",
-          "anchor_to": "center"
+          "offset": [ 2, -27],
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left"
         }
       },
       { "container_gamepad_helpers@common.container_gamepad_helpers": {} },
